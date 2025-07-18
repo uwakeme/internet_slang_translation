@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="header">
+    <text class="title">互联网黑话翻译器</text>
+    <text class="subtitle">让沟通更简单</text>
+  </view>
+  
+  <view class="quick-translate">
+    <textarea 
+      placeholder="输入互联网黑话或人话，快速翻译"
+      value="{{inputText}}"
+      bindinput="onInput"
+      class="input-area"
+      maxlength="500"
+    ></textarea>
+    <button class="translate-btn btn" bindtap="quickTranslate">快速翻译</button>
+  </view>
+
+  <view class="result" wx:if="{{result}}">
+    <view class="result-header">
+      <text class="result-label">翻译结果：</text>
+      <button class="copy-btn" bindtap="copyResult" size="mini">复制</button>
+    </view>
+    <text class="result-text">{{result}}</text>
+  </view>
+
+  <view class="features">
+    <view class="feature-item" bindtap="goToJargon">
+      <text class="feature-icon">🗣️</text>
+      <text class="feature-text">互联网黑话</text>
+      <text class="feature-desc">日常沟通用语</text>
+    </view>
+    <view class="feature-item" bindtap="geToProfessional">
+      <text class="feature-icon">🔧</text>
+      <text class="feature-text">专业名词</text>
+      <text class="feature-desc">技术术语</text>
+    </view>
+    <view class="feature-item" bindtap="goToTranslate">
+      <text class="feature-icon">🔄</text>
+      <text class="feature-text">专业翻译</text>
+      <text class="feature-desc">双向翻译模式</text>
+    </view>
+  </view>
+</view>
+
+

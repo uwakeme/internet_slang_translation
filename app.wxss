@@ -1,0 +1,453 @@
+page {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+.container {
+  padding: 0 0 40rpx 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 统一的页面头部 */
+.page-header {
+  position: relative;
+  padding: 60rpx 40rpx 40rpx;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.page-title {
+  font-size: 48rpx;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #00d4ff, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+
+/* 统一的卡片样式 */
+.card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20rpx);
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin: 0 40rpx 24rpx;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.15);
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: linear-gradient(90deg, #00d4ff, #ff6b6b);
+}
+
+.card:active {
+  transform: translateY(-4rpx);
+  box-shadow: 0 12rpx 50rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 统一的按钮样式 */
+.btn {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: white;
+  border-radius: 50rpx;
+  padding: 24rpx 40rpx;
+  margin: 20rpx 0;
+  border: none;
+  font-size: 28rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 20rpx rgba(0, 212, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 2rpx 10rpx rgba(0, 212, 255, 0.4);
+}
+
+.btn:active::before {
+  left: 100%;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  box-shadow: 0 4rpx 20rpx rgba(255, 107, 107, 0.3);
+}
+
+.btn-white {
+  background: rgba(255, 255, 255, 0.98);
+  color: #0066cc;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.15);
+}
+
+/* 统一的输入框样式 */
+.input-area {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2rpx solid rgba(0, 212, 255, 0.2);
+  border-radius: 16rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  color: #333;
+  backdrop-filter: blur(10rpx);
+  transition: all 0.3s ease;
+}
+
+.input-area:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 4rpx rgba(0, 212, 255, 0.1);
+}
+
+/* 统一的标签样式 */
+.tag {
+  background: linear-gradient(135deg, #0066cc, #004499);
+  color: white;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  box-shadow: 0 2rpx 8rpx rgba(0, 102, 204, 0.3);
+}
+
+.tag-light {
+  background: rgba(0, 102, 204, 0.1);
+  color: #0066cc;
+  border: 1rpx solid rgba(0, 102, 204, 0.3);
+  box-shadow: none;
+}
+
+/* 统一的文字样式 */
+.title-large {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #1a1a2e;
+  background: linear-gradient(135deg, #0066cc, #ff4757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-primary {
+  color: #333;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+.text-secondary {
+  color: #666;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+
+.text-hint {
+  color: #999;
+  font-size: 22rpx;
+}
+
+/* 统一的示例框样式 */
+.example-box {
+  background: rgba(0, 102, 204, 0.05);
+  padding: 20rpx;
+  border-radius: 16rpx;
+  border-left: 4rpx solid #0066cc;
+  margin: 16rpx 0;
+}
+
+.example-text {
+  font-size: 28rpx;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* 词汇示例专用样式 */
+.word-example {
+  margin-top: 24rpx;
+}
+
+.example-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.label-icon {
+  font-size: 24rpx;
+  margin-right: 8rpx;
+  color: #0066cc;
+}
+
+.label-text {
+  font-size: 24rpx;
+  color: #999;
+  font-weight: 500;
+}
+
+.example-content {
+  background: rgba(248, 250, 252, 0.9);
+  padding: 24rpx;
+  border-radius: 16rpx;
+  border-left: 4rpx solid #0066cc;
+  box-shadow: 0 2rpx 12rpx rgba(0, 102, 204, 0.1);
+  border: 1rpx solid rgba(0, 102, 204, 0.1);
+}
+
+.example-content .example-text {
+  font-size: 28rpx;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* 场景应用样式统一 */
+.scenarios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.scenario-item {
+  border: 2rpx solid rgba(0, 212, 255, 0.2);
+  border-radius: 20rpx;
+  padding: 32rpx;
+  background: rgba(248, 250, 252, 0.9);
+  margin-bottom: 24rpx;
+  transition: all 0.3s ease;
+}
+
+.scenario-item:active {
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 4rpx rgba(0, 212, 255, 0.1);
+}
+
+.scenario-header {
+  margin-bottom: 24rpx;
+  text-align: center;
+}
+
+.scenario-tag {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: white;
+  padding: 12rpx 24rpx;
+  border-radius: 24rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  box-shadow: 0 4rpx 20rpx rgba(0, 212, 255, 0.3);
+}
+
+.scenario-content {
+  text-align: center;
+}
+
+.scenario-original {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+  line-height: 1.5;
+}
+
+.scenario-arrow {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 16rpx;
+}
+
+.scenario-translation {
+  display: block;
+  font-size: 28rpx;
+  color: #0066cc;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* 统一的列表样式 */
+.list-item {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20rpx);
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin: 0 40rpx 24rpx;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.15);
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: linear-gradient(90deg, #00d4ff, #ff6b6b);
+}
+
+.list-item:active {
+  transform: translateY(-4rpx);
+  box-shadow: 0 12rpx 50rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 统一的空状态样式 */
+.empty-state {
+  text-align: center;
+  padding: 120rpx 40rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 统一的加载状态 */
+.loading {
+  text-align: center;
+  padding: 40rpx;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24rpx;
+}
+
+/* 统一的分割线 */
+.divider {
+  height: 1rpx;
+  background: rgba(0, 0, 0, 0.05);
+  margin: 20rpx 0;
+}
+
+/* 统一的图标样式 */
+.icon {
+  font-size: 32rpx;
+  color: #0066cc;
+  margin-right: 16rpx;
+}
+
+.icon-small {
+  font-size: 24rpx;
+  margin-right: 8rpx;
+}
+
+/* 统一的渐变文字 */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* 统一的阴影效果 */
+.shadow-light {
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.shadow-medium {
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.15);
+}
+
+.shadow-heavy {
+  box-shadow: 0 12rpx 50rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 统一的动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+/* 统一的响应式布局 */
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* 统一的间距 */
+.mt-small { margin-top: 16rpx; }
+.mt-medium { margin-top: 24rpx; }
+.mt-large { margin-top: 40rpx; }
+
+.mb-small { margin-bottom: 16rpx; }
+.mb-medium { margin-bottom: 24rpx; }
+.mb-large { margin-bottom: 40rpx; }
+
+.p-small { padding: 16rpx; }
+.p-medium { padding: 24rpx; }
+.p-large { padding: 32rpx; }
+
+
+
+

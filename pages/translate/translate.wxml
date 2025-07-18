@@ -1,0 +1,64 @@
+<view class="container">
+  <view class="page-title">
+    <text>专业翻译</text>
+  </view>
+
+  <view class="translate-modes">
+    <button 
+      class="mode-btn {{mode === 'toHuman' ? 'active' : ''}}"
+      bindtap="switchMode"
+      data-mode="toHuman"
+    >
+      黑话→人话
+    </button>
+    <button 
+      class="mode-btn {{mode === 'toJargon' ? 'active' : ''}}"
+      bindtap="switchMode"
+      data-mode="toJargon"
+    >
+      人话→黑话
+    </button>
+  </view>
+
+  <view class="translate-area">
+    <view class="input-section">
+      <text class="section-title">{{mode === 'toHuman' ? '输入互联网黑话' : '输入通俗易懂的话'}}</text>
+      <textarea 
+        placeholder="{{mode === 'toHuman' ? '例如：我们需要赋能业务，形成闭环' : '例如：我们需要帮助业务，形成完整流程'}}"
+        value="{{inputText}}"
+        bindinput="onInput"
+        class="input-area"
+        maxlength="1000"
+      ></textarea>
+    </view>
+    
+    <button class="translate-btn btn" bindtap="translate">
+      <text>{{translating ? '翻译中...' : '开始翻译'}}</text>
+    </button>
+    
+    <view class="result-section" wx:if="{{result}}">
+      <view class="section-header">
+        <text class="section-title">翻译结果</text>
+        <button class="copy-btn" bindtap="copyResult" size="mini">复制</button>
+      </view>
+      <view class="result-content">
+        <text class="result-text">{{result}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="history" wx:if="{{history.length > 0}}">
+    <view class="history-header">
+      <text class="history-title">翻译历史</text>
+      <button class="clear-btn" bindtap="clearHistory" size="mini">清空</button>
+    </view>
+    <view class="history-item" wx:for="{{history}}" wx:key="index">
+      <view class="history-content">
+        <text class="original">{{item.original}}</text>
+        <text class="arrow">↓</text>
+        <text class="translated">{{item.translated}}</text>
+      </view>
+      <text class="history-time">{{item.time}}</text>
+    </view>
+  </view>
+</view>

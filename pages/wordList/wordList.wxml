@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="page-header">
+    <view class="header-content">
+      <text class="page-title">{{categoryName}}</text>
+      <text class="word-count">共{{words.length}}个词汇</text>
+    </view>
+    <view class="header-decoration"></view>
+  </view>
+
+  <view class="words-list">
+    <view 
+      class="word-card" 
+      wx:for="{{words}}" 
+      wx:key="word"
+      bindtap="translateWord" 
+      data-word="{{item.word}}"
+    >
+      <view class="word-header">
+        <text class="word-title">{{item.word}}</text>
+        <text class="word-meaning">{{item.meaning}}</text>
+      </view>
+      
+      <view class="word-example" wx:if="{{item.example}}">
+        <view class="example-label">
+          <text class="label-icon">💡</text>
+          <text class="label-text">使用示例</text>
+        </view>
+        <text class="example-text">{{item.example}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-tip">
+    <text class="tip-text">💡 点击任意词汇可进入翻译页面</text>
+  </view>
+</view>
+
+
+
+

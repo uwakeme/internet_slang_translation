@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">黑话分类</text>
+    <text class="page-subtitle">探索不同领域的专业术语</text>
+  </view>
+
+  <!-- 互联网黑话 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-icon">🗣️</text>
+      <text class="section-title">互联网黑话</text>
+      <text class="section-desc">日常沟通用语</text>
+    </view>
+    <view class="category-grid">
+      <view 
+        class="category-item jargon-item" 
+        wx:for="{{jargonCategories}}" 
+        wx:key="id"
+        bindtap="goToWordList"
+        data-category="{{item}}"
+      >
+        <text class="category-icon">📝</text>
+        <text class="category-name">{{item.name}}</text>
+        <text class="category-desc">{{item.desc}}</text>
+        <text class="category-count">{{item.count}}个词汇</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 专业名词 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-icon">🔧</text>
+      <text class="section-title">专业名词</text>
+      <text class="section-desc">技术术语</text>
+    </view>
+    <view class="category-grid">
+      <view 
+        class="category-item professional-item" 
+        wx:for="{{professionalCategories}}" 
+        wx:key="id"
+        bindtap="goToWordList"
+        data-category="{{item}}"
+      >
+        <text class="category-icon">⚙️</text>
+        <text class="category-name">{{item.name}}</text>
+        <text class="category-desc">{{item.desc}}</text>
+        <text class="category-count">{{item.count}}个词汇</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="words-list">
+  <view 
+    class="word-item" 
+    wx:for="{{words}}" 
+    wx:key="word"
+    bindtap="translateWord" 
+    data-word="{{item.word}}"
+  >
+    <view class="word-header">
+      <text class="word-title">{{item.word}}</text>
+      <text class="word-meaning">{{item.meaning}}</text>
+    </view>
+    
+    <view class="word-example" wx:if="{{item.example}}">
+      <view class="example-label">
+        <text class="label-icon">💡</text>
+        <text class="label-text">使用示例</text>
+      </view>
+      <text class="example-text">{{item.example}}</text>
+    </view>
+  </view>
+</view>
+
+
+

@@ -1,0 +1,97 @@
+<view class="container" wx:if="{{wordInfo}}">
+  <!-- 词汇标题区域 -->
+  <view class="word-header">
+    <view class="word-main">
+      <text class="word-title">{{wordInfo.word}}</text>
+      <button class="copy-btn" bindtap="copyWord" size="mini">复制</button>
+    </view>
+    <text class="word-pronunciation">互联网黑话</text>
+  </view>
+
+  <!-- 翻译模块 -->
+  <view class="section translation-section">
+    <view class="section-header">
+      <text class="section-icon">🔄</text>
+      <text class="section-title">翻译</text>
+    </view>
+    <view class="translation-content">
+      <text class="translation-text">{{wordInfo.meaning}}</text>
+    </view>
+  </view>
+
+  <!-- 基础示例模块 -->
+  <view class="section example-section" wx:if="{{wordInfo.example}}">
+    <view class="section-header">
+      <text class="section-icon">💡</text>
+      <text class="section-title">基础示例</text>
+    </view>
+    <view class="example-content">
+      <text class="example-text">{{wordInfo.example}}</text>
+    </view>
+  </view>
+
+  <!-- 场景应用模块 -->
+  <view class="section scenarios-section">
+    <view class="section-header">
+      <text class="section-icon">🎯</text>
+      <text class="section-title">场景应用</text>
+    </view>
+    <view class="scenarios-list">
+      <view class="scenario-item" wx:for="{{scenarios}}" wx:key="scene">
+        <view class="scenario-header">
+          <text class="scenario-tag">{{item.scene}}</text>
+        </view>
+        
+        <!-- 对话形式 -->
+        <view class="scenario-content" wx:if="{{item.type === 'dialogue'}}">
+          <view class="dialogue-container">
+            <view class="dialogue-item original" wx:for="{{item.content}}" wx:for-item="dialogue" wx:key="speaker" wx:if="{{dialogue.speaker !== '翻译'}}">
+              <view class="speaker-tag">{{dialogue.speaker}}</view>
+              <view class="dialogue-bubble original-bubble">
+                <text class="dialogue-text">{{dialogue.text}}</text>
+              </view>
+            </view>
+            
+            <view class="dialogue-arrow">↓ 翻译为</view>
+            
+            <view class="dialogue-item translated" wx:for="{{item.content}}" wx:for-item="dialogue" wx:key="speaker" wx:if="{{dialogue.speaker === '翻译'}}">
+              <view class="speaker-tag translation-tag">人话版本</view>
+              <view class="dialogue-bubble translated-bubble">
+                <text class="dialogue-text">{{dialogue.text}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 段落形式 -->
+        <view class="scenario-content" wx:else>
+          <view class="paragraph-container">
+            <view class="paragraph-item original-paragraph">
+              <view class="paragraph-label">黑话版本</view>
+              <text class="paragraph-text">{{item.content.original}}</text>
+            </view>
+            
+            <view class="paragraph-arrow">↓ 翻译为</view>
+            
+            <view class="paragraph-item translated-paragraph">
+              <view class="paragraph-label">人话版本</view>
+              <text class="paragraph-text">{{item.content.translation}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions">
+    <button class="action-btn primary" bindtap="goToTranslate">
+      <text class="btn-icon">🔄</text>
+      <text>进入翻译页面</text>
+    </button>
+  </view>
+</view>
+
+<view class="empty-state" wx:else>
+  <text class="empty-text">词汇信息加载中...</text>
+</view>
