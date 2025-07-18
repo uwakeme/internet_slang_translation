@@ -1,0 +1,117 @@
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="search-header">
+    <view class="search-box">
+      <input 
+        class="search-input"
+        placeholder="搜索黑话、含义或标签"
+        value="{{searchKeyword}}"
+        bindinput="onInput"
+        bindconfirm="onSearch"
+        focus="{{true}}"
+      />
+      <view class="search-actions">
+        <button wx:if="{{searchKeyword}}" class="clear-btn" bindtap="clearSearch" size="mini">
+          <text class="clear-icon">×</text>
+        </button>
+        <button class="search-btn" bindtap="onSearch" size="mini">搜索</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索中状态 -->
+  <view class="searching" wx:if="{{searching}}">
+    <text class="searching-text">搜索中...</text>
+  </view>
+
+  <!-- 搜索结果 -->
+  <view class="search-results" wx:if="{{!showHistory && !searching}}">
+    <view class="results-header" wx:if="{{searchResults.length > 0}}">
+      <text class="results-count">找到 {{searchResults.length}} 个结果</text>
+    </view>
+    
+    <view class="no-results" wx:if="{{searchResults.length === 0}}">
+      <text class="no-results-icon">🔍</text>
+      <text class="no-results-text">没有找到相关内容</text>
+      <text class="no-results-tip">试试其他关键词或标签</text>
+    </view>
+
+    <view class="word-list">
+      <view 
+        class="word-item" 
+        wx:for="{{searchResults}}" 
+        wx:key="id"
+        bindtap="goToWordDetail"
+        data-word="{{item.word}}"
+      >
+        <view class="word-header">
+          <text class="word-title">{{item.word}}</text>
+          <text class="word-meaning">{{item.meaning}}</text>
+        </view>
+        
+        <view class="word-tags">
+          <text 
+            class="tag-item" 
+            wx:for="{{item.tags}}" 
+            wx:for-item="tag"
+            wx:key="*this"
+            bindtap="searchByTag"
+            data-tag="{{tag}}"
+            catchtap="searchByTag"
+          >{{tag}}</text>
+        </view>
+        
+        <view class="word-actions">
+          <button 
+            class="action-btn translate-btn" 
+            bindtap="goToTranslate"
+            data-word="{{item.word}}"
+            catchtap="goToTranslate"
+            size="mini"
+          >翻译</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索历史和热门标签 -->
+  <view class="search-home" wx:if="{{showHistory}}">
+    <!-- 搜索历史 -->
+    <view class="history-section" wx:if="{{searchHistory.length > 0}}">
+      <view class="section-header">
+        <text class="section-title">搜索历史</text>
+        <button class="clear-history-btn" bindtap="clearHistory" size="mini">清空</button>
+      </view>
+      <view class="history-list">
+        <view 
+          class="history-item" 
+          wx:for="{{searchHistory}}" 
+          wx:key="*this"
+          bindtap="searchFromHistory"
+          data-keyword="{{item}}"
+        >
+          <text class="history-icon">🕐</text>
+          <text class="history-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 热门标签 -->
+    <view class="tags-section">
+      <view class="section-header">
+        <text class="section-title">热门标签</text>
+      </view>
+      <view class="tags-grid">
+        <view 
+          class="tag-chip" 
+          wx:for="{{popularTags}}" 
+          wx:key="*this"
+          bindtap="searchByTag"
+          data-tag="{{item}}"
+        >
+          <text class="tag-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

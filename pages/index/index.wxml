@@ -4,6 +4,12 @@
     <text class="subtitle">让沟通更简单</text>
   </view>
   
+  <!-- 添加搜索入口 -->
+  <view class="search-entry" bindtap="goToSearch">
+    <text class="search-icon">🔍</text>
+    <text class="search-placeholder">搜索黑话、含义或标签</text>
+  </view>
+  
   <view class="quick-translate">
     <textarea 
       placeholder="输入互联网黑话或人话，快速翻译"
@@ -41,5 +47,6 @@
     </view>
   </view>
 </view>
+
 
 

@@ -63,7 +63,14 @@ Page({
     wx.switchTab({
       url: '/pages/translate/translate'
     })
+  },
+
+  goToSearch() {
+    wx.navigateTo({
+      url: '/pages/search/search'
+    })
   }
 })
+
 
 

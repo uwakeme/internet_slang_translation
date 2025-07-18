@@ -166,4 +166,28 @@
   line-height: 1.4;
 }
 
+.search-entry {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50rpx;
+  padding: 20rpx 30rpx;
+  margin: 0 40rpx 30rpx;
+  backdrop-filter: blur(10rpx);
+  border: 2rpx solid rgba(0, 212, 255, 0.2);
+}
+
+.search-icon {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+  color: #666;
+}
+
+.search-placeholder {
+  font-size: 28rpx;
+  color: #999;
+  flex: 1;
+}
+
+
 

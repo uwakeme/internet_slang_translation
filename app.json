@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/category/category",
     "pages/translate/translate",
+    "pages/search/search",
     "pages/wordList/wordList",
     "pages/wordDetail/wordDetail"
   ],
@@ -41,4 +42,5 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
+
 
