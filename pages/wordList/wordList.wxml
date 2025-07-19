@@ -8,11 +8,11 @@
   </view>
 
   <view class="words-list">
-    <view 
-      class="word-card" 
-      wx:for="{{words}}" 
+    <view
+      class="word-card"
+      wx:for="{{words}}"
       wx:key="word"
-      bindtap="translateWord" 
+      bindtap="goToWordDetail"
       data-word="{{item.word}}"
     >
       <view class="word-header">
@@ -31,7 +31,7 @@
   </view>
 
   <view class="bottom-tip">
-    <text class="tip-text">💡 点击任意词汇可进入翻译页面</text>
+    <text class="tip-text">💡 点击任意词汇可查看详细信息</text>
   </view>
 </view>
 

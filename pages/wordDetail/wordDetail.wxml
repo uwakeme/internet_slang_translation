@@ -83,13 +83,7 @@
     </view>
   </view>
 
-  <!-- 操作按钮 -->
-  <view class="actions">
-    <button class="action-btn primary" bindtap="goToTranslate">
-      <text class="btn-icon">🔄</text>
-      <text>进入翻译页面</text>
-    </button>
-  </view>
+
 </view>
 
 <view class="empty-state" wx:else>

@@ -1,23 +1,25 @@
-const { getAllWords } = require('./data.js')
+var dataModule = require('./data.js')
 
 // 构建翻译词典
 function buildDictionary() {
-  const words = getAllWords()
-  const jargonToHuman = {}
-  const humanToJargon = {}
-  
-  words.forEach(item => {
+  var words = dataModule.getAllWords()
+  var jargonToHuman = {}
+  var humanToJargon = {}
+
+  words.forEach(function(item) {
     jargonToHuman[item.word] = item.meaning
     humanToJargon[item.meaning] = item.word
   })
-  
-  return { jargonToHuman, humanToJargon }
+
+  return { jargonToHuman: jargonToHuman, humanToJargon: humanToJargon }
 }
 
-const { jargonToHuman, humanToJargon } = buildDictionary()
+var dictionary = buildDictionary()
+var jargonToHuman = dictionary.jargonToHuman
+var humanToJargon = dictionary.humanToJargon
 
 // 扩展词典 - 添加更多常见的互联网黑话
-const extraJargon = {
+var extraJargon = {
   '降本增效': '减少成本提高效率',
   '数字化转型': '用技术改造业务',
   '精细化运营': '细致管理运营',
@@ -54,7 +56,7 @@ const extraJargon = {
 
 // 合并词典
 Object.assign(jargonToHuman, extraJargon)
-Object.keys(extraJargon).forEach(key => {
+Object.keys(extraJargon).forEach(function(key) {
   humanToJargon[extraJargon[key]] = key
 })
 

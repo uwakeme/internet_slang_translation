@@ -1,4 +1,4 @@
-const { translateText } = require('../../utils/translator.js')
+var translator = require('../../utils/translator.js')
 
 Page({
   data: {
@@ -6,13 +6,13 @@ Page({
     result: ''
   },
 
-  onInput(e) {
+  onInput: function(e) {
     this.setData({
       inputText: e.detail.value
     })
   },
 
-  quickTranslate() {
+  quickTranslate: function() {
     if (!this.data.inputText.trim()) {
       wx.showToast({
         title: '请输入内容',
@@ -21,16 +21,17 @@ Page({
       return
     }
 
-    const result = translateText(this.data.inputText)
+    var result = translator.translateText(this.data.inputText)
     this.setData({
       result: result
     })
   },
 
-  copyResult() {
+  copyResult: function() {
+    var self = this
     wx.setClipboardData({
-      data: this.data.result,
-      success: () => {
+      data: self.data.result,
+      success: function() {
         wx.showToast({
           title: '复制成功',
           icon: 'success'
@@ -40,32 +41,32 @@ Page({
   },
 
   // 添加缺失的点击事件处理函数
-  goToJargon() {
+  goToJargon: function() {
     wx.switchTab({
       url: '/pages/category/category'
     })
   },
 
-  geToProfessional() {
+  geToProfessional: function() {
     wx.switchTab({
       url: '/pages/category/category'
     })
   },
 
-  goToCategory() {
+  goToCategory: function() {
     wx.switchTab({
       url: '/pages/category/category'
     })
   },
 
   // 添加专业翻译跳转函数
-  goToTranslate() {
+  goToTranslate: function() {
     wx.switchTab({
       url: '/pages/translate/translate'
     })
   },
 
-  goToSearch() {
+  goToSearch: function() {
     wx.navigateTo({
       url: '/pages/search/search'
     })

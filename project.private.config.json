@@ -1,6 +1,6 @@
 {
-  "libVersion": "3.8.11",
-  "projectname": "%E4%BA%92%E8%81%94%E7%BD%91%E9%BB%91%E8%AF%9D%E7%BF%BB%E8%AF%91%E5%99%A8",
+  "libVersion": "3.8.10",
+  "projectname": "internet-jargon-translator",
   "condition": {},
   "setting": {
     "urlCheck": false,
@@ -8,7 +8,7 @@
     "lazyloadPlaceholderEnable": false,
     "skylineRenderEnable": false,
     "preloadBackgroundData": false,
-    "autoAudits": false,
+    "autoAudits": true,
     "useApiHook": true,
     "useApiHostProcess": true,
     "showShadowRootInWxmlPanel": true,
@@ -20,5 +20,6 @@
     "ignoreDevUnusedFiles": true,
     "bigPackageSizeSupport": false,
     "useIsolateContext": true
-  }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
 }

@@ -7,10 +7,10 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "enhance": true,
+    "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
-    "minified": true,
+    "minified": false,
     "newFeature": false,
     "coverView": true,
     "nodeModules": false,
@@ -20,12 +20,12 @@
     "uglifyFileName": false,
     "checkInvalidKey": true,
     "checkSiteMap": true,
-    "uploadWithSourceMap": true,
+    "uploadWithSourceMap": false,
     "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": false,
+    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -48,10 +48,9 @@
     "disableSWC": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
+  "libVersion": "3.8.10",
   "appid": "wx52b8efe35d34c55d",
   "projectname": "internet-jargon-translator",
-  "isGameTourist": false,
   "condition": {
     "search": {
       "list": []
@@ -73,5 +72,8 @@
     }
   },
   "simulatorPluginLibVersion": {},
-  "editorSetting": {}
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
 }

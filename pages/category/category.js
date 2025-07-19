@@ -1,4 +1,4 @@
-const { getJargonCategories, getProfessionalCategories } = require('../../utils/data.js')
+var dataModule = require('../../utils/data.js')
 
 Page({
   data: {
@@ -6,21 +6,21 @@ Page({
     professionalCategories: []
   },
 
-  onLoad() {
+  onLoad: function() {
     this.loadCategories()
   },
 
-  loadCategories() {
+  loadCategories: function() {
     this.setData({
-      jargonCategories: getJargonCategories(),
-      professionalCategories: getProfessionalCategories()
+      jargonCategories: dataModule.getJargonCategories(),
+      professionalCategories: dataModule.getProfessionalCategories()
     })
   },
 
-  goToWordList(e) {
-    const category = e.currentTarget.dataset.category
+  goToWordList: function(e) {
+    var category = e.currentTarget.dataset.category
     wx.navigateTo({
-      url: `/pages/wordList/wordList?categoryId=${category.id}&categoryName=${category.name}&categoryType=${category.type}`
+      url: '/pages/wordList/wordList?categoryId=' + category.id + '&categoryName=' + category.name + '&categoryType=' + category.type
     })
   }
 })

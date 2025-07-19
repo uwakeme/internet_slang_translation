@@ -1,4 +1,4 @@
-const { translateToHuman, translateToJargon } = require('../../utils/translator.js')
+var translator = require('../../utils/translator.js')
 
 Page({
   data: {
@@ -9,27 +9,28 @@ Page({
     history: []
   },
 
-  onLoad(options) {
+  onLoad: function(options) {
     console.log('翻译页面接收参数:', options) // 调试日志
-    
+
     // 如果从分类页面传来了词汇，自动填入
     if (options.word) {
-      const word = decodeURIComponent(options.word)
+      var word = decodeURIComponent(options.word)
       this.setData({
         inputText: word,
         mode: 'toHuman'
       })
       // 自动翻译
-      setTimeout(() => {
-        this.translate()
+      var self = this
+      setTimeout(function() {
+        self.translate()
       }, 500)
     }
-    
+
     // 加载历史记录
     this.loadHistory()
   },
 
-  switchMode(e) {
+  switchMode: function(e) {
     this.setData({
       mode: e.currentTarget.dataset.mode,
       inputText: '',
@@ -37,13 +38,13 @@ Page({
     })
   },
 
-  onInput(e) {
+  onInput: function(e) {
     this.setData({
       inputText: e.detail.value
     })
   },
 
-  translate() {
+  translate: function() {
     if (!this.data.inputText.trim()) {
       wx.showToast({
         title: '请输入内容',
@@ -57,41 +58,43 @@ Page({
     })
 
     // 模拟翻译延迟
-    setTimeout(() => {
-      let result
-      if (this.data.mode === 'toHuman') {
-        result = translateToHuman(this.data.inputText)
+    var self = this
+    setTimeout(function() {
+      var result
+      if (self.data.mode === 'toHuman') {
+        result = translator.translateToHuman(self.data.inputText)
       } else {
-        result = translateToJargon(this.data.inputText)
+        result = translator.translateToJargon(self.data.inputText)
       }
 
       // 添加到历史记录
-      const history = this.data.history
-      const now = new Date()
-      const timeStr = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`
-      
+      var history = self.data.history
+      var now = new Date()
+      var minutes = now.getMinutes()
+      var timeStr = now.getHours() + ':' + (minutes < 10 ? '0' + minutes : minutes)
+
       history.unshift({
-        original: this.data.inputText,
+        original: self.data.inputText,
         translated: result,
         time: timeStr,
-        mode: this.data.mode
+        mode: self.data.mode
       })
 
-      this.setData({
+      self.setData({
         result: result,
         translating: false,
         history: history.slice(0, 20) // 只保留最近20条
       })
 
       // 保存历史记录
-      this.saveHistory()
+      self.saveHistory()
     }, 800)
   },
 
-  copyResult() {
+  copyResult: function() {
     wx.setClipboardData({
       data: this.data.result,
-      success: () => {
+      success: function() {
         wx.showToast({
           title: '复制成功',
           icon: 'success'
@@ -100,13 +103,14 @@ Page({
     })
   },
 
-  clearHistory() {
+  clearHistory: function() {
+    var self = this
     wx.showModal({
       title: '确认清空',
       content: '确定要清空所有翻译历史吗？',
-      success: (res) => {
+      success: function(res) {
         if (res.confirm) {
-          this.setData({
+          self.setData({
             history: []
           })
           wx.removeStorageSync('translate_history')
@@ -119,9 +123,9 @@ Page({
     })
   },
 
-  loadHistory() {
+  loadHistory: function() {
     try {
-      const history = wx.getStorageSync('translate_history') || []
+      var history = wx.getStorageSync('translate_history') || []
       this.setData({
         history: history
       })
@@ -130,7 +134,7 @@ Page({
     }
   },
 
-  saveHistory() {
+  saveHistory: function() {
     try {
       wx.setStorageSync('translate_history', this.data.history)
     } catch (e) {

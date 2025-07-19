@@ -1,4 +1,4 @@
-const { getWordsByCategory } = require('../../utils/data.js')
+var dataModule = require('../../utils/data.js')
 
 Page({
   data: {
@@ -8,30 +8,50 @@ Page({
     words: []
   },
 
-  onLoad(options) {
-    const { categoryId, categoryName, categoryType } = options
+  onLoad: function(options) {
+    var categoryId = options.categoryId
+    var categoryName = options.categoryName
+    var categoryType = options.categoryType
+
     this.setData({
-      categoryId,
-      categoryName,
-      categoryType
+      categoryId: categoryId,
+      categoryName: categoryName,
+      categoryType: categoryType
     })
-    
+
     wx.setNavigationBarTitle({
       title: categoryName
     })
-    
+
     this.loadWords()
   },
 
-  loadWords() {
-    const words = getWordsByCategory(parseInt(this.data.categoryId))
-    this.setData({ words })
+  loadWords: function() {
+    var words = dataModule.getWordsByCategory(parseInt(this.data.categoryId))
+    this.setData({ words: words })
   },
 
-  translateWord(e) {
-    const word = e.currentTarget.dataset.word
+  goToWordDetail: function(e) {
+    var word = e.currentTarget.dataset.word
+    console.log('点击词语:', word)
+    var url = '/pages/wordDetail/wordDetail?word=' + encodeURIComponent(word)
+    console.log('跳转URL:', url)
+
     wx.navigateTo({
-      url: `/pages/translate/translate?word=${encodeURIComponent(word)}`
+      url: url,
+      success: function() {
+        console.log('跳转成功')
+      },
+      fail: function(err) {
+        console.error('跳转失败:', err)
+      }
+    })
+  },
+
+  translateWord: function(e) {
+    var word = e.currentTarget.dataset.word
+    wx.navigateTo({
+      url: '/pages/translate/translate?word=' + encodeURIComponent(word)
     })
   }
 })

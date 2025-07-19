@@ -1,4 +1,4 @@
-const { getAllWords } = require('../../utils/data.js')
+var dataModule = require('../../utils/data.js')
 
 Page({
   data: {
@@ -6,37 +6,53 @@ Page({
     scenarios: []
   },
 
-  onLoad(options) {
-    const { word } = options
+  onLoad: function(options) {
+    console.log('词语详情页面接收参数:', options)
+    var word = options.word
     if (word) {
-      const decodedWord = decodeURIComponent(word)
+      var decodedWord = decodeURIComponent(word)
+      console.log('解码后的词语:', decodedWord)
       this.loadWordDetail(decodedWord)
+    } else {
+      console.error('没有接收到词语参数')
     }
   },
 
-  loadWordDetail(word) {
-    const allWords = getAllWords()
-    const wordInfo = allWords.find(item => item.word === word)
-    
+  loadWordDetail: function(word) {
+    console.log('开始加载词语详情:', word)
+    var allWords = dataModule.getAllWords()
+    console.log('所有词语数量:', allWords.length)
+
+    var wordInfo = allWords.find(function(item) {
+      return item.word === word
+    })
+
     if (wordInfo) {
+      console.log('找到词语信息:', wordInfo)
       // 生成更多使用场景
-      const scenarios = this.generateScenarios(wordInfo)
-      
+      var scenarios = this.generateScenarios(wordInfo)
+
       this.setData({
         wordInfo: wordInfo,
         scenarios: scenarios
       })
-      
+
       // 设置导航栏标题
       wx.setNavigationBarTitle({
         title: wordInfo.word
       })
+    } else {
+      console.error('未找到词语:', word)
+      wx.showToast({
+        title: '词语不存在',
+        icon: 'none'
+      })
     }
   },
 
-  generateScenarios(wordInfo) {
+  generateScenarios: function(wordInfo) {
     // 根据不同词汇生成具体的使用场景
-    const scenarioMap = {
+    var scenarioMap = {
       '赋能': [
         { 
           scene: '会议讨论', 
@@ -114,27 +130,21 @@ Page({
     }
     
     return scenarioMap[wordInfo.word] || [
-      { 
-        scene: '日常工作', 
+      {
+        scene: '日常工作',
         type: 'paragraph',
         content: {
-          original: `在工作中经常会用到"${wordInfo.word}"这个词`,
-          translation: `实际意思是"${wordInfo.meaning}"`
+          original: '在工作中经常会用到"' + wordInfo.word + '"这个词',
+          translation: '实际意思是"' + wordInfo.meaning + '"'
         }
       }
     ]
   },
 
-  goToTranslate() {
-    wx.navigateTo({
-      url: `/pages/translate/translate?word=${encodeURIComponent(this.data.wordInfo.word)}`
-    })
-  },
-
-  copyWord() {
+  copyWord: function() {
     wx.setClipboardData({
       data: this.data.wordInfo.word,
-      success: () => {
+      success: function() {
         wx.showToast({
           title: '已复制词汇',
           icon: 'success'
