@@ -63,7 +63,7 @@
 
 ### 项目结构
 ```
-internet-jargon-translator/
+internet_slang_translation/
 ├── app.js                      # 小程序入口文件
 ├── app.json                    # 小程序配置文件
 ├── app.wxss                    # 全局样式文件
@@ -181,8 +181,8 @@ internet-jargon-translator/
 ### 安装步骤
 1. **克隆项目**
    ```bash
-   git clone https://github.com/your-username/internet-jargon-translator.git
-   cd internet-jargon-translator
+   git clone https://github.com/uwakeme/internet_slang_translation.git
+   cd internet_slang_translation
    ```
 
 2. **导入项目**
@@ -248,24 +248,6 @@ internet-jargon-translator/
 - 📱 适配更多设备尺寸
 - 🐛 修复已知问题
 
-## 📝 更新日志
-
-### v1.1.0 (2025-01-19)
-- 🔍 新增智能搜索功能
-- 📝 新增词汇详情页面
-- 🏷️ 支持标签搜索和热门标签
-- 📱 优化页面导航和用户体验
-- 🐛 修复页面跳转问题
-- ⚡ 升级基础库到3.8.10
-
-### v1.0.0 (2024-01-01)
-- ✨ 初始版本发布
-- 🎯 支持智能双向翻译
-- 📚 内置6大分类72个词汇
-- 💾 翻译历史记录功能
-- 🎨 现代化UI设计
-- 📱 完整的小程序功能
-
 ## 📄 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
@@ -275,8 +257,8 @@ internet-jargon-translator/
 如有问题或建议，欢迎通过以下方式联系：
 
 - 📧 邮箱: your-email@example.com
-- 🐛 问题反馈: [GitHub Issues](https://github.com/your-username/internet-jargon-translator/issues)
-- 💬 讨论交流: [GitHub Discussions](https://github.com/your-username/internet-jargon-translator/discussions)
+- 🐛 问题反馈: [GitHub Issues](https://github.com/uwakeme/internet_slang_translation/issues)
+- 💬 讨论交流: [GitHub Discussions](https://github.com/uwakeme/internet_slang_translation/discussions)
 
 ---
 
