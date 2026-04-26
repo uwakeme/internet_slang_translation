@@ -2804,6 +2804,288 @@ const allWords = [
       "管理",
       "平台"
     ]
+  },
+  {
+    "id": 231,
+    "word": "活人感",
+    "meaning": "真实自然的状态",
+    "example": "这个人很有活人感 → 这个人很真实自然",
+    "categoryId": 5,
+    "tags": [
+      "真实",
+      "自然",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 232,
+    "word": "情绪价值",
+    "meaning": "提供情绪支持与陪伴",
+    "example": "提供情绪价值 → 提供情绪支持与陪伴",
+    "categoryId": 5,
+    "tags": [
+      "情绪",
+      "价值",
+      "支持",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 233,
+    "word": "赛博对账",
+    "meaning": "在网上核对彼此生活细节和共同记忆",
+    "example": "赛博对账 → 在网上核对彼此生活细节",
+    "categoryId": 5,
+    "tags": [
+      "赛博",
+      "对账",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 234,
+    "word": "敬自己一杯",
+    "meaning": "对努力与平凡的接纳与自我和解",
+    "example": "敬自己一杯 → 对自己说声辛苦了",
+    "categoryId": 5,
+    "tags": [
+      "自我",
+      "和解",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 235,
+    "word": "预制xx",
+    "meaning": "像预制菜一样标准化的某物",
+    "example": "预制朋友圈 → 标准化的朋友圈内容",
+    "categoryId": 5,
+    "tags": [
+      "预制",
+      "标准化",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 236,
+    "word": "谷子",
+    "meaning": "二次元IP周边产品",
+    "example": "买谷子 → 买二次元周边",
+    "categoryId": 5,
+    "tags": [
+      "二次元",
+      "周边",
+      "IP"
+    ]
+  },
+  {
+    "id": 237,
+    "word": "浪浪山小妖怪",
+    "meaning": "平凡小人物的共鸣与自嘲",
+    "example": "浪浪山小妖怪 → 普通打工人",
+    "categoryId": 5,
+    "tags": [
+      "浪浪山",
+      "小妖怪",
+      "打工人"
+    ]
+  },
+  {
+    "id": 238,
+    "word": "爱你老己",
+    "meaning": "好好爱自己",
+    "example": "爱你老己，明天见 → 好好爱自己，明天见",
+    "categoryId": 5,
+    "tags": [
+      "爱自己",
+      "悦己",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 239,
+    "word": "班味",
+    "meaning": "被上班状态浸透后的疲惫气质",
+    "example": "身上有班味 → 看起来很疲惫被工作折磨",
+    "categoryId": 5,
+    "tags": [
+      "班味",
+      "疲惫",
+      "打工人"
+    ]
+  },
+  {
+    "id": 240,
+    "word": "AI Agent",
+    "meaning": "人工智能智能体，能自主完成复杂任务",
+    "example": "开发AI Agent → 开发能自主行动的智能体",
+    "categoryId": 6,
+    "tags": [
+      "AI",
+      "Agent",
+      "智能体",
+      "AI"
+    ]
+  },
+  {
+    "id": 241,
+    "word": "RAG",
+    "meaning": "检索增强生成",
+    "example": "RAG系统 → 检索增强生成系统",
+    "categoryId": 6,
+    "tags": [
+      "RAG",
+      "检索",
+      "生成",
+      "AI"
+    ]
+  },
+  {
+    "id": 242,
+    "word": "Embedding",
+    "meaning": "向量嵌入，将文本转为数值向量",
+    "example": "Embedding模型 → 向量化表示模型",
+    "categoryId": 6,
+    "tags": [
+      "Embedding",
+      "向量",
+      "嵌入",
+      "AI"
+    ]
+  },
+  {
+    "id": 243,
+    "word": "Token",
+    "meaning": "语言模型的基本处理单元",
+    "example": "Token数量限制 → 模型处理的字符单元限制",
+    "categoryId": 6,
+    "tags": [
+      "Token",
+      "词元",
+      "AI"
+    ]
+  },
+  {
+    "id": 244,
+    "word": "MCP",
+    "meaning": "模型上下文协议，AI与外部工具的标准化对接",
+    "example": "MCP协议 → 模型上下文协议",
+    "categoryId": 6,
+    "tags": [
+      "MCP",
+      "协议",
+      "AI生态"
+    ]
+  },
+  {
+    "id": 245,
+    "word": "Function Call",
+    "meaning": "函数调用，AI调用外部工具的能力",
+    "example": "Function Call功能 → AI调用外部函数的能力",
+    "categoryId": 6,
+    "tags": [
+      "Function Call",
+      "函数调用",
+      "AI"
+    ]
+  },
+  {
+    "id": 246,
+    "word": "Agentic RAG",
+    "meaning": "智能体增强的RAG，自主决策检索策略",
+    "example": "Agentic RAG系统 → 智能体增强的检索系统",
+    "categoryId": 6,
+    "tags": [
+      "Agentic RAG",
+      "智能体",
+      "RAG",
+      "AI"
+    ]
+  },
+  {
+    "id": 247,
+    "word": "GraphRAG",
+    "meaning": "知识图谱增强的RAG",
+    "example": "GraphRAG方法 → 知识图谱增强检索方法",
+    "categoryId": 6,
+    "tags": [
+      "GraphRAG",
+      "知识图谱",
+      "RAG",
+      "AI"
+    ]
+  },
+  {
+    "id": 248,
+    "word": "长上下文",
+    "meaning": "大语言模型的长文本处理能力",
+    "example": "长上下文窗口 → 模型能处理的超长文本范围",
+    "categoryId": 6,
+    "tags": [
+      "长上下文",
+      "上下文窗口",
+      "AI"
+    ]
+  },
+  {
+    "id": 249,
+    "word": "世界模型",
+    "meaning": "模拟真实世界的AI系统",
+    "example": "世界模型重构认知 → AI模拟真实世界",
+    "categoryId": 6,
+    "tags": [
+      "世界模型",
+      "模拟",
+      "AI"
+    ]
+  },
+  {
+    "id": 250,
+    "word": "慢推理",
+    "meaning": "AI深度思考后再回答的模式",
+    "example": "慢推理模型 → 先思考再回答的AI模型",
+    "categoryId": 6,
+    "tags": [
+      "慢推理",
+      "深度思考",
+      "AI"
+    ]
+  },
+  {
+    "id": 251,
+    "word": "端云协同",
+    "meaning": "终端与云端协同的AI计算模式",
+    "example": "端云协同落地 → 本地与云端配合的AI部署",
+    "categoryId": 6,
+    "tags": [
+      "端云协同",
+      "边缘计算",
+      "AI"
+    ]
+  },
+  {
+    "id": 252,
+    "word": "丝瓜汤文学",
+    "meaning": "一种释压自嘲的文字风格",
+    "example": "丝瓜汤文学 → 躺平摆烂的自嘲文学",
+    "categoryId": 5,
+    "tags": [
+      "丝瓜汤",
+      "自嘲",
+      "释压"
+    ]
+  },
+  {
+    "id": 253,
+    "word": "外耗",
+    "meaning": "对外消耗情绪能量",
+    "example": "拒绝外耗 → 不被外界消耗情绪",
+    "categoryId": 5,
+    "tags": [
+      "外耗",
+      "情绪",
+      "自我保护"
+    ]
   }
 ]
 
