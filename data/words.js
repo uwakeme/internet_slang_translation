@@ -3076,15 +3076,63 @@ const allWords = [
     ]
   },
   {
-    "id": 253,
-    "word": "外耗",
-    "meaning": "对外消耗情绪能量",
-    "example": "拒绝外耗 → 不被外界消耗情绪",
-    "categoryId": 5,
+    "id": 254,
+    "word": "Vibe Coding",
+    "meaning": "AI辅助编程，用自然语言描述需求让AI生成代码",
+    "example": "用Vibe Coding方式开发 → 用自然语言描述需求，AI生成代码",
+    "categoryId": 6,
     "tags": [
-      "外耗",
-      "情绪",
-      "自我保护"
+      "Vibe Coding",
+      "AI编程",
+      "开发"
+    ]
+  },
+  {
+    "id": 255,
+    "word": "具身智能",
+    "meaning": "能感知物理世界并与之交互的AI系统",
+    "example": "具身智能机器人 → 能感知并交互的AI机器人",
+    "categoryId": 6,
+    "tags": [
+      "具身智能",
+      "机器人",
+      "AI"
+    ]
+  },
+  {
+    "id": 256,
+    "word": "物理AI",
+    "meaning": "能理解和交互物理世界的AI系统",
+    "example": "物理AI时代 → AI理解物理世界的时代",
+    "categoryId": 6,
+    "tags": [
+      "物理AI",
+      "世界模型",
+      "AI"
+    ]
+  },
+  {
+    "id": 257,
+    "word": "AI糟粕",
+    "meaning": "低质量批量生成的AI内容",
+    "example": "识别AI糟粕 → 识别低质量AI生成内容",
+    "categoryId": 6,
+    "tags": [
+      "AI糟粕",
+      "AI内容",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 258,
+    "word": "电力鸿沟",
+    "meaning": "AI发展所需电力资源的差距",
+    "example": "电力鸿沟影响AI普惠 → 电力差距影响AI普及",
+    "categoryId": 6,
+    "tags": [
+      "电力鸿沟",
+      "AI基础设施",
+      "能源"
     ]
   }
 ]
