@@ -3124,15 +3124,147 @@ const allWords = [
     ]
   },
   {
-    "id": 258,
-    "word": "电力鸿沟",
-    "meaning": "AI发展所需电力资源的差距",
-    "example": "电力鸿沟影响AI普惠 → 电力差距影响AI普及",
+    "id": 259,
+    "word": "DeepSeek",
+    "meaning": "中国本土大模型系列，以低成本高性能著称",
+    "example": "DeepSeek开源模型 → 中国本土大语言模型",
     "categoryId": 6,
     "tags": [
-      "电力鸿沟",
-      "AI基础设施",
-      "能源"
+      "DeepSeek",
+      "大模型",
+      "AI"
+    ]
+  },
+  {
+    "id": 260,
+    "word": "推理模型",
+    "meaning": "通过多步拆解与连续推演处理复杂问题的AI模型",
+    "example": "推理模型崛起 → 能深度思考的AI模型崛起",
+    "categoryId": 6,
+    "tags": [
+      "推理",
+      "慢思考",
+      "AI"
+    ]
+  },
+  {
+    "id": 261,
+    "word": "LLMOps",
+    "meaning": "大语言模型运维，包括部署、监控、优化等",
+    "example": "LLMOps流程 → 大模型运维流程",
+    "categoryId": 6,
+    "tags": [
+      "LLMOps",
+      "运维",
+      "AI"
+    ]
+  },
+  {
+    "id": 262,
+    "word": "AI Coding",
+    "meaning": "AI辅助编程，用AI工具协助写代码",
+    "example": "AI Coding工具 → AI编程辅助工具",
+    "categoryId": 6,
+    "tags": [
+      "AI编程",
+      "辅助开发",
+      "工具"
+    ]
+  },
+  {
+    "id": 263,
+    "word": "蒸馏",
+    "meaning": "让大模型当导师，小模型当学生，压缩知识",
+    "example": "模型蒸馏 → 将大模型知识压缩到小模型",
+    "categoryId": 6,
+    "tags": [
+      "蒸馏",
+      "模型压缩",
+      "AI"
+    ]
+  },
+  {
+    "id": 264,
+    "word": "涌现能力",
+    "meaning": "模型规模变大后突然具备的新能力",
+    "example": "涌现能力出现 → 模型突然出现新能力",
+    "categoryId": 6,
+    "tags": [
+      "涌现",
+      "emergent",
+      "AI"
+    ]
+  },
+  {
+    "id": 265,
+    "word": "思维链",
+    "meaning": "AI推理时的逐步思考过程",
+    "example": "思维链提示 → 让AI展示推理过程",
+    "categoryId": 6,
+    "tags": [
+      "思维链",
+      "推理",
+      "CoT"
+    ]
+  },
+  {
+    "id": 266,
+    "word": "混合专家",
+    "meaning": "MoE架构，只激活部分专家网络处理请求",
+    "example": "混合专家模型 → MoE架构模型",
+    "categoryId": 6,
+    "tags": [
+      "MoE",
+      "混合专家",
+      "架构"
+    ]
+  },
+  {
+    "id": 267,
+    "word": "村咖",
+    "meaning": "开在乡村里的特色咖啡馆",
+    "example": "去村咖打卡 → 去乡村咖啡馆拍照",
+    "categoryId": 5,
+    "tags": [
+      "村咖",
+      "乡村",
+      "生活方式"
+    ]
+  },
+  {
+    "id": 268,
+    "word": "主理人",
+    "meaning": "能将自身特质与品牌结合的负责人",
+    "example": "品牌主理人 → 品牌负责人/决策者",
+    "categoryId": 5,
+    "tags": [
+      "主理人",
+      "品牌",
+      "创业者"
+    ]
+  },
+  {
+    "id": 269,
+    "word": "邪修",
+    "meaning": "不走寻常路的野路子高效方法",
+    "example": "邪修做饭 → 用离谱但高效的方法做饭",
+    "categoryId": 5,
+    "tags": [
+      "邪修",
+      "野路子",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 270,
+    "word": "拼好×",
+    "meaning": "通过拼单组合追求高性价比的态度",
+    "example": "拼好床 → 合租床铺共享资源",
+    "categoryId": 5,
+    "tags": [
+      "拼好",
+      "性价比",
+      "协作"
     ]
   }
 ]
