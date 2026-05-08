@@ -3446,7 +3446,127 @@ const allWords = [
       "顺其自然",
       "生活态度"
     ]
+  },
+  {
+    "id": 286,
+    "word": "A2A",
+    "meaning": "Agent to Agent协议，智能体之间通信的标准方式",
+    "example": "A2A协议 → 智能体间的通信协议",
+    "categoryId": 6,
+    "tags": [
+      "A2A",
+      "Agent",
+      "协议",
+      "AI"
+    ]
+  },
+  {
+    "id": 287,
+    "word": "VLA",
+    "meaning": "视觉-语言-动作模型",
+    "example": "VLA模型 → 视觉语言动作统一模型",
+    "categoryId": 6,
+    "tags": [
+      "VLA",
+      "具身智能",
+      "机器人"
+    ]
+  },
+  {
+    "id": 288,
+    "word": "SLM",
+    "meaning": "小语言模型，参数较少但专精的AI模型",
+    "example": "SLM部署 → 小型语言模型本地部署",
+    "categoryId": 6,
+    "tags": [
+      "SLM",
+      "小模型",
+      "AI"
+    ]
+  },
+  {
+    "id": 289,
+    "word": "超级个体",
+    "meaning": "借助AI工具独立完成完整商业闭环的个人",
+    "example": "超级个体崛起 → 利用AI独立创业的个人创业者增多",
+    "categoryId": 6,
+    "tags": [
+      "超级个体",
+      "AI创业",
+      "个人IP"
+    ]
+  },
+  {
+    "id": 290,
+    "word": "AI眼镜",
+    "meaning": "集成AI能力的智能眼镜",
+    "example": "Meta AI眼镜 → 带摄像头和语音助手的智能眼镜",
+    "categoryId": 6,
+    "tags": [
+      "AI眼镜",
+      "可穿戴",
+      "AR"
+    ]
+  },
+  {
+    "id": 291,
+    "word": "健康寿命",
+    "meaning": "在良好状态下生活的年限",
+    "example": "延长健康寿命 → 提升晚年生活质量",
+    "categoryId": 5,
+    "tags": [
+      "健康",
+      "寿命",
+      "生活方式"
+    ]
+  },
+  {
+    "id": 292,
+    "word": "空间智能",
+    "meaning": "AI理解和推理三维空间的能力",
+    "example": "空间智能突破 → AI对3D世界的理解飞跃",
+    "categoryId": 6,
+    "tags": [
+      "空间智能",
+      "具身智能",
+      "AI"
+    ]
+  },
+  {
+    "id": 293,
+    "word": "YYDS",
+    "meaning": "永远的神，表示极度赞美",
+    "example": "这个产品YYDS → 这个产品太厉害了",
+    "categoryId": 5,
+    "tags": [
+      "YYDS",
+      "永远的神",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 294,
+    "word": "Ven",
+    "meaning": "把「问」发成「ven」，大陆口音的趣味空耳",
+    "example": "你venty真多 → 你问题真多",
+    "categoryId": 5,
+    "tags": [
+      "Ven",
+      "空耳",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 295,
+    "word": "与眾分",
+    "meaning": "与眾不同的缩写，形容独特",
+    "example": "这个观点很与眾分 → 这个观点很独特",
+    "categoryId": 5,
+    "tags": [
+      "与眾分",
+      "独特",
+      "网络流行语"
+    ]
   }
-
 
 module.exports = allWords
