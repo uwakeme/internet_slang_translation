@@ -3641,16 +3641,125 @@ const allWords = [
     ]
   },
   {
-    "id": 302,
-    "word": "尊嘟假嘟",
-    "meaning": "「真的假的」的谐音，嘴巴嘟起来装可爱说法",
-    "example": "尊嘟假嘟？ → 真的假的？",
+    "id": 303,
+    "word": "脆",
+    "meaning": "Threads社交平台的代称",
+    "example": "在脆上看到这个帖子 → 在Threads上看到这个帖子",
     "categoryId": 5,
     "tags": [
-      "尊嘟假嘟",
-      "谐音",
+      "脆",
+      "Threads",
+      "社交平台"
+    ]
+  },
+  {
+    "id": 304,
+    "word": "SLDPK",
+    "meaning": "粤语俚语，意为笑到离谱、笑翻天",
+    "example": "笑到我SLDPK → 笑到我快不行了",
+    "categoryId": 5,
+    "tags": [
+      "SLDPK",
+      "粤语",
+      "爆笑"
+    ]
+  },
+  {
+    "id": 305,
+    "word": "世一",
+    "meaning": "世界第一的缩写，用于表达极度的赞美和崇拜",
+    "example": "我的偶像世一 → 我的偶像天下第一",
+    "categoryId": 5,
+    "tags": [
+      "世一",
+      "世界第一",
       "网络流行语"
     ]
+  },
+  {
+    "id": 306,
+    "word": "MM7",
+    "meaning": "粤语速成输入法，正字的编码，也表示肯定和赞同",
+    "example": "这首歌MM7！ → 这首歌太正了！",
+    "categoryId": 5,
+    "tags": [
+      "MM7",
+      "粤语",
+      "肯定"
+    ]
+  },
+  {
+    "id": 307,
+    "word": "LARPing",
+    "meaning": ".live action role playing，扮演某种身份或生活方式",
+    "example": "她在LARPing一种自律精緻女孩的人设 → 她在扮演一种自律精致女孩的形象",
+    "categoryId": 5,
+    "tags": [
+      "LARPing",
+      "扮演",
+      "人设"
+    ]
+  },
+  {
+    "id": 308,
+    "word": "Mogging",
+    "meaning": "在外貌、气质或条件上形成压倒性优势，让对方相形见绌",
+    "example": "他直接在Mogging全场 → 他直接碾压全场",
+    "categoryId": 5,
+    "tags": [
+      "Mogging",
+      "碾压",
+      "气场"
+    ]
+  },
+  {
+    "id": 309,
+    "word": "Flow State",
+    "meaning": "心流状态，指极度专注投入眼前事物，获得愉悦和自我效能感",
+    "example": "别打扰我，我在Flow State → 别打扰我，我在专注状态",
+    "categoryId": 5,
+    "tags": [
+      "Flow State",
+      "心流",
+      "专注"
+    ]
+  },
+  {
+    "id": 310,
+    "word": "Moot",
+    "meaning": "社群平台上互相关注的用户，介于网友和真实朋友之间",
+    "example": "我的moots → 我互关的好友",
+    "categoryId": 5,
+    "tags": [
+      "Moot",
+      "互关",
+      "社交"
+    ]
+  },
+  {
+    "id": 311,
+    "word": "Lowkey genuinely",
+    "meaning": "低调地、真心地，暗含不想张扬的情绪",
+    "example": "I lowkey genuinely think it's great → 我真心觉得超棒",
+    "categoryId": 5,
+    "tags": [
+      "Lowkey genuinely",
+      "真心",
+      "低调"
+    ]
+  },
+  {
+    "id": 312,
+    "word": "Context Engineering",
+    "meaning": "上下文工程，AI Agent系统中管理信息和上下文的技术",
+    "example": "Context Engineering优化 → 上下文工程优化",
+    "categoryId": 6,
+    "tags": [
+      "Context Engineering",
+      "上下文",
+      "AI工程"
+    ]
   }
+]
 
 module.exports = allWords
