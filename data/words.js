@@ -3749,15 +3749,63 @@ const allWords = [
     ]
   },
   {
-    "id": 312,
-    "word": "Context Engineering",
-    "meaning": "上下文工程，AI Agent系统中管理信息和上下文的技术",
-    "example": "Context Engineering优化 → 上下文工程优化",
+    "id": 253,
+    "word": "AI垃圾",
+    "meaning": "低质量、重复性强的AI生成内容",
+    "example": "识别AI垃圾 → 识别低质量AI生成内容",
     "categoryId": 6,
     "tags": [
-      "Context Engineering",
-      "上下文",
-      "AI工程"
+      "AI糟粕",
+      "AI污染",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 313,
+    "word": "AGI",
+    "meaning": "通用人工智能，具备像人类一样处理广泛任务的能力",
+    "example": "迈向AGI → 朝着通用人工智能发展",
+    "categoryId": 6,
+    "tags": [
+      "AGI",
+      "通用人工智能",
+      "AI"
+    ]
+  },
+  {
+    "id": 314,
+    "word": "智性沸腾",
+    "meaning": "2026年B站报告提出的年轻消费趋势，指通过消费为自我认同的价值投票",
+    "example": "智性沸腾一代 → 理性消费、注重价值的年轻群体",
+    "categoryId": 5,
+    "tags": [
+      "智性沸腾",
+      "Z世代",
+      "消费趋势"
+    ]
+  },
+  {
+    "id": 315,
+    "word": "抽象力",
+    "meaning": "用玩梗、解构、荒诞幽默消解压力的能力",
+    "example": "抽象力拉满 → 很会玩梗解构",
+    "categoryId": 5,
+    "tags": [
+      "抽象力",
+      "玩梗",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 316,
+    "word": "合成数据",
+    "meaning": "人工生成的训练数据，用于解决真实数据不足或版权问题",
+    "example": "合成数据训练 → 用AI生成的数据训练模型",
+    "categoryId": 6,
+    "tags": [
+      "合成数据",
+      "训练数据",
+      "AI"
     ]
   }
 ]
