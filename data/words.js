@@ -3807,6 +3807,174 @@ const allWords = [
       "训练数据",
       "AI"
     ]
+  },
+  {
+    "id": 317,
+    "word": "AI原住民",
+    "meaning": "从小接触AI工具长大的Z世代人群",
+    "example": "AI原住民习惯用AI写作业、做PPT → 从小就用AI工具的Z世代",
+    "categoryId": 6,
+    "tags": [
+      "AI原住民",
+      "Z世代",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 318,
+    "word": "搭子经济",
+    "meaning": "基于特定场景寻找临时伙伴的消费模式",
+    "example": "搭子经济兴起 → 找饭搭子、旅游搭子等临时伙伴的消费方式流行",
+    "categoryId": 10,
+    "tags": [
+      "搭子",
+      "经济",
+      "消费"
+    ]
+  },
+  {
+    "id": 319,
+    "word": "电子布洛芬",
+    "meaning": "能让人快速开心的短视频/音乐/综艺",
+    "example": "刷短视频是电子布洛芬 → 能快速止痛的娱乐内容",
+    "categoryId": 5,
+    "tags": [
+      "电子布洛芬",
+      "娱乐",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 320,
+    "word": "反向消费",
+    "meaning": "年轻人追求性价比、拒绝消费主义的趋势",
+    "example": "反向消费兴起 → 年轻人开始追求性价比、拒绝攀比消费",
+    "categoryId": 10,
+    "tags": [
+      "反向消费",
+      "理性消费",
+      "趋势"
+    ]
+  },
+  {
+    "id": 321,
+    "word": "数字游民",
+    "meaning": "利用互联网远程工作、边旅行边工作的人群",
+    "example": "成为数字游民 → 利用网络远程工作，边旅行边赚钱",
+    "categoryId": 5,
+    "tags": [
+      "数字游民",
+      "远程工作",
+      "生活方式"
+    ]
+  },
+  {
+    "id": 322,
+    "word": "赛博养生",
+    "meaning": "用智能设备和App管理健康的新型养生方式",
+    "example": "赛博养生流行 → 用智能设备管理健康成新趋势",
+    "categoryId": 5,
+    "tags": [
+      "赛博养生",
+      "健康管理",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 323,
+    "word": "松弛感",
+    "meaning": "追求从容不迫、不内耗的生活态度",
+    "example": "保持松弛感 → 保持从容不焦虑的状态",
+    "categoryId": 5,
+    "tags": [
+      "松弛感",
+      "生活态度",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 324,
+    "word": "AI幻觉",
+    "meaning": "AI模型生成看似合理但实际错误的信息",
+    "example": "大模型出现AI幻觉 → AI一本正经地胡说八道",
+    "categoryId": 6,
+    "tags": [
+      "AI幻觉",
+      "大模型",
+      "AI"
+    ]
+  },
+  {
+    "id": 325,
+    "word": "公园20分钟效应",
+    "meaning": "每天在公园待20分钟即可显著减压的现象",
+    "example": "公园20分钟效应 → 在公园待20分钟能有效减压",
+    "categoryId": 5,
+    "tags": [
+      "公园20分钟",
+      "减压",
+      "生活方式"
+    ]
+  },
+  {
+    "id": 326,
+    "word": "数据飞轮",
+    "meaning": "数据越多→模型越好→用户越多→数据越多的正循环",
+    "example": "构建数据飞轮 → 形成数据驱动的正向增长循环",
+    "categoryId": 6,
+    "tags": [
+      "数据飞轮",
+      "AI",
+      "正循环"
+    ]
+  },
+  {
+    "id": 327,
+    "word": "断舍离2.0",
+    "meaning": "新一代极简主义，强调在数字时代放下手机、减少信息焦虑",
+    "example": "断舍离2.0时代 → 从物质极简到数字极简的升级",
+    "categoryId": 5,
+    "tags": [
+      "断舍离",
+      "极简主义",
+      "数字排毒"
+    ]
+  },
+  {
+    "id": 328,
+    "word": "Context Engineering",
+    "meaning": "上下文工程，给AI足够的信息让它干对的事",
+    "example": "Context Engineering优化 → 优化AI的上下文输入",
+    "categoryId": 6,
+    "tags": [
+      "Context Engineering",
+      "上下文工程",
+      "AI"
+    ]
+  },
+  {
+    "id": 329,
+    "word": "Intent-driven Computing",
+    "meaning": "意图驱动计算，AI从被动回答转向主动理解意图并执行",
+    "example": "Intent-driven Computing时代 → AI能理解意图并主动规划执行",
+    "categoryId": 6,
+    "tags": [
+      "Intent-driven",
+      "意图计算",
+      "AI"
+    ]
+  },
+  {
+    "id": 330,
+    "word": "NSP",
+    "meaning": "Next-State Prediction，下一个状态预测的AI新范式",
+    "example": "NSP范式 → 预测世界下一个状态的新一代AI范式",
+    "categoryId": 6,
+    "tags": [
+      "NSP",
+      "世界模型",
+      "AI"
+    ]
   }
 ]
 
