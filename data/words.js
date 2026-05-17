@@ -3965,15 +3965,29 @@ const allWords = [
     ]
   },
   {
-    "id": 330,
-    "word": "NSP",
-    "meaning": "Next-State Prediction，下一个状态预测的AI新范式",
-    "example": "NSP范式 → 预测世界下一个状态的新一代AI范式",
+    "id": 331,
+    "word": "算了",
+    "meaning": "彻底放弃、不再挣扎的心态，继躺平后更深层的精神退出",
+    "example": "面对求职失败，算了，不找了 → 直接放弃，不再尝试",
+    "categoryId": 5,
+    "tags": [
+      "算了",
+      "躺平",
+      "社会现象",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 332,
+    "word": "GEO",
+    "meaning": "生成式引擎优化，AI搜索时代的内容优化策略",
+    "example": "GEO优化 → 针对AI搜索结果的内容优化",
     "categoryId": 6,
     "tags": [
-      "NSP",
-      "世界模型",
-      "AI"
+      "GEO",
+      "AI搜索",
+      "SEO",
+      "内容优化"
     ]
   }
 ]
