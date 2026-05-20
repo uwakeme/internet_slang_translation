@@ -4225,6 +4225,20 @@ const allWords = [
       "2026热词",
       "句式"
     ]
+  },
+  {
+    "id": 351,
+    "word": "SBTI",
+    "meaning": "Silly Big Personality Test，2026年4月爆火的恶搞MBTI山寨测试",
+    "example": "SBTI人格测试 → 恶搞MBTI山寨测试，测出各种自嘲标签",
+    "categoryId": 5,
+    "tags": [
+      "SBTI",
+      "人格测试",
+      "恶搞",
+      "2026热词",
+      "网络流行语"
+    ]
   }
 ]
 
