@@ -4848,5 +4848,149 @@ const allWords = [
       "尝试",
       "粤语"
     ]
+  },
+  {
+    "id": 402,
+    "word": "Agent",
+    "meaning": "AI智能体，能自主规划和执行任务的AI系统",
+    "example": "部署Agent → 部署AI智能体",
+    "categoryId": 6,
+    "tags": [
+      "AI",
+      "智能体",
+      "自动化"
+    ]
+  },
+  {
+    "id": 403,
+    "word": "AIGC",
+    "meaning": "AI生成内容，人工智能创作的文字、图像、视频等",
+    "example": "AIGC创作 → AI生成内容创作",
+    "categoryId": 6,
+    "tags": [
+      "AI",
+      "生成",
+      "内容"
+    ]
+  },
+  {
+    "id": 404,
+    "word": "具身智能",
+    "meaning": "让AI拥有物理身体，能在现实世界中执行任务",
+    "example": "具身智能机器人 → 能在现实世界行动的AI机器人",
+    "categoryId": 6,
+    "tags": [
+      "AI",
+      "机器人",
+      "物理世界"
+    ]
+  },
+  {
+    "id": 405,
+    "word": "Skill",
+    "meaning": "AI技能模块，封装好的工作流程模板",
+    "example": "加载Skill → 加载技能模块",
+    "categoryId": 6,
+    "tags": [
+      "AI",
+      "技能",
+      "工作流"
+    ]
+  },
+  {
+    "id": 406,
+    "word": "Harness Engineering",
+    "meaning": "AI系统安全约束工程，保障AI安全可控",
+    "example": "Harness Engineering实践 → AI安全约束工程实践",
+    "categoryId": 6,
+    "tags": [
+      "AI",
+      "安全",
+      "工程"
+    ]
+  },
+  {
+    "id": 407,
+    "word": "赛博对账",
+    "meaning": "在网上核对彼此的生活细节和成长经历",
+    "example": "赛博对账 → 在网上对账生活",
+    "categoryId": 5,
+    "tags": [
+      "赛博对账",
+      "网络流行语",
+      "社交"
+    ]
+  },
+  {
+    "id": 408,
+    "word": "谷子",
+    "meaning": "二次元IP周边产品，也指代相关消费文化",
+    "example": "买谷子 → 买周边",
+    "categoryId": 5,
+    "tags": [
+      "谷子",
+      "二次元",
+      "周边"
+    ]
+  },
+  {
+    "id": 409,
+    "word": "村咖",
+    "meaning": "乡村咖啡馆，代表慢生活和小镇氛围",
+    "example": "去村咖坐坐 → 去乡村咖啡馆放松",
+    "categoryId": 5,
+    "tags": [
+      "村咖",
+      "乡村",
+      "生活"
+    ]
+  },
+  {
+    "id": 410,
+    "word": "浪浪山小妖怪",
+    "meaning": "出自动画，形容普通人在大环境中奋斗的小角色",
+    "example": "我也是浪浪山小妖怪 → 我也是普通打工人",
+    "categoryId": 5,
+    "tags": [
+      "浪浪山",
+      "小妖怪",
+      "动画"
+    ]
+  },
+  {
+    "id": 411,
+    "word": "爱你老己",
+    "meaning": "好好爱自己，悦己表达的轻松说法",
+    "example": "今天也要爱你老己 → 今天也要好好爱自己",
+    "categoryId": 5,
+    "tags": [
+      "爱你老己",
+      "自我关怀",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 412,
+    "word": "丝瓜汤文学",
+    "meaning": "一种自嘲摆烂的幽默表达方式",
+    "example": "躺平丝瓜汤 → 彻底摆烂",
+    "categoryId": 5,
+    "tags": [
+      "丝瓜汤",
+      "摆烂",
+      "自嘲"
+    ]
+  },
+  {
+    "id": 413,
+    "word": "脆",
+    "meaning": "指社交平台Threads",
+    "example": "在脆上看到 → 在Threads上看到",
+    "categoryId": 5,
+    "tags": [
+      "脆",
+      "Threads",
+      "网络用语"
+    ]
   }
 ]
