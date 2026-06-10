@@ -3354,7 +3354,7 @@ const allWords = [
   {
     "id": 278,
     "word": "绝摆",
-    "meaning": "闽南语"很棒、厉害"的意思，2026年走红网络",
+    "meaning": "闽南语「很棒、厉害」的意思，2026年走红网络",
     "example": "这个东西绝摆 → 这个东西太厉害了",
     "categoryId": 5,
     "tags": [
@@ -4991,6 +4991,182 @@ const allWords = [
       "脆",
       "Threads",
       "网络用语"
+    ]
+  },
+  {
+    "id": 414,
+    "word": "我要验牌",
+    "meaning": "要求对方证明资质或真伪的温和质疑",
+    "example": "这数据靠谱吗？我要验牌 → 让我核验一下这数据是否真实",
+    "categoryId": 5,
+    "tags": [
+      "我要验牌",
+      "网络流行语",
+      "2026春晚",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 415,
+    "word": "做完你的做你的",
+    "meaning": "多线程处理任务时安抚他人稍等的状态",
+    "example": "催什么催，做完你的做你的 → 稍等，处理完这个就到你了",
+    "categoryId": 5,
+    "tags": [
+      "做完你的做你的",
+      "多线程",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 416,
+    "word": "如何呢又能怎",
+    "meaning": "带无奈与轻度摆烂的认命感表达",
+    "example": "又被加班了，如何呢又能怎 → 又被加班了，能怎么办",
+    "categoryId": 5,
+    "tags": [
+      "如何呢又能怎",
+      "摆烂",
+      "网络流行语"
+    ]
+  },
+  {
+    "id": 417,
+    "word": "从从容容游刃有余",
+    "meaning": "与「匆匆忙忙连滚带爬」对仗的万能反差句式",
+    "example": "上班从从容容游刃有余，下班匆匆忙忙连滚带爬 → 理想与现实强烈反差",
+    "categoryId": 5,
+    "tags": [
+      "从从容容",
+      "游刃有余",
+      "反差",
+      "句式"
+    ]
+  },
+  {
+    "id": 418,
+    "word": "匆匆忙忙连滚带爬",
+    "meaning": "形容手忙脚乱、鸡飞狗跳的状态",
+    "example": "加班到匆匆忙忙连滚带爬 → 加班到手忙脚乱",
+    "categoryId": 5,
+    "tags": [
+      "匆匆忙忙",
+      "连滚带爬",
+      "句式"
+    ]
+  },
+  {
+    "id": 419,
+    "word": "我将辞职在家研究",
+    "meaning": "用夸张辞职表达对事物极度好奇的句式",
+    "example": "这个太有意思了，我将辞职在家研究 → 这件事太有趣了我要深入研究",
+    "categoryId": 5,
+    "tags": [
+      "辞职研究",
+      "夸张",
+      "2026新句式"
+    ]
+  },
+  {
+    "id": 420,
+    "word": "讲不讲话",
+    "meaning": "「敢不敢说」的闽南语谐音挑衅式回应",
+    "example": "你倒是讲不讲话 → 你敢不敢说",
+    "categoryId": 5,
+    "tags": [
+      "讲不讲话",
+      "闽南语",
+      "挑衅"
+    ]
+  },
+  {
+    "id": 421,
+    "word": "托我转交",
+    "meaning": "闽南语谐音梗，意为「拜托转告/帮我传达」",
+    "example": "托我转交给你 → 拜托帮我转告他",
+    "categoryId": 5,
+    "tags": [
+      "托我转交",
+      "闽南语",
+      "谐音"
+    ]
+  },
+  {
+    "id": 422,
+    "word": "Subagent",
+    "meaning": "主Agent派出去的子代理，负责跑腿处理单一任务",
+    "example": "调用Subagent → 调用子代理执行子任务",
+    "categoryId": 6,
+    "tags": [
+      "Subagent",
+      "子代理",
+      "AI",
+      "Claude"
+    ]
+  },
+  {
+    "id": 423,
+    "word": "Agent Teams",
+    "meaning": "多个AI Agent组成可互相通信协作的团队",
+    "example": "部署Agent Teams → 部署多智能体协作团队",
+    "categoryId": 6,
+    "tags": [
+      "Agent Teams",
+      "AI团队",
+      "多智能体",
+      "AI"
+    ]
+  },
+  {
+    "id": 424,
+    "word": "Agent Card",
+    "meaning": "Agent数字名片，描述Agent身份与能力的元数据文件",
+    "example": "发布Agent Card → 发布Agent能力描述卡片",
+    "categoryId": 6,
+    "tags": [
+      "Agent Card",
+      "A2A",
+      "协议",
+      "AI"
+    ]
+  },
+  {
+    "id": 425,
+    "word": "词元",
+    "meaning": "Token的中文官方定名，大模型处理信息的最小计量单位",
+    "example": "调用词元 → 调用AI大模型的Token",
+    "categoryId": 6,
+    "tags": [
+      "词元",
+      "Token",
+      "AI",
+      "国家数据局"
+    ]
+  },
+  {
+    "id": 426,
+    "word": "数字水印",
+    "meaning": "嵌入AI生成内容中的隐形标识，用于追溯内容来源",
+    "example": "内容嵌入数字水印 → AI生成内容带可追溯水印",
+    "categoryId": 6,
+    "tags": [
+      "数字水印",
+      "AI监管",
+      "内容溯源",
+      "AI"
+    ]
+  },
+  {
+    "id": 427,
+    "word": "Operator",
+    "meaning": "AI新范式，从被动副驾驶(Copilot)升级为主动操作员",
+    "example": "Operator模式 → AI主动操作完成任务",
+    "categoryId": 6,
+    "tags": [
+      "Operator",
+      "Copilot",
+      "AI",
+      "范式"
     ]
   }
 ]
