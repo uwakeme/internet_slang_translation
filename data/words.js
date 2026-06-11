@@ -5324,5 +5324,156 @@ const allWords = [
       "摆烂",
       "流行语"
     ]
+  },
+  {
+    "id": 440,
+    "word": "Harness Engineering",
+    "meaning": "驾驭工程,为AI Agent设计控制系统的工程学科,含约束规则、反馈循环和验证机制",
+    "example": "做Harness Engineering → 给AI Agent搭好围栏和反馈,让它可靠地干活",
+    "categoryId": 6,
+    "tags": [
+      "Harness Engineering",
+      "驾驭工程",
+      "Agent",
+      "AI"
+    ]
+  },
+  {
+    "id": 441,
+    "word": "Subagent",
+    "meaning": "子代理,主Agent拆分复杂任务后,委派给专门的子Agent处理特定子任务",
+    "example": "用Subagent分工 → 把大任务拆给几个子Agent并行处理",
+    "categoryId": 6,
+    "tags": [
+      "Subagent",
+      "子代理",
+      "Agent",
+      "AI"
+    ]
+  },
+  {
+    "id": 442,
+    "word": "Multi-Agent",
+    "meaning": "多智能体协作,多个AI Agent分工配合、互相通信共同完成复杂任务",
+    "example": "用Multi-Agent架构 → 让多个Agent像团队一样分工协作",
+    "categoryId": 6,
+    "tags": [
+      "Multi-Agent",
+      "多智能体",
+      "Agent",
+      "AI"
+    ]
+  },
+  {
+    "id": 443,
+    "word": "Sovereign AI",
+    "meaning": "主权AI,由国家或组织自建、数据不依赖外部云端、技术自主可控的AI",
+    "example": "发展Sovereign AI → 推动AI基础设施自主可控",
+    "categoryId": 6,
+    "tags": [
+      "Sovereign AI",
+      "主权AI",
+      "AI"
+    ]
+  },
+  {
+    "id": 444,
+    "word": "AI Workforce",
+    "meaning": "AI员工,把AI Agent当作企业里的虚拟员工,与人协作完成工作",
+    "example": "打造AI Workforce → 组建AI虚拟员工团队和人协作",
+    "categoryId": 6,
+    "tags": [
+      "AI Workforce",
+      "AI员工",
+      "数字员工",
+      "AI"
+    ]
+  },
+  {
+    "id": 445,
+    "word": "Coding Agent",
+    "meaning": "编程智能体,能独立完成需求分析、代码编写、测试到部署全流程的AI",
+    "example": "用Coding Agent开发 → 让AI从读需求到自动部署全包",
+    "categoryId": 6,
+    "tags": [
+      "Coding Agent",
+      "编程智能体",
+      "Vibe Coding",
+      "AI"
+    ]
+  },
+  {
+    "id": 446,
+    "word": "Browser Agent",
+    "meaning": "浏览器智能体,能像人一样操作网页、完成点击、填表、抓取等任务的AI",
+    "example": "用Browser Agent自动化 → 让AI自己开浏览器点网页办事",
+    "categoryId": 6,
+    "tags": [
+      "Browser Agent",
+      "浏览器智能体",
+      "Agent",
+      "AI"
+    ]
+  },
+  {
+    "id": 447,
+    "word": "AI Skills",
+    "meaning": "AI技能包,赋予Agent特定领域专业能力的模块化配置,如搜索、写代码等",
+    "example": "配置AI Skills → 给Agent装上特定领域的专业能力",
+    "categoryId": 6,
+    "tags": [
+      "AI Skills",
+      "技能包",
+      "Agent",
+      "AI"
+    ]
+  },
+  {
+    "id": 448,
+    "word": "痛文化",
+    "meaning": "2026年流行趋势,把日常压力、情绪都包装成痛,带点夸张的自我消解",
+    "example": "痛文化席卷年轻人 → 上班痛、恋爱痛、学业痛都被玩成梗",
+    "categoryId": 5,
+    "tags": [
+      "痛文化",
+      "情绪",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 449,
+    "word": "做完你的做你的",
+    "meaning": "出自景德镇鸡排主理人,被网友二创形容多线程忙碌、忙中控场的状态",
+    "example": "别催了,做完你的做你的 → 手头忙着,别催我",
+    "categoryId": 5,
+    "tags": [
+      "做完你的做你的",
+      "忙中控场",
+      "2026热梗"
+    ]
+  },
+  {
+    "id": 450,
+    "word": "我去不早说",
+    "meaning": "2026年新晋吐槽句式,用于后知后觉式自嘲,类似'早说啊'的夸张版",
+    "example": "这东西免费?我去不早说 → 早说啊,白白错过",
+    "categoryId": 5,
+    "tags": [
+      "我去不早说",
+      "后悔",
+      "2026新梗"
+    ]
+  },
+  {
+    "id": 451,
+    "word": "如何呢又能怎",
+    "meaning": "2025年度十大网络流行语,带无奈感、认命感和轻度摆烂式幽默的反问",
+    "example": "如何呢又能怎 → 能怎么办,也只能这样了",
+    "categoryId": 5,
+    "tags": [
+      "如何呢又能怎",
+      "摆烂",
+      "2025流行语"
+    ]
   }
 ] 
