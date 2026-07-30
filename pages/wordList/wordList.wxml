@@ -4,20 +4,24 @@
       <text class="page-title">{{categoryName}}</text>
       <text class="word-count">共{{words.length}}个词汇</text>
     </view>
-    <view class="header-decoration"></view>
   </view>
 
   <view class="words-list">
     <view
-      class="word-card"
+      class="word-card fade-in-up"
       wx:for="{{words}}"
       wx:key="word"
       bindtap="goToWordDetail"
       data-word="{{item.word}}"
+      style="animation-delay: {{index * 0.05}}s"
     >
       <view class="word-header">
         <text class="word-title">{{item.word}}</text>
         <text class="word-meaning">{{item.meaning}}</text>
+      </view>
+
+      <view class="word-tags" wx:if="{{item.tags && item.tags.length > 0}}">
+        <text class="word-tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
       </view>
       
       <view class="word-example" wx:if="{{item.example}}">
@@ -34,7 +38,3 @@
     <text class="tip-text">💡 点击任意词汇可查看详细信息</text>
   </view>
 </view>
-
-
-
-

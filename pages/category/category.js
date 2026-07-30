@@ -11,9 +11,11 @@ Page({
   },
 
   loadCategories: function() {
+    var jargonCats = dataModule.getJargonCategories()
+    var professionalCats = dataModule.getProfessionalCategories()
     this.setData({
-      jargonCategories: dataModule.getJargonCategories(),
-      professionalCategories: dataModule.getProfessionalCategories()
+      jargonCategories: jargonCats,
+      professionalCategories: professionalCats
     })
   },
 

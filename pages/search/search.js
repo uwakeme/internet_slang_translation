@@ -1,5 +1,12 @@
 var dataModule = require('../../utils/data.js')
 
+// 构建分类 ID → 名称映射
+var categoryMap = {}
+var categories = dataModule.getCategories()
+for (var i = 0; i < categories.length; i++) {
+  categoryMap[categories[i].id] = categories[i].name
+}
+
 Page({
   data: {
     searchKeyword: '',
@@ -9,6 +16,8 @@ Page({
     showHistory: true,
     searching: false
   },
+
+  _searchTimer: null,
 
   onLoad: function() {
     this.loadPopularTags()
@@ -22,7 +31,7 @@ Page({
       showHistory: !keyword.trim()
     })
 
-    // 实时搜索
+    // 实时搜索（防抖）
     if (keyword.trim()) {
       this.performSearch(keyword)
     } else {
@@ -33,13 +42,27 @@ Page({
   },
 
   performSearch: function(keyword) {
+    // 清除前一个定时器，实现防抖
+    if (this._searchTimer) {
+      clearTimeout(this._searchTimer)
+      this._searchTimer = null
+    }
+
     this.setData({ searching: true })
 
     var self = this
-    setTimeout(function() {
+    this._searchTimer = setTimeout(function() {
       var results = dataModule.searchWords(keyword)
+
+      // 给每个结果附加分类名称
+      var enriched = results.map(function(word) {
+        return Object.assign({}, word, {
+          categoryName: categoryMap[word.categoryId] || '未分类'
+        })
+      })
+
       self.setData({
-        searchResults: results,
+        searchResults: enriched,
         searching: false
       })
 
@@ -64,9 +87,17 @@ Page({
   searchByTag: function(e) {
     var tag = e.currentTarget.dataset.tag
     var results = dataModule.searchByTag(tag)
+
+    // 给每个结果附加分类名称
+    var enriched = results.map(function(word) {
+      return Object.assign({}, word, {
+        categoryName: categoryMap[word.categoryId] || '未分类'
+      })
+    })
+
     this.setData({
       searchKeyword: tag,
-      searchResults: results,
+      searchResults: enriched,
       showHistory: false
     })
     this.saveSearchHistory(tag)
@@ -126,7 +157,7 @@ Page({
   loadPopularTags: function() {
     var tags = dataModule.getPopularTags()
     this.setData({
-      popularTags: tags.slice(0, 12) // 只显示前12个热门标签
+      popularTags: tags.slice(0, 12)
     })
   },
 

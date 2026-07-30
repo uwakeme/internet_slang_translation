@@ -25,23 +25,27 @@
       <text class="section-title">{{mode === 'toHuman' ? '输入互联网黑话' : '输入通俗易懂的话'}}</text>
       <textarea 
         placeholder="{{mode === 'toHuman' ? '例如：我们需要赋能业务，形成闭环' : '例如：我们需要帮助业务，形成完整流程'}}"
+        placeholder-style="color: #5c5855"
         value="{{inputText}}"
         bindinput="onInput"
-        class="input-area"
+        bindfocus="onInputFocus"
+        bindblur="onInputBlur"
+        class="input-area {{inputFocus ? 'input-area-focus' : ''}}"
         maxlength="1000"
       ></textarea>
+      <text class="char-count">{{inputText.length}}/1000</text>
     </view>
     
-    <button class="translate-btn btn" bindtap="translate">
+    <button class="translate-btn" bindtap="translate" disabled="{{translating}}" data-mode="{{mode}}">
       <text>{{translating ? '翻译中...' : '开始翻译'}}</text>
     </button>
     
-    <view class="result-section" wx:if="{{result}}">
+    <view class="result-card" wx:if="{{result}}">
       <view class="section-header">
         <text class="section-title">翻译结果</text>
         <button class="copy-btn" bindtap="copyResult" size="mini">复制</button>
       </view>
-      <view class="result-content">
+      <view class="result-content fade-in-up">
         <text class="result-text">{{result}}</text>
       </view>
     </view>
@@ -52,13 +56,15 @@
       <text class="history-title">翻译历史</text>
       <button class="clear-btn" bindtap="clearHistory" size="mini">清空</button>
     </view>
-    <view class="history-item" wx:for="{{history}}" wx:key="index">
-      <view class="history-content">
-        <text class="original">{{item.original}}</text>
-        <text class="arrow">↓</text>
-        <text class="translated">{{item.translated}}</text>
+    <view class="history-list">
+      <view class="history-item" wx:for="{{history}}" wx:key="index" bindtap="onHistoryTap" data-index="{{index}}" data-original="{{item.original}}" data-mode="{{item.mode}}">
+        <view class="history-content">
+          <text class="original">{{item.original}}</text>
+          <text class="arrow">↓</text>
+          <text class="translated">{{item.translated}}</text>
+        </view>
+        <text class="history-time">{{item.time}}</text>
       </view>
-      <text class="history-time">{{item.time}}</text>
     </view>
   </view>
 </view>

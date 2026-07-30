@@ -7,22 +7,26 @@
   <!-- 互联网黑话 -->
   <view class="section">
     <view class="section-header">
+      <view class="section-indicator jargon-indicator"></view>
       <text class="section-icon">🗣️</text>
       <text class="section-title">互联网黑话</text>
       <text class="section-desc">日常沟通用语</text>
     </view>
     <view class="category-grid">
       <view 
-        class="category-item jargon-item" 
+        class="category-item jargon-item fade-in-up" 
         wx:for="{{jargonCategories}}" 
         wx:key="id"
         bindtap="goToWordList"
         data-category="{{item}}"
+        style="animation-delay: {{index * 0.08}}s"
       >
-        <text class="category-icon">📝</text>
+        <view class="category-icon">
+          <image class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
+        </view>
         <text class="category-name">{{item.name}}</text>
         <text class="category-desc">{{item.desc}}</text>
-        <text class="category-count">{{item.count}}个词汇</text>
+        <view class="category-count-tag">{{item.count}}个词汇</view>
       </view>
     </view>
   </view>
@@ -30,49 +34,27 @@
   <!-- 专业名词 -->
   <view class="section">
     <view class="section-header">
+      <view class="section-indicator professional-indicator"></view>
       <text class="section-icon">🔧</text>
       <text class="section-title">专业名词</text>
       <text class="section-desc">技术术语</text>
     </view>
     <view class="category-grid">
       <view 
-        class="category-item professional-item" 
+        class="category-item professional-item fade-in-up" 
         wx:for="{{professionalCategories}}" 
         wx:key="id"
         bindtap="goToWordList"
         data-category="{{item}}"
+        style="animation-delay: {{index * 0.08}}s"
       >
-        <text class="category-icon">⚙️</text>
+        <view class="category-icon">
+          <image class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
+        </view>
         <text class="category-name">{{item.name}}</text>
         <text class="category-desc">{{item.desc}}</text>
-        <text class="category-count">{{item.count}}个词汇</text>
+        <view class="category-count-tag">{{item.count}}个词汇</view>
       </view>
     </view>
   </view>
 </view>
-
-<view class="words-list">
-  <view 
-    class="word-item" 
-    wx:for="{{words}}" 
-    wx:key="word"
-    bindtap="translateWord" 
-    data-word="{{item.word}}"
-  >
-    <view class="word-header">
-      <text class="word-title">{{item.word}}</text>
-      <text class="word-meaning">{{item.meaning}}</text>
-    </view>
-    
-    <view class="word-example" wx:if="{{item.example}}">
-      <view class="example-label">
-        <text class="label-icon">💡</text>
-        <text class="label-text">使用示例</text>
-      </view>
-      <text class="example-text">{{item.example}}</text>
-    </view>
-  </view>
-</view>
-
-
-

@@ -1,14 +1,14 @@
 const categories = [
-  { id: 1, name: '会议用语', desc: '开会时常用的黑话', type: 'jargon', icon: '📝' },
-  { id: 2, name: '项目管理', desc: '项目相关的管理黑话', type: 'jargon', icon: '📊' },
-  { id: 3, name: '商务合作', desc: '商务谈判常用黑话', type: 'jargon', icon: '🤝' },
-  { id: 4, name: '人力资源', desc: 'HR领域的管理黑话', type: 'jargon', icon: '👥' },
-  { id: 5, name: '职场文化', desc: '职场环境相关黑话', type: 'jargon', icon: '🏢' },
-  { id: 6, name: 'AI人工智能', desc: 'AI领域的专业术语', type: 'professional', icon: '🤖' },
-  { id: 7, name: '技术开发', desc: '程序员的专业术语', type: 'professional', icon: '💻' },
-  { id: 8, name: '产品运营', desc: '产品和运营的专业术语', type: 'professional', icon: '📱' },
-  { id: 9, name: '互联网金融', desc: '金融科技专业术语', type: 'professional', icon: '💰' },
-  { id: 10, name: '电商运营', desc: '电商行业专业术语', type: 'professional', icon: '🛒' }
+  { id: 1, name: '会议用语', desc: '开会时常用的黑话', type: 'jargon', iconType: 'meeting', icon: '/images/categories/meeting.svg' },
+  { id: 2, name: '项目管理', desc: '项目相关的管理黑话', type: 'jargon', iconType: 'project', icon: '/images/categories/project.svg' },
+  { id: 3, name: '商务合作', desc: '商务谈判常用黑话', type: 'jargon', iconType: 'business', icon: '/images/categories/business.svg' },
+  { id: 4, name: '人力资源', desc: 'HR领域的管理黑话', type: 'jargon', iconType: 'hr', icon: '/images/categories/hr.svg' },
+  { id: 5, name: '职场文化', desc: '职场环境相关黑话', type: 'jargon', iconType: 'workplace', icon: '/images/categories/workplace.svg' },
+  { id: 6, name: 'AI人工智能', desc: 'AI领域的专业术语', type: 'professional', iconType: 'ai', icon: '/images/categories/ai.svg' },
+  { id: 7, name: '技术开发', desc: '程序员的专业术语', type: 'professional', iconType: 'dev', icon: '/images/categories/dev.svg' },
+  { id: 8, name: '产品运营', desc: '产品和运营的专业术语', type: 'professional', iconType: 'product', icon: '/images/categories/product.svg' },
+  { id: 9, name: '互联网金融', desc: '金融科技专业术语', type: 'professional', iconType: 'finance', icon: '/images/categories/finance.svg' },
+  { id: 10, name: '电商运营', desc: '电商行业专业术语', type: 'professional', iconType: 'ecommerce', icon: '/images/categories/ecommerce.svg' }
 ]
 
 const allWords = [

@@ -3,7 +3,9 @@ var dataModule = require('../../utils/data.js')
 Page({
   data: {
     wordInfo: null,
-    scenarios: []
+    scenarios: [],
+    hasCustomScenario: false,
+    categoryName: ''
   },
 
   onLoad: function(options) {
@@ -32,9 +34,22 @@ Page({
       // 生成更多使用场景
       var scenarios = this.generateScenarios(wordInfo)
 
+      // 判断是否有自定义场景
+      var customWords = ['赋能', '闭环', '颗粒度', '沉淀', '对齐']
+      var hasCustomScenario = customWords.indexOf(wordInfo.word) !== -1
+
+      // 查找分类名称
+      var categories = dataModule.getCategories()
+      var categoryInfo = categories.find(function(cat) {
+        return cat.id === wordInfo.categoryId
+      })
+      var categoryName = categoryInfo ? categoryInfo.name : ''
+
       this.setData({
         wordInfo: wordInfo,
-        scenarios: scenarios
+        scenarios: scenarios,
+        hasCustomScenario: hasCustomScenario,
+        categoryName: categoryName
       })
 
       // 设置导航栏标题

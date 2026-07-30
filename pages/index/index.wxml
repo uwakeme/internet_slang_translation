@@ -1,52 +1,74 @@
 <view class="container">
-  <view class="header">
+  <!-- 标题区域 -->
+  <view class="header fade-in">
     <text class="title">互联网黑话翻译器</text>
     <text class="subtitle">让沟通更简单</text>
   </view>
-  
-  <!-- 添加搜索入口 -->
-  <view class="search-entry" bindtap="goToSearch">
+
+  <!-- 搜索入口 -->
+  <view class="search-entry fade-in-delay1" bindtap="goToSearch">
     <text class="search-icon">🔍</text>
     <text class="search-placeholder">搜索黑话、含义或标签</text>
   </view>
-  
-  <view class="quick-translate">
-    <textarea 
-      placeholder="输入互联网黑话或人话，快速翻译"
-      value="{{inputText}}"
-      bindinput="onInput"
-      class="input-area"
-      maxlength="500"
-    ></textarea>
-    <button class="translate-btn btn" bindtap="quickTranslate">快速翻译</button>
+
+  <!-- 今日热词 -->
+  <view class="section fade-in-delay2">
+    <view class="section-header">
+      <view class="section-bar"></view>
+      <text class="section-title">今日热词</text>
+    </view>
+    <view class="hot-words-wrap">
+      <view
+        class="hot-tag"
+        wx:for="{{hotWords}}"
+        wx:key="id"
+        data-word="{{item.word}}"
+        bindtap="goToWordDetail"
+      >
+        <text class="hot-tag-word">{{item.word}}</text>
+        <text class="hot-tag-meaning">{{item.meaning}}</text>
+      </view>
+    </view>
   </view>
 
-  <view class="result" wx:if="{{result}}">
-    <view class="result-header">
-      <text class="result-label">翻译结果：</text>
-      <button class="copy-btn" bindtap="copyResult" size="mini">复制</button>
+  <!-- 分类速览 -->
+  <view class="section fade-in-delay3">
+    <view class="section-header">
+      <view class="section-bar"></view>
+      <text class="section-title">分类速览</text>
     </view>
-    <text class="result-text">{{result}}</text>
-  </view>
-
-  <view class="features">
-    <view class="feature-item" bindtap="goToJargon">
-      <text class="feature-icon">🗣️</text>
-      <text class="feature-text">互联网黑话</text>
-      <text class="feature-desc">日常沟通用语</text>
-    </view>
-    <view class="feature-item" bindtap="geToProfessional">
-      <text class="feature-icon">🔧</text>
-      <text class="feature-text">专业名词</text>
-      <text class="feature-desc">技术术语</text>
-    </view>
-    <view class="feature-item" bindtap="goToTranslate">
-      <text class="feature-icon">🔄</text>
-      <text class="feature-text">专业翻译</text>
-      <text class="feature-desc">双向翻译模式</text>
+    <view
+      class="category-block"
+      wx:for="{{categorySections}}"
+      wx:key="id"
+    >
+      <view
+        class="category-title-row"
+        data-id="{{item.id}}"
+        data-name="{{item.name}}"
+        bindtap="goToCategory"
+      >
+        <view class="category-color-dot" style="background: {{item.color}};"></view>
+        <view class="category-icon-box">
+          <image class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
+        </view>
+        <text class="category-name">{{item.name}}</text>
+        <text class="category-arrow">›</text>
+      </view>
+      <view class="category-words">
+        <view
+          class="word-card"
+          wx:for="{{item.words}}"
+          wx:for-item="word"
+          wx:key="id"
+          style="border-left-color: {{item.color}};"
+          data-word="{{word.word}}"
+          bindtap="goToWordDetail"
+        >
+          <text class="word-name">{{word.word}}</text>
+          <text class="word-meaning">{{word.meaning}}</text>
+        </view>
+      </view>
     </view>
   </view>
 </view>
-
-
-

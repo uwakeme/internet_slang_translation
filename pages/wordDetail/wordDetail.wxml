@@ -1,11 +1,17 @@
 <view class="container" wx:if="{{wordInfo}}">
   <!-- 词汇标题区域 -->
   <view class="word-header">
-    <view class="word-main">
-      <text class="word-title">{{wordInfo.word}}</text>
-      <button class="copy-btn" bindtap="copyWord" size="mini">复制</button>
+    <view class="word-name-wrap">
+      <text class="word-name">{{wordInfo.word}}</text>
     </view>
-    <text class="word-pronunciation">互联网黑话</text>
+    <view class="word-meta">
+      <button class="copy-btn" bindtap="copyWord" size="mini">复制</button>
+      <text class="word-category-label">{{categoryName}}</text>
+    </view>
+    <!-- 词汇标签 -->
+    <view class="word-tags" wx:if="{{wordInfo.tags && wordInfo.tags.length > 0}}">
+      <text class="word-tag" wx:for="{{wordInfo.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
+    </view>
   </view>
 
   <!-- 翻译模块 -->
@@ -31,7 +37,7 @@
   </view>
 
   <!-- 场景应用模块 -->
-  <view class="section scenarios-section">
+  <view class="section scenarios-section" wx:if="{{hasCustomScenario}}">
     <view class="section-header">
       <text class="section-icon">🎯</text>
       <text class="section-title">场景应用</text>
@@ -82,7 +88,6 @@
       </view>
     </view>
   </view>
-
 
 </view>
 

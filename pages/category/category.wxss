@@ -1,13 +1,35 @@
+/* ============================================
+   分类页样式 — 暖色深色主题
+   ============================================ */
+
 .section {
   margin-bottom: 60rpx;
 }
 
+/* ── Section 标题区域 ───────────────────── */
 .section-header {
   display: flex;
   align-items: center;
   padding: 0 40rpx 30rpx;
-  border-bottom: 2rpx solid rgba(255, 255, 255, 0.1);
   margin-bottom: 30rpx;
+}
+
+.section-indicator {
+  width: 6rpx;
+  height: 40rpx;
+  border-radius: 3rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.jargon-indicator {
+  background: linear-gradient(180deg, #f5a623, #ff6b6b);
+  box-shadow: 0 0 16rpx rgba(245, 166, 35, 0.35);
+}
+
+.professional-indicator {
+  background: linear-gradient(180deg, #ff6b6b, #a78bfa);
+  box-shadow: 0 0 16rpx rgba(255, 107, 107, 0.35);
 }
 
 .section-icon {
@@ -17,16 +39,18 @@
 
 .section-title {
   font-size: 36rpx;
-  font-weight: 700;
-  color: white;
+  font-weight: 800;
+  color: #f0ece2;
   margin-right: 16rpx;
+  letter-spacing: 2rpx;
 }
 
 .section-desc {
   font-size: 24rpx;
-  color: rgba(255, 255, 255, 0.6);
+  color: #9a9590;
 }
 
+/* ── 分类网格 ───────────────────────────── */
 .category-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,202 +58,106 @@
   padding: 0 40rpx;
 }
 
+/* ── 分类卡片 ───────────────────────────── */
 .category-item {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20rpx);
-  border-radius: 20rpx;
-  padding: 32rpx 24rpx;
+  background: linear-gradient(180deg, rgba(32, 35, 48, 0.95) 0%, rgba(20, 22, 30, 0.95) 100%);
+  backdrop-filter: blur(32rpx);
+  -webkit-backdrop-filter: blur(32rpx);
+  border-radius: 24rpx;
+  padding: 36rpx 24rpx;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
+  border: 1rpx solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, 0.4), inset 0 1rpx 0 rgba(255, 255, 255, 0.08);
 }
 
-.jargon-item::before {
+.category-item::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4rpx;
-  background: linear-gradient(90deg, #00d4ff, #0099cc);
+  height: 1rpx;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
 }
 
-.professional-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4rpx;
-  background: linear-gradient(90deg, #ff6b6b, #ff4757);
+.category-item:active {
+  transform: scale(0.96);
+  box-shadow: 0 6rpx 24rpx rgba(0, 0, 0, 0.45), inset 0 1rpx 0 rgba(255, 255, 255, 0.08);
 }
 
+/* ── 分类图标容器 ───────────────────────── */
 .category-icon {
-  font-size: 32rpx;
-  margin-bottom: 16rpx;
-  display: block;
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.4), inset 0 1rpx 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
 }
 
+.category-icon-img {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+/* ── 分类名称 ───────────────────────────── */
 .category-name {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 8rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #f0ece2;
+  margin-bottom: 10rpx;
   display: block;
 }
 
+/* ── 分类描述 ───────────────────────────── */
 .category-desc {
   font-size: 22rpx;
-  color: #666;
-  margin-bottom: 12rpx;
+  color: #9a9590;
+  margin-bottom: 18rpx;
   display: block;
 }
 
-.category-count {
-  font-size: 20rpx;
-  color: #0066cc;
-  background: rgba(0, 102, 204, 0.1);
-  padding: 4rpx 12rpx;
-  border-radius: 12rpx;
+/* ── 词汇数量标签（黑话：琥珀色） ───────── */
+.category-count-tag {
   display: inline-block;
+  font-size: 20rpx;
+  color: #f5a623;
+  border: 1rpx solid rgba(245, 166, 35, 0.25);
+  border-radius: 24rpx;
+  padding: 6rpx 16rpx;
+  background: rgba(245, 166, 35, 0.08);
+  box-shadow: inset 0 1rpx 0 rgba(255, 255, 255, 0.06);
 }
 
-.words-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20rpx;
-  padding: 0 40rpx;
+/* ── 专业名词卡片标签（珊瑚红） ─────────── */
+.professional-item .category-count-tag {
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.25);
+  background: rgba(255, 107, 107, 0.08);
 }
 
-.word-item {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20rpx);
-  border-radius: 16rpx;
-  padding: 24rpx;
-  box-shadow: 0 6rpx 30rpx rgba(0, 0, 0, 0.1);
-  border: 1rpx solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+/* ── 逐项淡入动画 ───────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.word-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3rpx;
-  background: linear-gradient(90deg, #00d4ff, #ff6b6b);
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
-
-.word-item:active {
-  transform: translateY(-2rpx);
-  box-shadow: 0 8rpx 35rpx rgba(0, 0, 0, 0.15);
-}
-
-.word-text {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 12rpx;
-  background: linear-gradient(135deg, #0066cc, #ff4757);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.word-meaning {
-  background: linear-gradient(135deg, #0066cc, #004499);
-  color: white;
-  padding: 8rpx 16rpx;
-  border-radius: 20rpx;
-  font-size: 24rpx;
-  font-weight: 500;
-  box-shadow: 0 2rpx 8rpx rgba(0, 102, 204, 0.3);
-}
-
-.word-example {
-  margin-bottom: 16rpx;
-}
-
-.example-label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20rpx;
-}
-
-.label-icon {
-  font-size: 24rpx;
-  margin-right: 8rpx;
-  color: #0066cc;
-}
-
-.label-text {
-  font-size: 24rpx;
-  color: #666;
-  font-weight: 500;
-}
-
-.example-text {
-  font-size: 28rpx;
-  color: #444;
-  line-height: 1.6;
-  background: rgba(0, 102, 204, 0.05);
-  padding: 20rpx;
-  border-radius: 12rpx;
-  border-left: 4rpx solid #0066cc;
-}
-
-.word-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16rpx 20rpx;
-  margin: -16rpx -20rpx -16rpx -20rpx;
-  border-radius: 12rpx;
-  background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(255, 71, 87, 0.08));
-  transition: all 0.2s ease;
-}
-
-.word-footer:active {
-  background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(255, 71, 87, 0.15));
-  transform: translateY(1rpx);
-}
-
-.translate-hint {
-  font-size: 26rpx;
-  color: #0066cc;
-  font-weight: 600;
-}
-
-.arrow {
-  font-size: 28rpx;
-  color: #0066cc;
-  font-weight: bold;
-  transition: transform 0.2s ease;
-}
-
-.word-footer:active .arrow {
-  transform: translateX(4rpx);
-}
-
-.empty-state {
-  text-align: center;
-  padding: 120rpx 40rpx;
-  color: #999;
-}
-
-.empty-text {
-  font-size: 28rpx;
-  color: #666;
-}
-
-
-
-
-
-
-
-

@@ -6,7 +6,8 @@ Page({
     inputText: '',
     result: '',
     translating: false,
-    history: []
+    history: [],
+    inputFocus: false
   },
 
   onLoad: function(options) {
@@ -42,6 +43,14 @@ Page({
     this.setData({
       inputText: e.detail.value
     })
+  },
+
+  onInputFocus: function() {
+    this.setData({ inputFocus: true })
+  },
+
+  onInputBlur: function() {
+    this.setData({ inputFocus: false })
   },
 
   translate: function() {
@@ -88,6 +97,9 @@ Page({
 
       // 保存历史记录
       self.saveHistory()
+
+      // 触觉反馈
+      wx.vibrateShort({ type: 'light' })
     }, 800)
   },
 
@@ -139,6 +151,18 @@ Page({
       wx.setStorageSync('translate_history', this.data.history)
     } catch (e) {
       console.error('保存历史记录失败', e)
+    }
+  },
+
+  onHistoryTap: function(e) {
+    var original = e.currentTarget.dataset.original;
+    var mode = e.currentTarget.dataset.mode;
+    if (original) {
+      this.setData({
+        inputText: original,
+        mode: mode || 'toHuman',
+        result: ''
+      });
     }
   }
 })
