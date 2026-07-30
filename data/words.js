@@ -5477,3 +5477,4 @@ const allWords = [
     ]
   }
 ] 
+module.exports = allWords

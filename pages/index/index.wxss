@@ -207,6 +207,11 @@
   height: 44rpx;
 }
 
+.category-icon-text {
+  font-size: 38rpx;
+  line-height: 1;
+}
+
 .category-name {
   font-size: 28rpx;
   font-weight: 600;

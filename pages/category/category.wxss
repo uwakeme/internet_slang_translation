@@ -109,6 +109,11 @@
   height: 46rpx;
 }
 
+.category-icon-text {
+  font-size: 40rpx;
+  line-height: 1;
+}
+
 /* ── 分类名称 ───────────────────────────── */
 .category-name {
   font-size: 30rpx;
