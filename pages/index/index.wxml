@@ -50,7 +50,7 @@
       >
         <view class="category-color-dot" style="background: {{item.color}};"></view>
         <view class="category-icon-box">
-          <image wx:if="{{item.icon.indexOf('/') === 0}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
+          <image wx:if="{{item.iconType === 'image'}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
           <text wx:else class="category-icon-text">{{item.icon}}</text>
         </view>
         <text class="category-name">{{item.name}}</text>

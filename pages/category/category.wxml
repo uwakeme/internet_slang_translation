@@ -22,7 +22,7 @@
         style="animation-delay: {{index * 0.08}}s"
       >
         <view class="category-icon">
-          <image wx:if="{{item.icon.indexOf('/') === 0}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
+          <image wx:if="{{item.iconType === 'image'}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
           <text wx:else class="category-icon-text">{{item.icon}}</text>
         </view>
         <text class="category-name">{{item.name}}</text>
@@ -50,7 +50,7 @@
         style="animation-delay: {{index * 0.08}}s"
       >
         <view class="category-icon">
-          <image wx:if="{{item.icon.indexOf('/') === 0}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
+          <image wx:if="{{item.iconType === 'image'}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
           <text wx:else class="category-icon-text">{{item.icon}}</text>
         </view>
         <text class="category-name">{{item.name}}</text>
