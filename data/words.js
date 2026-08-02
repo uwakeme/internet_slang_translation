@@ -5711,5 +5711,148 @@ const allWords = [
       "AI智能体",
       "2026热词"
     ]
+  },
+  {
+    "id": 470,
+    "word": "NSP",
+    "meaning": "Next-State Prediction世界状态预测,AI从'预测下一个词'转向'预测世界下一个状态'的新范式",
+    "example": "NSP范式崛起 → AI开始学习预测世界状态变化",
+    "categoryId": 6,
+    "tags": [
+      "NSP",
+      "世界模型",
+      "新范式",
+      "AI"
+    ]
+  },
+  {
+    "id": 471,
+    "word": "TinyML",
+    "meaning": "微型机器学习,将AI能力压缩到微控制器级别,让每个传感器都具备本地AI推理能力",
+    "example": "TinyML部署 → 在微小设备上运行AI模型",
+    "categoryId": 6,
+    "tags": [
+      "TinyML",
+      "边缘AI",
+      "物联网",
+      "AI"
+    ]
+  },
+  {
+    "id": 472,
+    "word": "Physical AI",
+    "meaning": "实体AI,能感知物理世界并直接参与生产、物流与服务的实际应用",
+    "example": "Physical AI机器人 → 能操控物理世界的AI系统",
+    "categoryId": 6,
+    "tags": [
+      "Physical AI",
+      "具身智能",
+      "机器人",
+      "AI"
+    ]
+  },
+  {
+    "id": 473,
+    "word": "Federated AI",
+    "meaning": "联邦AI,通过组合多个不同模型来提高准确性、灵活性和成本效率的AI架构",
+    "example": "Federated AI方案 → 用多模型协作而非依赖单一模型",
+    "categoryId": 6,
+    "tags": [
+      "Federated AI",
+      "多模型",
+      "协作",
+      "AI"
+    ]
+  },
+  {
+    "id": 474,
+    "word": "Domain-Specific LLM",
+    "meaning": "领域专用大语言模型,针对单一行业训练,更懂专业术语和合规要求的AI模型",
+    "example": "医疗Domain-Specific LLM → 专用于医疗行业的AI",
+    "categoryId": 6,
+    "tags": [
+      "领域大模型",
+      "垂直模型",
+      "AI",
+      "行业"
+    ]
+  },
+  {
+    "id": 475,
+    "word": "Digital Twin",
+    "meaning": "数字孪生,在虚拟空间构建物理世界的数字化映射,用于模拟、预测和优化",
+    "example": "构建数字孪生 → 创建物理系统的虚拟复制品",
+    "categoryId": 6,
+    "tags": [
+      "Digital Twin",
+      "数字孪生",
+      "仿真",
+      "IoT"
+    ]
+  },
+  {
+    "id": 476,
+    "word": "AI-Native",
+    "meaning": "AI原生,以AI为核心从零开始设计软件开发的模式,自然语言即可生成完整应用",
+    "example": "AI-Native开发 → 用自然语言描述需求,AI生成完整代码",
+    "categoryId": 7,
+    "tags": [
+      "AI-Native",
+      "AI开发",
+      "自然语言编程",
+      "开发"
+    ]
+  },
+  {
+    "id": 477,
+    "word": "主体性",
+    "meaning": "2026年小红书十大热词之一,强调个人在信息洪流中保持独立判断和自主选择的能力",
+    "example": "保持主体性 → 在算法包围中坚守自我判断",
+    "categoryId": 5,
+    "tags": [
+      "主体性",
+      "自我",
+      "2026热词",
+      "小红书"
+    ]
+  },
+  {
+    "id": 478,
+    "word": "柔软力",
+    "meaning": "2026年小红书十大热词之一,指以柔克刚、用灵活方式化解困境的智慧和能力",
+    "example": "柔软力处理 → 用温和方式化解冲突",
+    "categoryId": 5,
+    "tags": [
+      "柔软力",
+      "生活智慧",
+      "2026热词",
+      "小红书"
+    ]
+  },
+  {
+    "id": 479,
+    "word": "反精致",
+    "meaning": "2026年小红书十大热词之一,拒绝过度包装和精致人设,追求真实自然的生活态度",
+    "example": "反精致风潮 → 抛弃精致偶像包袱,接受真实自我",
+    "categoryId": 5,
+    "tags": [
+      "反精致",
+      "真实",
+      "2026热词",
+      "小红书"
+    ]
+  },
+  {
+    "id": 480,
+    "word": "文化力",
+    "meaning": "2026年小红书十大热词之一,指文化内容和文化产品带来的影响力和消费驱动力",
+    "example": "文化力崛起 → 年轻人更愿意为文化体验付费",
+    "categoryId": 5,
+    "tags": [
+      "文化力",
+      "文化消费",
+      "2026热词",
+      "小红书"
+    ]
   }
 ] 
