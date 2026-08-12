@@ -6764,6 +6764,162 @@ const allWords = [
       "生活态度",
       "2026热梗"
     ]
+  },
+  {
+    "id": 551,
+    "word": "超节点",
+    "meaning": "把成百上千颗AI芯片深度整合成一台巨型超级电脑的计算平台",
+    "example": "天池超节点提升推理效率50% → 集成上千颗芯片的算力集群让模型推理更快",
+    "categoryId": 6,
+    "tags": [
+      "超节点",
+      "算力",
+      "AI基础设施",
+      "WAIC2026"
+    ]
+  },
+  {
+    "id": 552,
+    "word": "Agent操作系统",
+    "meaning": "给AI Agent配的完整办公执行系统,能自主规划路线、调用工具完成任务",
+    "example": "Agent OS装机量突破4200万 → AI操作系统已部署超4200万台设备",
+    "categoryId": 6,
+    "tags": [
+      "Agent OS",
+      "AI操作系统",
+      "智能体落地",
+      "WAIC2026"
+    ]
+  },
+  {
+    "id": 553,
+    "word": "OPC",
+    "meaning": "One Person Company,一人公司,借助AI一个人就能完成设计、运营、客服、技术全流程业务",
+    "example": "OPC模式只要一个人就齐活了 → 一个人靠AI就能开公司",
+    "categoryId": 6,
+    "tags": [
+      "OPC",
+      "一人公司",
+      "超级个体",
+      "WAIC2026"
+    ]
+  },
+  {
+    "id": 554,
+    "word": "AI for Science",
+    "meaning": "AI化身超级科研助手,可参与科研全流程,推动'从0到1'的科学突破",
+    "example": "AI for Science加速材料研发 → AI辅助科研大幅缩短实验周期",
+    "categoryId": 6,
+    "tags": [
+      "AI4S",
+      "AI科研",
+      "科研范式",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 555,
+    "word": "多智能体系统",
+    "meaning": "Multiagent Systems,由多个AI Agent分工协作组成的虚拟团队,处理单一AI难以应对的复杂流程",
+    "example": "多智能体系统处理供应链优化 → 多个AI分工完成单一AI难以完成的复杂任务",
+    "categoryId": 6,
+    "tags": [
+      "Multiagent",
+      "多Agent",
+      "协作",
+      "AI"
+    ]
+  },
+  {
+    "id": 556,
+    "word": "领域大模型",
+    "meaning": "Domain-Specific LLM,为金融、医疗、法律等单一行业专门训练的专业AI模型",
+    "example": "领域大模型更懂行业术语 → 行业专用AI回答更准确合规",
+    "categoryId": 6,
+    "tags": [
+      "领域模型",
+      "DSLM",
+      "行业AI",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 557,
+    "word": "AI原生开发",
+    "meaning": "AI-Native Development,以AI为核心从零设计的软件开发范式,用自然语言描述需求即可生成应用",
+    "example": "AI原生开发平台 → 从设计之初就以AI能力为核心的开发环境",
+    "categoryId": 7,
+    "tags": [
+      "AI原生",
+      "AI开发",
+      "新范式",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 558,
+    "word": "AI超算",
+    "meaning": "AI Supercomputing,专为训练大型AI模型设计的超级计算平台,集合大量高性能芯片与存储资源",
+    "example": "AI超算平台支撑万亿参数模型训练 → 训练大模型离不开AI超算",
+    "categoryId": 6,
+    "tags": [
+      "AI超算",
+      "算力基础设施",
+      "AI",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 559,
+    "word": "AI安全平台",
+    "meaning": "AI Security Platforms,集中监控、管理和保护企业所有AI系统的中央安全控制室",
+    "example": "AI安全平台防止数据泄露 → 用AI安全中心统一守护企业AI部署",
+    "categoryId": 6,
+    "tags": [
+      "AI安全",
+      "AI治理",
+      "防护",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 560,
+    "word": "主动智能体",
+    "meaning": "Proactive Agent,持续在线、主动为人类工作的AI智能体,可主动规划执行而非被动应答",
+    "example": "主动智能体在后台完成任务 → AI主动规划执行,不用等你发问",
+    "categoryId": 6,
+    "tags": [
+      "主动智能体",
+      "Agent",
+      "主动性",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 561,
+    "word": "数字孪生",
+    "meaning": "Digital Twin,在虚拟空间中构建与现实物体或系统完全对应的数字副本,用于模拟、预测与优化",
+    "example": "数字孪生工厂实时仿真运行 → 在虚拟世界模拟整个工厂的生产流程",
+    "categoryId": 6,
+    "tags": [
+      "数字孪生",
+      "Digital Twin",
+      "仿真",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 562,
+    "word": "龙虾悖论",
+    "meaning": "养龙虾热背后的安全困境:想让它做的事越多,给的权限就必须越大,权限越大安全风险就越高",
+    "example": "龙虾悖论难解 → AI能力越强,失控风险反而越大",
+    "categoryId": 6,
+    "tags": [
+      "龙虾悖论",
+      "AI安全",
+      "OpenClaw",
+      "2026热词"
+    ]
   }
 ]
 module.exports = allWords
