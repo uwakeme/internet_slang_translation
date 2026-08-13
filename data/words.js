@@ -6920,6 +6920,73 @@ const allWords = [
       "OpenClaw",
       "2026热词"
     ]
+  },
+  {
+    "id": 563,
+    "word": "密度法则",
+    "meaning": "2026年中国信通院提出的AI产业新趋势——用更少算力和数据获得更多智能,大模型从'拼规模'转向'拼密度'",
+    "example": "遵循密度法则训练模型 → 不再盲目堆参数,而是提升单位算力的智能产出",
+    "categoryId": 6,
+    "tags": [
+      "密度法则",
+      "Scaling Law",
+      "AI趋势",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 564,
+    "word": "Agentic Engineering",
+    "meaning": "智能体工程学,2026年从Prompt Engineering演进而来的AI工程新重心,聚焦Agent系统的设计、开发与运维全流程",
+    "example": "转向Agentic Engineering → 不再只调提示词,而是搭整套Agent系统",
+    "categoryId": 6,
+    "tags": [
+      "Agentic Engineering",
+      "智能体工程",
+      "AI",
+      "2026热词",
+      "WAIC2026"
+    ]
+  },
+  {
+    "id": 565,
+    "word": "背手负鼠",
+    "meaning": "2026年全网爆火的表情包,一只北美负鼠背手站立的姿态神似'领导架子',精准复刻打工人表面体面内心崩溃的状态",
+    "example": "背手负鼠上班 → 假装成熟稳重实际快撑不住了",
+    "categoryId": 5,
+    "tags": [
+      "背手负鼠",
+      "表情包",
+      "打工人",
+      "自嘲",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 566,
+    "word": "给我擦皮鞋",
+    "meaning": "2026年热门梗,'我要验牌'的配套梗,源自周星驰电影法国赌神台词,现用于调侃或嘲讽对方",
+    "example": "我要验牌,给我擦皮鞋 → 质疑对方后嘲讽式炫耀",
+    "categoryId": 5,
+    "tags": [
+      "擦皮鞋",
+      "周星驰",
+      "网络梗",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 567,
+    "word": "养龙虾",
+    "meaning": "2026年科技圈热潮,指在设备中安装部署OpenClaw AI智能体的过程,因其图标似龙虾而得名",
+    "example": "今天成功养了一只龙虾 → 今天部署好了OpenClaw",
+    "categoryId": 6,
+    "tags": [
+      "养龙虾",
+      "OpenClaw",
+      "AI智能体",
+      "2026热词"
+    ]
   }
 ]
 module.exports = allWords
