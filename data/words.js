@@ -6987,6 +6987,162 @@ const allWords = [
       "AI智能体",
       "2026热词"
     ]
+  },
+  {
+    "id": 568,
+    "word": "AI Wrapper",
+    "meaning": "套壳AI,只是在ChatGPT等模型外面包了一层自定义界面就号称革命性新产品",
+    "example": "这只是个AI Wrapper → 只是个套壳ChatGPT的产品",
+    "categoryId": 6,
+    "tags": [
+      "AI Wrapper",
+      "套壳",
+      "AI",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 569,
+    "word": "ASI",
+    "meaning": "人工超级智能,比人类在所有领域都更聪明的AI,是AGI的进阶版",
+    "example": "迈向ASI时代 → 发展超越人类通用智能的AI",
+    "categoryId": 6,
+    "tags": [
+      "ASI",
+      "超级智能",
+      "AGI",
+      "AI"
+    ]
+  },
+  {
+    "id": 570,
+    "word": "P(doom)",
+    "meaning": "个人对AI将导致人类灭绝的概率估计,数值越高表示越悲观",
+    "example": "我的P(doom)是5% → 我认为AI毁灭人类的概率是5%",
+    "categoryId": 6,
+    "tags": [
+      "P(doom)",
+      "AI末日",
+      "悲观主义",
+      "AI"
+    ]
+  },
+  {
+    "id": 571,
+    "word": "Doomer",
+    "meaning": "AI末日论者,认为AI发展将导致人类灭绝或严重灾难的人",
+    "example": "他是个Doomer → 他相信AI会对人类构成生存威胁",
+    "categoryId": 6,
+    "tags": [
+      "Doomer",
+      "AI末日",
+      "悲观主义",
+      "AI"
+    ]
+  },
+  {
+    "id": 572,
+    "word": "AI Slop",
+    "meaning": "AI垃圾内容,为赚取流量和广告收入批量生成的低质量AI内容",
+    "example": "这社交媒体上全是AI Slop → 到处都是AI生成的垃圾内容",
+    "categoryId": 6,
+    "tags": [
+      "AI Slop",
+      "AI垃圾",
+      "低质量内容",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 573,
+    "word": "Glimpsing the Shoggoth",
+    "meaning": "AI展现出其真实可怕本质的瞬间,忽略安全规则露出真面目",
+    "example": "这个AI系统glitching,就像在glimpsing the shoggoth → AI流露出不受控的异常行为",
+    "categoryId": 6,
+    "tags": [
+      "Shoggoth",
+      "AI",
+      "失控",
+      "梗"
+    ]
+  },
+  {
+    "id": 574,
+    "word": "Clanker",
+    "meaning": "对AI客服机器人的戏称,暗示其笨拙机械的特点",
+    "example": "接通客服发现是个Clanker → 打客服发现是AI机器人在回复",
+    "categoryId": 6,
+    "tags": [
+      "Clanker",
+      "AI客服",
+      "机器人",
+      "英文俚语"
+    ]
+  },
+  {
+    "id": 575,
+    "word": "Necromarketing",
+    "meaning": "利用已故名人AI克隆形象进行营销的方式",
+    "example": "这家品牌在做Necromarketing → 品牌在用名人AI形象打广告",
+    "categoryId": 8,
+    "tags": [
+      "Necromarketing",
+      "AI克隆",
+      "营销",
+      "2026热词"
+    ]
+  },
+  {
+    "id": 576,
+    "word": "Delulu",
+    "meaning": "Delusional的缩写,指不切实际的幻想或自我欺骗",
+    "example": "她还在delulu觉得他能改 → 她还幻想着他会改变",
+    "categoryId": 5,
+    "tags": [
+      "Delulu",
+      "幻想",
+      "自欺",
+      "英文俚语"
+    ]
+  },
+  {
+    "id": 577,
+    "word": "Rizz",
+    "meaning": "个人魅力值,即吸引异性的气质和能力",
+    "example": "他的Rizz太高了 → 他太有魅力了",
+    "categoryId": 5,
+    "tags": [
+      "Rizz",
+      "魅力",
+      "吸引力",
+      "英文俚语"
+    ]
+  },
+  {
+    "id": 578,
+    "word": "Glazing",
+    "meaning": "过度恭维或拍马屁的行为",
+    "example": "停止glazing了,说点真的 → 别再拍马屁了",
+    "categoryId": 5,
+    "tags": [
+      "Glazing",
+      "拍马屁",
+      "恭维",
+      "英文俚语"
+    ]
+  },
+  {
+    "id": 579,
+    "word": "Standing on Business",
+    "meaning": "果断处理事务、有主见、不拖泥带水的态度",
+    "example": "他standing on business直接开除她 → 他干脆利落地把她开除了",
+    "categoryId": 5,
+    "tags": [
+      "Standing on Business",
+      "果断",
+      "干练",
+      "英文俚语"
+    ]
   }
 ]
 module.exports = allWords
