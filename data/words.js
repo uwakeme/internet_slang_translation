@@ -7895,6 +7895,84 @@ const allWords = [
       "谐音梗",
       "2026热词"
     ]
+  },
+  {
+    "id": 638,
+    "word": "智能体",
+    "meaning": "AI Agent,能自主决策和执行任务的AI系统,可理解为数字化的机器人助手",
+    "example": "部署智能体 → 使用AI助手自动化执行任务",
+    "categoryId": 6,
+    "tags": [
+      "Agent",
+      "AI",
+      "自动化",
+      "2025科技热词"
+    ]
+  },
+  {
+    "id": 639,
+    "word": "人形机器人",
+    "meaning": "外形类似人类的机器人,如特斯拉Optimus、宇树等,结合AI与机器人技术",
+    "example": "人形机器人进厂打工 → 仿人机器人开始工作",
+    "categoryId": 6,
+    "tags": [
+      "机器人",
+      "具身智能",
+      "2026科技热词",
+      "AI"
+    ]
+  },
+  {
+    "id": 640,
+    "word": "vibe coding",
+    "meaning": "氛围编程,用自然语言描述需求让AI生成代码的开发方式,2025柯林斯词典年度词汇",
+    "example": "vibe coding崛起 → 边聊天边写代码成为主流",
+    "categoryId": 7,
+    "tags": [
+      "AI编程",
+      "自然语言",
+      "2025热词",
+      "开发"
+    ]
+  },
+  {
+    "id": 641,
+    "word": "rage bait",
+    "meaning": "愤怒诱饵,故意发布引战内容博取流量和互动,2025牛津词典年度词汇",
+    "example": "又是rage bait → 又是在故意引战博眼球",
+    "categoryId": 8,
+    "tags": [
+      "引战",
+      "流量",
+      "2025热词",
+      "社交媒体"
+    ]
+  },
+  {
+    "id": 642,
+    "word": "预制",
+    "meaning": "指流水线化、模板化的内容或产品,如预制菜、预制回复等,表达缺乏真诚和个性",
+    "example": "这个视频太预制了 → 内容太流水线没有创意",
+    "categoryId": 5,
+    "tags": [
+      "模板化",
+      "流水线",
+      "网络热词",
+      "2026"
+    ]
+  },
+  {
+    "id": 643,
+    "word": "harness",
+    "meaning": "AI术语,控制和使用AI的工具或方法,如AI harness即引导AI按预期工作的技术手段",
+    "example": "harness AI能力 → 掌握和控制AI工具",
+    "categoryId": 6,
+    "tags": [
+      "AI工具",
+      "控制",
+      "新技术",
+      "2026"
+    ]
   }
 ]
 module.exports = allWords
