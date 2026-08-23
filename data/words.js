@@ -8319,6 +8319,103 @@ const allWords = [
       "2026",
       "新技术"
     ]
+  },
+  {
+    "id": 669,
+    "word": "DeepSeek Harness",
+    "meaning": "DeepSeek于2026年8月13日发布的开源Agent开发平台,MIT协议,插件化架构,Model+Harness=Agent,一切皆插件;发布4天内GitHub星标突破12万,被称为AI领域的'安卓时刻'",
+    "example": "用DeepSeek Harness开发 → 用插件化Agent框架构建AI应用",
+    "categoryId": 6,
+    "tags": [
+      "DeepSeek",
+      "Agent框架",
+      "开源",
+      "2026",
+      "热点"
+    ]
+  },
+  {
+    "id": 670,
+    "word": "Agent Skills",
+    "meaning": "AI Agent的可复用能力包,将完成特定目标所需的全部知识和工作流封装打包;区别于单一工具调用,Skill打包了完整任务路径,跨Agent可迁移加载,2026年成为Agent系统标配概念",
+    "example": "加载Agent Skills → 加载封装好的AI工作流能力",
+    "categoryId": 6,
+    "tags": [
+      "Agent",
+      "技能包",
+      "工作流",
+      "2026"
+    ]
+  },
+  {
+    "id": 671,
+    "word": "Context Compaction",
+    "meaning": "上下文压缩,2026年LLM超长上下文处理的关键技术,解决百万Token窗口下的信息衰减和成本问题;通过精准锁定关键信息、过滤噪声来压缩上下文,同时保持核心语义",
+    "example": "Context Compaction优化 → 压缩冗余上下文,保留关键信息降低幻觉",
+    "categoryId": 6,
+    "tags": [
+      "上下文",
+      "压缩",
+      "长文本",
+      "2026",
+      "LLM"
+    ]
+  },
+  {
+    "id": 672,
+    "word": "Scaffolding",
+    "meaning": "AI脚手架,围绕AI模型搭建的支持系统总称,包括工具定义、约束规则、输出结构化等;与Harness(安全约束)不同,Scaffolding更侧重于为AI提供执行框架和结构化环境,是Agent的基础设施层",
+    "example": "搭建Scaffolding → 为AI模型构建执行支撑框架",
+    "categoryId": 6,
+    "tags": [
+      "Scaffolding",
+      "Agent",
+      "框架",
+      "基础设施",
+      "2026"
+    ]
+  },
+  {
+    "id": 673,
+    "word": "知识以很痛的方式进入大脑",
+    "meaning": "2026年8月微博热搜梗,指人亲身经历失败、挫折或吃亏后才真正记住原本听过就忘的道理;痛感触发情绪记忆系统让信息被判定为重要并长期保存,强调'痛过才记得住'的认知升级方式",
+    "example": "知识以很痛的方式进入大脑 → 踩坑后才真正学会教训",
+    "categoryId": 5,
+    "tags": [
+      "很痛",
+      "学习",
+      "认知",
+      "2026",
+      "微博热搜"
+    ]
+  },
+  {
+    "id": 674,
+    "word": "给到夯",
+    "meaning": "台湾网络潮语,'夯'为'很热、超火'的意思,给到夯即给予最高等级的称赞,形容某人或事物表现得超级出色、爆火;源自台湾Threads/Instagram等Z世代社群",
+    "example": "这个表演给到夯 → 这个表演简直炸裂全场",
+    "categoryId": 5,
+    "tags": [
+      "给到夯",
+      "台湾",
+      "称赞",
+      "网络流行语",
+      "2026"
+    ]
+  },
+  {
+    "id": 675,
+    "word": "青春男大",
+    "meaning": "2026年8月爆红网络用语,指成年男性(尤其是运动员)展现出年轻、有活力、阳光、无心机的青春气质;源自樊振东被网友称为'完全青春男大',形容其赛场上霸气、生活中接地气的反差萌,该词阅读量突破5亿",
+    "example": "他简直是青春男大 → 他整个人看起来特别阳光有活力",
+    "categoryId": 5,
+    "tags": [
+      "青春男大",
+      "网络流行语",
+      "反差",
+      "2026",
+      "微博热搜"
+    ]
   }
 ]
 module.exports = allWords
