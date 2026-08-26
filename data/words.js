@@ -8639,6 +8639,136 @@ const allWords = [
       "反内卷",
       "2026热梗"
     ]
+  },
+  {
+    "id": 693,
+    "word": "Nano Banana",
+    "meaning": "Google Gemini图像生成模型的内部代号,指Gemini 2.5 Flash Image,因网友发现神秘代号而爆红,后被Google正式认领",
+    "example": "用Nano Banana生图 → 用Gemini 2.5 Flash Image生成图片",
+    "categoryId": 6,
+    "tags": [
+      "Nano Banana",
+      "Gemini",
+      "图像生成",
+      "AI"
+    ]
+  },
+  {
+    "id": 694,
+    "word": "Nano Banana Pro",
+    "meaning": "Google Gemini 3 Pro图像生成模型,基于Nano Banana升级,具备更强的图像质量与复杂场景理解能力",
+    "example": "用Nano Banana Pro生图 → 用Gemini 3 Pro图像模型生成",
+    "categoryId": 6,
+    "tags": [
+      "Nano Banana Pro",
+      "Gemini 3",
+      "图像生成",
+      "AI"
+    ]
+  },
+  {
+    "id": 695,
+    "word": "Gemini Deep Think",
+    "meaning": "Google Gemini 3推出的深度思考推理模式,在数学、科学等竞赛级基准上达到金牌水准",
+    "example": "开启Gemini Deep Think → 启用Gemini的深度思考模式",
+    "categoryId": 6,
+    "tags": [
+      "Gemini Deep Think",
+      "深度思考",
+      "推理",
+      "AI"
+    ]
+  },
+  {
+    "id": 696,
+    "word": "DeepSeek-V3.1",
+    "meaning": "DeepSeek于2026年8月21日发布的版本,在保持高性能的同时大幅降低推理成本,性能逼近Gemini-3",
+    "example": "用DeepSeek-V3.1对话 → 用DeepSeek 2026年8月新版本对话",
+    "categoryId": 6,
+    "tags": [
+      "DeepSeek-V3.1",
+      "DeepSeek",
+      "大模型",
+      "AI"
+    ]
+  },
+  {
+    "id": 697,
+    "word": "DeepSeek-V3.2",
+    "meaning": "DeepSeek于2026年8月发布的新一代版本,采用新注意力机制,处理128K token成本相比上代降低约70%,支持跨工具调用保持推理",
+    "example": "DeepSeek-V3.2推理成本更低 → DeepSeek新版本性价比更高",
+    "categoryId": 6,
+    "tags": [
+      "DeepSeek-V3.2",
+      "低成本",
+      "大模型",
+      "AI"
+    ]
+  },
+  {
+    "id": 698,
+    "word": "Agentic Enterprise",
+    "meaning": "Google在2026 Google I/O提出的企业AI形态,AI智能体深度嵌入业务流程,代替或辅助员工完成多步任务",
+    "example": "向Agentic Enterprise转型 → 转型为代理式企业,AI深度嵌入业务",
+    "categoryId": 6,
+    "tags": [
+      "Agentic Enterprise",
+      "代理式企业",
+      "Google",
+      "AI"
+    ]
+  },
+  {
+    "id": 699,
+    "word": "Reasoning Slider",
+    "meaning": "OpenAI GPT-5.6 Sol引入的推理强度可调节滑块,用户可按需在快速响应与深度推理间自由切换",
+    "example": "把Reasoning Slider调高 → 把推理强度调高,让AI深度思考",
+    "categoryId": 6,
+    "tags": [
+      "Reasoning Slider",
+      "推理滑块",
+      "GPT-5.6",
+      "AI"
+    ]
+  },
+  {
+    "id": 700,
+    "word": "MCP Server",
+    "meaning": "MCP协议的服务端实现,为AI Agent提供标准化工具调用入口,只要符合MCP规范AI即可接入",
+    "example": "部署MCP Server → 部署一个MCP协议的服务端",
+    "categoryId": 6,
+    "tags": [
+      "MCP Server",
+      "MCP",
+      "服务端",
+      "AI生态"
+    ]
+  },
+  {
+    "id": 701,
+    "word": "30%法则",
+    "meaning": "2026年8月24日微博热搜新梗,科普博主游识猷提出:每天只锁定2件核心任务,完成目标的30%即合格,降低完成标准反能持续行动",
+    "example": "试试30%法则 → 每天只做2件事,完成30%就好",
+    "categoryId": 5,
+    "tags": [
+      "30%法则",
+      "时间管理",
+      "松弛感",
+      "2026热梗"
+    ]
+  },
+  {
+    "id": 702,
+    "word": "高精力人群",
+    "meaning": "2026年8月24日微博热议新概念,与高体力人群相对,指天生精神旺盛、注意力持续时间长的群体",
+    "example": "他是高精力人群 → 他天生精神旺盛,做事有持续动力",
+    "categoryId": 5,
+    "tags": [
+      "高精力",
+      "人群",
+      "热搜",
+      "2026热梗"
+    ]
   }
 ]
 module.exports = allWords
