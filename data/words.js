@@ -8783,6 +8783,154 @@ const allWords = [
       "2026热梗",
       "微博"
     ]
+  },
+  {
+    "id": 704,
+    "word": "Agent Skills",
+    "meaning": "AI智能体技能包,Anthropic 2025年10月发布Claude Skills,2025年12月18日开放为agentskills.io开放标准,让AI Agent通过SKILL.md加载可重用、模块化的领域技能",
+    "example": "为Agent编写Skill → 为AI智能体编写可复用的技能包",
+    "categoryId": 6,
+    "tags": [
+      "Agent Skills",
+      "Claude Skills",
+      "开放标准",
+      "AI Agent"
+    ]
+  },
+  {
+    "id": 705,
+    "word": "ACP协议",
+    "meaning": "Agent Communication Protocol,智能体通信协议,IBM Research 2025年3月推出,2025年底并入A2A;负责智能体间的发现、协作、状态同步与治理",
+    "example": "用ACP连接Agent → 用智能体通信协议连接多个AI Agent",
+    "categoryId": 6,
+    "tags": [
+      "ACP",
+      "智能体通信",
+      "协议",
+      "AI"
+    ]
+  },
+  {
+    "id": 706,
+    "word": "WebMCP",
+    "meaning": "Google Chrome 146 Canary 2026年2月13日上线的浏览器级MCP协议,通过navigator.modelContext API让AI Agent结构化访问网页,Token效率提升约89%",
+    "example": "WebMCP让Agent读网页 → 用WebMCP让AI Agent结构化访问网站",
+    "categoryId": 6,
+    "tags": [
+      "WebMCP",
+      "Chrome",
+      "MCP",
+      "AI"
+    ]
+  },
+  {
+    "id": 707,
+    "word": "ANP协议",
+    "meaning": "Agent Network Protocol,去中心化的Agent网络协议,社区驱动,目标是打造Agent版的互联网,支持跨组织无中心注册中心的发现、认证与通信",
+    "example": "用ANP发现Agent → 用去中心化协议发现并对接其他Agent",
+    "categoryId": 6,
+    "tags": [
+      "ANP",
+      "去中心化",
+      "Agent网络",
+      "AI"
+    ]
+  },
+  {
+    "id": 708,
+    "word": "牛马",
+    "meaning": "2025年爆火、2026年继续高频使用的职场自嘲词,源自农耕时代劳动力的比喻,形容任劳任怨、加班加点但回报有限的打工人",
+    "example": "今天又是牛马的一天 → 今天又是被工作压榨的一天",
+    "categoryId": 5,
+    "tags": [
+      "牛马",
+      "打工人",
+      "自嘲",
+      "职场",
+      "2026热梗"
+    ]
+  },
+  {
+    "id": 709,
+    "word": "二牛马",
+    "meaning": "承接大牛马外包的兼职打工者,精准定义了一种隐秘职场外包市场,大牛马把PPT、数据整理等琐碎工作分包给兼职者或大学生",
+    "example": "我就是个二牛马 → 我就是接外包琐碎活的兼职打工者",
+    "categoryId": 5,
+    "tags": [
+      "二牛马",
+      "外包",
+      "兼职",
+      "职场",
+      "2026热梗"
+    ]
+  },
+  {
+    "id": 710,
+    "word": "脆皮牛马",
+    "meaning": "高敏感、低耐受力的打工人自嘲,28岁的年龄却有48岁的腰,体检报告成恐怖片,对微信提示音产生条件反射式心跳漏拍",
+    "example": "脆皮牛马又崩了 → 高敏感打工人又扛不住了",
+    "categoryId": 5,
+    "tags": [
+      "脆皮牛马",
+      "高敏感",
+      "打工人",
+      "2026热梗"
+    ]
+  },
+  {
+    "id": 711,
+    "word": "做完你的做你的",
+    "meaning": "2026年抖音爆红梗,源自景德镇鸡排主理人李俊永安抚排队顾客的名场面,被网友用来形容多线程处理任务、被催进度却仍稳如老狗的工作状态",
+    "example": "做完你的做你的,我还在控制 → 一个个来,别催,我在处理",
+    "categoryId": 5,
+    "tags": [
+      "做完你的做你的",
+      "鸡排主理人",
+      "李俊永",
+      "抖音",
+      "2026热梗"
+    ]
+  },
+  {
+    "id": 712,
+    "word": "偷感",
+    "meaning": "做事拘谨、偷偷摸摸、希望隐身的状态,源自2024年流行至今,形容默默努力不张扬或因在意他人目光而蜷缩回避的心理状态",
+    "example": "我偷感很重 → 我喜欢低调做事,不想被人关注",
+    "categoryId": 5,
+    "tags": [
+      "偷感",
+      "低调",
+      "隐身",
+      "心理状态",
+      "2024流行语"
+    ]
+  },
+  {
+    "id": 713,
+    "word": "盗人",
+    "meaning": "与偷感相对的概念,指想要的东西主动争取、不理解的事直接坦白、从不隐藏、从不内耗的坦荡行事风格",
+    "example": "她是典型盗人 → 她不掩饰弱点,敢说做不到也能坦诚沟通",
+    "categoryId": 5,
+    "tags": [
+      "盗人",
+      "坦荡",
+      "不内耗",
+      "职场",
+      "2026热梗"
+    ]
+  },
+  {
+    "id": 714,
+    "word": "Job Hugging",
+    "meaning": "2026年最夯全球职场新词,指经济不确定时期不敢离职、紧紧抱住现有工作的状态,调查称近六成美国上班族自称Job Hugger",
+    "example": "I'm a job hugger → 我现在不敢离职,先抱紧这份工作",
+    "categoryId": 5,
+    "tags": [
+      "Job Hugging",
+      "抱紧工作",
+      "职场",
+      "2026热梗"
+    ]
   }
 ]
 module.exports = allWords
