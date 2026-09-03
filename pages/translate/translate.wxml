@@ -51,7 +51,11 @@
     </view>
   </view>
 
-  <view class="history" wx:if="{{history.length > 0}}">
+    <view class="no-match-tip" wx:if="{{noMatch && result}}">
+      <text>未发现可转换的表达，已显示原文</text>
+    </view>
+
+    <view class="history" wx:if="{{history.length > 0}}">
     <view class="history-header">
       <text class="history-title">翻译历史</text>
       <button class="clear-btn" bindtap="clearHistory" size="mini">清空</button>

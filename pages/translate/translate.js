@@ -5,6 +5,7 @@ Page({
     mode: 'toHuman',
     inputText: '',
     result: '',
+    noMatch: false,
     translating: false,
     history: [],
     inputFocus: false
@@ -35,7 +36,8 @@ Page({
     this.setData({
       mode: e.currentTarget.dataset.mode,
       inputText: '',
-      result: ''
+      result: '',
+      noMatch: false
     })
   },
 
@@ -69,11 +71,11 @@ Page({
     // 模拟翻译延迟
     var self = this
     setTimeout(function() {
-      var result
+      var res
       if (self.data.mode === 'toHuman') {
-        result = translator.translateToHuman(self.data.inputText)
+        res = translator.translateToHuman(self.data.inputText)
       } else {
-        result = translator.translateToJargon(self.data.inputText)
+        res = translator.translateToJargon(self.data.inputText)
       }
 
       // 添加到历史记录
@@ -84,13 +86,14 @@ Page({
 
       history.unshift({
         original: self.data.inputText,
-        translated: result,
+        translated: res.text,
         time: timeStr,
         mode: self.data.mode
       })
 
       self.setData({
-        result: result,
+        result: res.text,
+        noMatch: res.matched === 0,
         translating: false,
         history: history.slice(0, 20) // 只保留最近20条
       })
