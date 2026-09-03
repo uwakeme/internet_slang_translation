@@ -2,12 +2,36 @@
 const categories = require('../data/categories.js')
 const allWords = require('../data/words.js')
 
-// 工具函数
-function getCategories() {
+// ---- 派生数据缓存（避免每次调用都 filter 全部词） ----
+let _categoriesCache = null
+let _wordsByCategoryCache = null
+
+function buildCategories() {
+  const countMap = {}
+  for (let i = 0; i < allWords.length; i++) {
+    const cid = allWords[i].categoryId
+    countMap[cid] = (countMap[cid] || 0) + 1
+  }
   return categories.map(cat => ({
     ...cat,
-    count: allWords.filter(word => word.categoryId === cat.id).length
+    count: countMap[cat.id] || 0
   }))
+}
+
+function buildWordsByCategory() {
+  const map = {}
+  for (let i = 0; i < allWords.length; i++) {
+    const w = allWords[i]
+    if (!map[w.categoryId]) map[w.categoryId] = []
+    map[w.categoryId].push(w)
+  }
+  return map
+}
+
+// 工具函数
+function getCategories() {
+  if (!_categoriesCache) _categoriesCache = buildCategories()
+  return _categoriesCache
 }
 
 function getCategoriesByType(type) {
@@ -15,7 +39,8 @@ function getCategoriesByType(type) {
 }
 
 function getWordsByCategory(categoryId) {
-  return allWords.filter(word => word.categoryId === categoryId)
+  if (!_wordsByCategoryCache) _wordsByCategoryCache = buildWordsByCategory()
+  return _wordsByCategoryCache[categoryId] || []
 }
 
 function getAllWords() {

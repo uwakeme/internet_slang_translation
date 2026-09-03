@@ -1,5 +1,51 @@
 var dataModule = require('../../utils/data.js')
 
+var SECTION_COLORS = ['#f5a623', '#ff6b6b', '#4ecdc4', '#a78bfa']
+var SELECTED_CATEGORY_IDS = [1, 2, 8, 6]
+var HOT_WORDS_LIMIT = 8
+var WORDS_PER_CATEGORY = 3
+var MEANING_MAX_LEN = 20
+
+function shortenMeaning(meaning) {
+  return meaning.length > MEANING_MAX_LEN
+    ? meaning.substring(0, MEANING_MAX_LEN) + '...'
+    : meaning
+}
+
+function buildHotWords(allWords) {
+  return allWords.slice(0, HOT_WORDS_LIMIT).map(function (w) {
+    return { id: w.id, word: w.word, meaning: shortenMeaning(w.meaning) }
+  })
+}
+
+function buildCategorySections(categories) {
+  var sections = []
+  for (var i = 0; i < SELECTED_CATEGORY_IDS.length; i++) {
+    var catId = SELECTED_CATEGORY_IDS[i]
+    var cat = null
+    for (var j = 0; j < categories.length; j++) {
+      if (categories[j].id === catId) { cat = categories[j]; break }
+    }
+    if (!cat) continue
+
+    var words = dataModule.getWordsByCategory(catId)
+      .slice(0, WORDS_PER_CATEGORY)
+      .map(function (w) {
+        return { id: w.id, word: w.word, meaning: shortenMeaning(w.meaning) }
+      })
+
+    sections.push({
+      id: cat.id,
+      name: cat.name,
+      iconType: cat.iconType,
+      icon: cat.icon,
+      color: SECTION_COLORS[i],
+      words: words
+    })
+  }
+  return sections
+}
+
 Page({
   data: {
     hotWords: [],
@@ -7,62 +53,15 @@ Page({
   },
 
   onLoad: function () {
-    this.loadHotWords()
-    this.loadCategorySections()
-  },
-
-  loadHotWords: function () {
-    var allWords = dataModule.getAllWords()
-    // 取前 8 个词汇作为今日热词
-    var hotWords = allWords.slice(0, 8).map(function (w) {
-      var shortMeaning = w.meaning.length > 20 ? w.meaning.substring(0, 20) + '...' : w.meaning
-      return {
-        id: w.id,
-        word: w.word,
-        meaning: shortMeaning
-      }
-    })
-    this.setData({ hotWords: hotWords })
-  },
-
-  loadCategorySections: function () {
-    var categories = dataModule.getCategories()
-    // 选取 4 个分类：会议用语、项目管理、产品运营、AI人工智能
-    var selectedIds = [1, 2, 8, 6]
-    var sections = []
-    var colors = ['#f5a623', '#ff6b6b', '#4ecdc4', '#a78bfa']
-
-    for (var i = 0; i < selectedIds.length; i++) {
-      var catId = selectedIds[i]
-      var cat = null
-      for (var j = 0; j < categories.length; j++) {
-        if (categories[j].id === catId) {
-          cat = categories[j]
-          break
-        }
-      }
-      if (!cat) continue
-
-      var words = dataModule.getWordsByCategory(catId).slice(0, 3).map(function (w) {
-        var shortMeaning = w.meaning.length > 20 ? w.meaning.substring(0, 20) + '...' : w.meaning
-        return {
-          id: w.id,
-          word: w.word,
-          meaning: shortMeaning
-        }
-      })
-
-      sections.push({
-        id: cat.id,
-        name: cat.name,
-        iconType: cat.iconType,
-        icon: cat.icon,
-        color: colors[i],
-        words: words
-      })
+    try {
+      var hotWords = buildHotWords(dataModule.getAllWords())
+      var sections = buildCategorySections(dataModule.getCategories())
+      // 合并 setData，减少一次渲染通知
+      this.setData({ hotWords: hotWords, categorySections: sections })
+    } catch (err) {
+      console.error('[index onLoad] failed:', err)
+      wx.showToast({ title: '首页加载失败,请重试', icon: 'none' })
     }
-
-    this.setData({ categorySections: sections })
   },
 
   goToSearch: function () {

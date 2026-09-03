@@ -37,6 +37,7 @@
       <view class="section-bar"></view>
       <text class="section-title">分类速览</text>
     </view>
+    <view wx:if="{{categorySections.length === 0}}" class="empty-block">分类加载中...</view>
     <view
       class="category-block"
       wx:for="{{categorySections}}"
@@ -50,7 +51,7 @@
       >
         <view class="category-color-dot" style="background: {{item.color}};"></view>
         <view class="category-icon-box">
-          <image wx:if="{{item.iconType === 'image'}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit"/>
+          <image wx:if="{{item.iconType === 'image'}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit" lazy-load="true"/>
           <text wx:else class="category-icon-text">{{item.icon}}</text>
         </view>
         <text class="category-name">{{item.name}}</text>
@@ -65,6 +66,8 @@
           style="border-left-color: {{item.color}};"
           data-word="{{word.word}}"
           bindtap="goToWordDetail"
+          hover-class="word-card-hover"
+          hover-stay-time="80"
         >
           <text class="word-name">{{word.word}}</text>
           <text class="word-meaning">{{word.meaning}}</text>
