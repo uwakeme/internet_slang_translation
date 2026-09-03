@@ -2806,23 +2806,11 @@ const allWords = [
     ]
   },
   {
-    "id": 231,
-    "word": "活人感",
-    "meaning": "真实自然的状态",
-    "example": "这个人很有活人感 → 这个人很真实自然",
-    "categoryId": 5,
-    "tags": [
-      "真实",
-      "自然",
-      "网络流行语"
-    ]
-  },
-  {
     "id": 232,
     "word": "情绪价值",
     "meaning": "提供情绪支持与陪伴",
     "example": "提供情绪价值 → 提供情绪支持与陪伴",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "情绪",
       "价值",
@@ -2831,93 +2819,9 @@ const allWords = [
     ]
   },
   {
-    "id": 233,
-    "word": "赛博对账",
-    "meaning": "在网上核对彼此生活细节和共同记忆",
-    "example": "赛博对账 → 在网上核对彼此生活细节",
-    "categoryId": 5,
-    "tags": [
-      "赛博",
-      "对账",
-      "网络流行语"
-    ]
-  },
-  {
-    "id": 234,
-    "word": "敬自己一杯",
-    "meaning": "对努力与平凡的接纳与自我和解",
-    "example": "敬自己一杯 → 对自己说声辛苦了",
-    "categoryId": 5,
-    "tags": [
-      "自我",
-      "和解",
-      "网络流行语"
-    ]
-  },
-  {
-    "id": 235,
-    "word": "预制xx",
-    "meaning": "像预制菜一样标准化的某物",
-    "example": "预制朋友圈 → 标准化的朋友圈内容",
-    "categoryId": 5,
-    "tags": [
-      "预制",
-      "标准化",
-      "网络流行语"
-    ]
-  },
-  {
-    "id": 236,
-    "word": "谷子",
-    "meaning": "二次元IP周边产品",
-    "example": "买谷子 → 买二次元周边",
-    "categoryId": 5,
-    "tags": [
-      "二次元",
-      "周边",
-      "IP"
-    ]
-  },
-  {
-    "id": 237,
-    "word": "浪浪山小妖怪",
-    "meaning": "平凡小人物的共鸣与自嘲",
-    "example": "浪浪山小妖怪 → 普通打工人",
-    "categoryId": 5,
-    "tags": [
-      "浪浪山",
-      "小妖怪",
-      "打工人"
-    ]
-  },
-  {
-    "id": 238,
-    "word": "爱你老己",
-    "meaning": "好好爱自己",
-    "example": "爱你老己,明天见 → 好好爱自己,明天见",
-    "categoryId": 5,
-    "tags": [
-      "爱自己",
-      "悦己",
-      "网络流行语"
-    ]
-  },
-  {
-    "id": 239,
-    "word": "班味",
-    "meaning": "被上班状态浸透后的疲惫气质",
-    "example": "身上有班味 → 看起来很疲惫被工作折磨",
-    "categoryId": 5,
-    "tags": [
-      "班味",
-      "疲惫",
-      "打工人"
-    ]
-  },
-  {
     "id": 240,
     "word": "AI Agent",
-    "meaning": "人工智能智能体,能自主完成复杂任务",
+    "meaning": "人工智能智能体，能自主完成复杂任务",
     "example": "开发AI Agent → 开发能自主行动的智能体",
     "categoryId": 6,
     "tags": [
@@ -2928,47 +2832,9 @@ const allWords = [
     ]
   },
   {
-    "id": 241,
-    "word": "RAG",
-    "meaning": "检索增强生成",
-    "example": "RAG系统 → 检索增强生成系统",
-    "categoryId": 6,
-    "tags": [
-      "RAG",
-      "检索",
-      "生成",
-      "AI"
-    ]
-  },
-  {
-    "id": 242,
-    "word": "Embedding",
-    "meaning": "向量嵌入,将文本转为数值向量",
-    "example": "Embedding模型 → 向量化表示模型",
-    "categoryId": 6,
-    "tags": [
-      "Embedding",
-      "向量",
-      "嵌入",
-      "AI"
-    ]
-  },
-  {
-    "id": 243,
-    "word": "Token",
-    "meaning": "语言模型的基本处理单元",
-    "example": "Token数量限制 → 模型处理的字符单元限制",
-    "categoryId": 6,
-    "tags": [
-      "Token",
-      "词元",
-      "AI"
-    ]
-  },
-  {
     "id": 244,
     "word": "MCP",
-    "meaning": "模型上下文协议,AI与外部工具的标准化对接",
+    "meaning": "模型上下文协议，AI与外部工具的标准化对接",
     "example": "MCP协议 → 模型上下文协议",
     "categoryId": 6,
     "tags": [
@@ -2980,7 +2846,7 @@ const allWords = [
   {
     "id": 245,
     "word": "Function Call",
-    "meaning": "函数调用,AI调用外部工具的能力",
+    "meaning": "函数调用，AI调用外部工具的能力",
     "example": "Function Call功能 → AI调用外部函数的能力",
     "categoryId": 6,
     "tags": [
@@ -2992,7 +2858,7 @@ const allWords = [
   {
     "id": 246,
     "word": "Agentic RAG",
-    "meaning": "智能体增强的RAG,自主决策检索策略",
+    "meaning": "智能体增强的RAG，自主决策检索策略",
     "example": "Agentic RAG系统 → 智能体增强的检索系统",
     "categoryId": 6,
     "tags": [
@@ -3064,39 +2930,27 @@ const allWords = [
     ]
   },
   {
-    "id": 252,
-    "word": "丝瓜汤文学",
-    "meaning": "一种释压自嘲的文字风格",
-    "example": "丝瓜汤文学 → 躺平摆烂的自嘲文学",
-    "categoryId": 5,
+    "id": 253,
+    "word": "AI垃圾",
+    "meaning": "低质量、重复性强的AI生成内容",
+    "example": "识别AI垃圾 → 识别低质量AI生成内容",
+    "categoryId": 6,
     "tags": [
-      "丝瓜汤",
-      "自嘲",
-      "释压"
+      "AI糟粕",
+      "AI污染",
+      "网络流行语"
     ]
   },
   {
     "id": 254,
     "word": "Vibe Coding",
-    "meaning": "AI辅助编程,用自然语言描述需求让AI生成代码",
-    "example": "用Vibe Coding方式开发 → 用自然语言描述需求,AI生成代码",
+    "meaning": "AI辅助编程，用自然语言描述需求让AI生成代码",
+    "example": "用Vibe Coding方式开发 → 用自然语言描述需求，AI生成代码",
     "categoryId": 6,
     "tags": [
       "Vibe Coding",
       "AI编程",
       "开发"
-    ]
-  },
-  {
-    "id": 255,
-    "word": "具身智能",
-    "meaning": "能感知物理世界并与之交互的AI系统",
-    "example": "具身智能机器人 → 能感知并交互的AI机器人",
-    "categoryId": 6,
-    "tags": [
-      "具身智能",
-      "机器人",
-      "AI"
     ]
   },
   {
@@ -3112,21 +2966,9 @@ const allWords = [
     ]
   },
   {
-    "id": 257,
-    "word": "AI糟粕",
-    "meaning": "低质量批量生成的AI内容",
-    "example": "识别AI糟粕 → 识别低质量AI生成内容",
-    "categoryId": 6,
-    "tags": [
-      "AI糟粕",
-      "AI内容",
-      "网络流行语"
-    ]
-  },
-  {
     "id": 259,
     "word": "DeepSeek",
-    "meaning": "中国本土大模型系列,以低成本高性能著称",
+    "meaning": "中国本土大模型系列，以低成本高性能著称",
     "example": "DeepSeek开源模型 → 中国本土大语言模型",
     "categoryId": 6,
     "tags": [
@@ -3150,7 +2992,7 @@ const allWords = [
   {
     "id": 261,
     "word": "LLMOps",
-    "meaning": "大语言模型运维,包括部署、监控、优化等",
+    "meaning": "大语言模型运维，包括部署、监控、优化等",
     "example": "LLMOps流程 → 大模型运维流程",
     "categoryId": 6,
     "tags": [
@@ -3162,7 +3004,7 @@ const allWords = [
   {
     "id": 262,
     "word": "AI Coding",
-    "meaning": "AI辅助编程,用AI工具协助写代码",
+    "meaning": "AI辅助编程，用AI工具协助写代码",
     "example": "AI Coding工具 → AI编程辅助工具",
     "categoryId": 6,
     "tags": [
@@ -3174,7 +3016,7 @@ const allWords = [
   {
     "id": 263,
     "word": "蒸馏",
-    "meaning": "让大模型当导师,小模型当学生,压缩知识",
+    "meaning": "让大模型当导师，小模型当学生，压缩知识",
     "example": "模型蒸馏 → 将大模型知识压缩到小模型",
     "categoryId": 6,
     "tags": [
@@ -3210,7 +3052,7 @@ const allWords = [
   {
     "id": 266,
     "word": "混合专家",
-    "meaning": "MoE架构,只激活部分专家网络处理请求",
+    "meaning": "MoE架构，只激活部分专家网络处理请求",
     "example": "混合专家模型 → MoE架构模型",
     "categoryId": 6,
     "tags": [
@@ -3220,23 +3062,11 @@ const allWords = [
     ]
   },
   {
-    "id": 267,
-    "word": "村咖",
-    "meaning": "开在乡村里的特色咖啡馆",
-    "example": "去村咖打卡 → 去乡村咖啡馆拍照",
-    "categoryId": 5,
-    "tags": [
-      "村咖",
-      "乡村",
-      "生活方式"
-    ]
-  },
-  {
     "id": 268,
     "word": "主理人",
     "meaning": "能将自身特质与品牌结合的负责人",
     "example": "品牌主理人 → 品牌负责人/决策者",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "主理人",
       "品牌",
@@ -3248,7 +3078,7 @@ const allWords = [
     "word": "邪修",
     "meaning": "不走寻常路的野路子高效方法",
     "example": "邪修做饭 → 用离谱但高效的方法做饭",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "邪修",
       "野路子",
@@ -3260,7 +3090,7 @@ const allWords = [
     "word": "拼好×",
     "meaning": "通过拼单组合追求高性价比的态度",
     "example": "拼好床 → 合租床铺共享资源",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "拼好",
       "性价比",
@@ -3270,7 +3100,7 @@ const allWords = [
   {
     "id": 271,
     "word": "内卷",
-    "meaning": "在有限环境下无限竞争,收益不变但付出加倍",
+    "meaning": "在有限环境下无限竞争，收益不变但付出加倍",
     "example": "职场内卷 → 职场过度竞争",
     "categoryId": 5,
     "tags": [
@@ -3282,7 +3112,7 @@ const allWords = [
   {
     "id": 272,
     "word": "躺平",
-    "meaning": "放弃过度竞争,选择低欲望的生活方式",
+    "meaning": "放弃过度竞争，选择低欲望的生活方式",
     "example": "选择躺平 → 选择不卷了",
     "categoryId": 5,
     "tags": [
@@ -3306,7 +3136,7 @@ const allWords = [
   {
     "id": 274,
     "word": "割韭菜",
-    "meaning": "被利用、被收割,常见于投资或职场中被上层压榨",
+    "meaning": "被利用、被收割，常见于投资或职场中被上层压榨",
     "example": "被割韭菜 → 被当成韭菜收割",
     "categoryId": 5,
     "tags": [
@@ -3332,7 +3162,7 @@ const allWords = [
     "word": "抽象力",
     "meaning": "用玩梗、解构、荒诞幽默消解压力的能力",
     "example": "抽象力拉满 → 很会玩梗解构",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "抽象力",
       "玩梗",
@@ -3340,35 +3170,11 @@ const allWords = [
     ]
   },
   {
-    "id": 277,
-    "word": "外耗",
-    "meaning": "不过度消耗自己、不在意他人评价的生活态度",
-    "example": "遇到不讲理的客户,不如直接外耗他 → 把规矩硬气说清楚",
-    "categoryId": 5,
-    "tags": [
-      "外耗",
-      "自我保护",
-      "生活态度"
-    ]
-  },
-  {
-    "id": 278,
-    "word": "绝摆",
-    "meaning": "闽南语「很棒、厉害」的意思,2026年走红网络",
-    "example": "这个东西绝摆 → 这个东西太厉害了",
-    "categoryId": 5,
-    "tags": [
-      "绝摆",
-      "闽南语",
-      "网络流行语"
-    ]
-  },
-  {
     "id": 279,
     "word": "硬控",
-    "meaning": "被强烈吸引无法自拔,像被游戏技能控制一样",
+    "meaning": "被强烈吸引无法自拔，像被游戏技能控制一样",
     "example": "被这个视频硬控了 → 沉迷这个视频停不下来",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "硬控",
       "沉迷",
@@ -3380,7 +3186,7 @@ const allWords = [
     "word": "晕碳",
     "meaning": "摄入大量碳水后犯困、想睡觉",
     "example": "吃完米饭晕碳 → 吃碳水后犯困",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "晕碳",
       "碳水",
@@ -3390,9 +3196,9 @@ const allWords = [
   {
     "id": 281,
     "word": "低山臭水遇知音",
-    "meaning": "高山流水遇知音的反差改写版,更接地气",
+    "meaning": "高山流水遇知音的反差改写版，更接地气",
     "example": "低山臭水遇知音 → 普通人找到懂自己的人",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "低山臭水",
       "知音",
@@ -3402,9 +3208,9 @@ const allWords = [
   {
     "id": 282,
     "word": "不知道我的身材很曼妙",
-    "meaning": "淘宝神回复,指答非所问或自信满满的态度",
-    "example": "显胯宽吗?不知道,我的身材很曼妙 → 自信又可爱的回答",
-    "categoryId": 5,
+    "meaning": "淘宝神回复，指答非所问或自信满满的态度",
+    "example": "显胯宽吗?不知道，我的身材很曼妙 → 自信又可爱的回答",
+    "categoryId": 15,
     "tags": [
       "曼妙",
       "淘宝神回复",
@@ -3412,23 +3218,11 @@ const allWords = [
     ]
   },
   {
-    "id": 283,
-    "word": "留友看",
-    "meaning": "Threads热门用语,留着给朋友看的缩写",
-    "example": "这个太绝了,留友看 → 好内容推荐给朋友",
-    "categoryId": 5,
-    "tags": [
-      "留友看",
-      "Threads",
-      "社交"
-    ]
-  },
-  {
     "id": 284,
     "word": "超顶",
     "meaning": "形容最高级、最棒、极致的品质",
     "example": "用料最顶 → 用料最好最顶级",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "超顶",
       "最好",
@@ -3440,7 +3234,7 @@ const allWords = [
     "word": "佛系",
     "meaning": "对事情不争不抢、顺其自然的态度",
     "example": "佛系养生 → 不刻意追求的养生方式",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "佛系",
       "顺其自然",
@@ -3450,7 +3244,7 @@ const allWords = [
   {
     "id": 286,
     "word": "A2A",
-    "meaning": "Agent to Agent协议,智能体之间通信的标准方式",
+    "meaning": "Agent to Agent协议，智能体之间通信的标准方式",
     "example": "A2A协议 → 智能体间的通信协议",
     "categoryId": 6,
     "tags": [
@@ -3475,7 +3269,7 @@ const allWords = [
   {
     "id": 288,
     "word": "SLM",
-    "meaning": "小语言模型,参数较少但专精的AI模型",
+    "meaning": "小语言模型，参数较少但专精的AI模型",
     "example": "SLM部署 → 小型语言模型本地部署",
     "categoryId": 6,
     "tags": [
@@ -3513,7 +3307,7 @@ const allWords = [
     "word": "健康寿命",
     "meaning": "在良好状态下生活的年限",
     "example": "延长健康寿命 → 提升晚年生活质量",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "健康",
       "寿命",
@@ -3535,9 +3329,9 @@ const allWords = [
   {
     "id": 293,
     "word": "YYDS",
-    "meaning": "永远的神,表示极度赞美",
+    "meaning": "永远的神，表示极度赞美",
     "example": "这个产品YYDS → 这个产品太厉害了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "YYDS",
       "永远的神",
@@ -3547,9 +3341,9 @@ const allWords = [
   {
     "id": 294,
     "word": "Ven",
-    "meaning": "把「问」发成「ven」,大陆口音的趣味空耳",
+    "meaning": "把「问」发成「ven」，大陆口音的趣味空耳",
     "example": "你venty真多 → 你问题真多",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Ven",
       "空耳",
@@ -3559,9 +3353,9 @@ const allWords = [
   {
     "id": 295,
     "word": "与眾分",
-    "meaning": "与眾不同的缩写,形容独特",
+    "meaning": "与眾不同的缩写，形容独特",
     "example": "这个观点很与眾分 → 这个观点很独特",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "与眾分",
       "独特",
@@ -3573,7 +3367,7 @@ const allWords = [
     "word": "后门有车",
     "meaning": "过于认真提醒却闹乌龙的场景",
     "example": "后门有车这句话 → 过度紧张提醒却搞错情况的梗",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "后门有车",
       "乌龙",
@@ -3581,23 +3375,11 @@ const allWords = [
     ]
   },
   {
-    "id": 297,
-    "word": "真冰涼",
-    "meaning": "吃完热食后喝冰饮的爽快感",
-    "example": "这个真冰涼 → 冰凉饮料配热食太爽了",
-    "categoryId": 5,
-    "tags": [
-      "真冰涼",
-      "台湾",
-      "美食梗"
-    ]
-  },
-  {
     "id": 298,
     "word": "少癲大癲",
-    "meaning": "形容疯狂程度,少癲是轻微夸张,大癲是极度夸张",
+    "meaning": "形容疯狂程度，少癲是轻微夸张，大癲是极度夸张",
     "example": "这件事少癲 → 这件事有点夸张",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "少癲大癲",
       "夸张",
@@ -3607,9 +3389,9 @@ const allWords = [
   {
     "id": 299,
     "word": "自肥",
-    "meaning": "以不正当手段图利自己,谋取私利",
+    "meaning": "以不正当手段图利自己，谋取私利",
     "example": "自肥可耻但很有用 → 为自己谋利虽不光彩但很爽",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "自肥",
       "香港",
@@ -3619,9 +3401,9 @@ const allWords = [
   {
     "id": 300,
     "word": "触爛",
-    "meaning": "强烈赞同,爛是「true」的谐音,触即认同",
-    "example": "触爛 → 说得太对了,完全同意",
-    "categoryId": 5,
+    "meaning": "强烈赞同，爛是「true」的谐音，触即认同",
+    "example": "触爛 → 说得太对了，完全同意",
+    "categoryId": 15,
     "tags": [
       "触爛",
       "认同",
@@ -3631,9 +3413,9 @@ const allWords = [
   {
     "id": 301,
     "word": "張中和",
-    "meaning": "「尊重我」的谐音,期望对方给予尊重",
+    "meaning": "「尊重我」的谐音，期望对方给予尊重",
     "example": "張中和一下好吗 → 请给我一点尊重好吗",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "張中和",
       "粤语",
@@ -3645,7 +3427,7 @@ const allWords = [
     "word": "脆",
     "meaning": "Threads社交平台的代称",
     "example": "在脆上看到这个帖子 → 在Threads上看到这个帖子",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "脆",
       "Threads",
@@ -3655,9 +3437,9 @@ const allWords = [
   {
     "id": 304,
     "word": "SLDPK",
-    "meaning": "粤语俚语,意为笑到离谱、笑翻天",
+    "meaning": "粤语俚语，意为笑到离谱、笑翻天",
     "example": "笑到我SLDPK → 笑到我快不行了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "SLDPK",
       "粤语",
@@ -3667,9 +3449,9 @@ const allWords = [
   {
     "id": 305,
     "word": "世一",
-    "meaning": "世界第一的缩写,用于表达极度的赞美和崇拜",
+    "meaning": "世界第一的缩写，用于表达极度的赞美和崇拜",
     "example": "我的偶像世一 → 我的偶像天下第一",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "世一",
       "世界第一",
@@ -3677,23 +3459,11 @@ const allWords = [
     ]
   },
   {
-    "id": 306,
-    "word": "MM7",
-    "meaning": "粤语速成输入法,正字的编码,也表示肯定和赞同",
-    "example": "这首歌MM7! → 这首歌太正了!",
-    "categoryId": 5,
-    "tags": [
-      "MM7",
-      "粤语",
-      "肯定"
-    ]
-  },
-  {
     "id": 307,
     "word": "LARPing",
-    "meaning": ".live action role playing,扮演某种身份或生活方式",
+    "meaning": ".live action role playing，扮演某种身份或生活方式",
     "example": "她在LARPing一种自律精緻女孩的人设 → 她在扮演一种自律精致女孩的形象",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "LARPing",
       "扮演",
@@ -3703,9 +3473,9 @@ const allWords = [
   {
     "id": 308,
     "word": "Mogging",
-    "meaning": "在外貌、气质或条件上形成压倒性优势,让对方相形见绌",
+    "meaning": "在外貌、气质或条件上形成压倒性优势，让对方相形见绌",
     "example": "他直接在Mogging全场 → 他直接碾压全场",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Mogging",
       "碾压",
@@ -3715,9 +3485,9 @@ const allWords = [
   {
     "id": 309,
     "word": "Flow State",
-    "meaning": "心流状态,指极度专注投入眼前事物,获得愉悦和自我效能感",
-    "example": "别打扰我,我在Flow State → 别打扰我,我在专注状态",
-    "categoryId": 5,
+    "meaning": "心流状态，指极度专注投入眼前事物，获得愉悦和自我效能感",
+    "example": "别打扰我，我在Flow State → 别打扰我，我在专注状态",
+    "categoryId": 15,
     "tags": [
       "Flow State",
       "心流",
@@ -3727,9 +3497,9 @@ const allWords = [
   {
     "id": 310,
     "word": "Moot",
-    "meaning": "社群平台上互相关注的用户,介于网友和真实朋友之间",
+    "meaning": "社群平台上互相关注的用户，介于网友和真实朋友之间",
     "example": "我的moots → 我互关的好友",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Moot",
       "互关",
@@ -3739,9 +3509,9 @@ const allWords = [
   {
     "id": 311,
     "word": "Lowkey genuinely",
-    "meaning": "低调地、真心地,暗含不想张扬的情绪",
+    "meaning": "低调地、真心地，暗含不想张扬的情绪",
     "example": "I lowkey genuinely think it's great → 我真心觉得超棒",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Lowkey genuinely",
       "真心",
@@ -3749,21 +3519,9 @@ const allWords = [
     ]
   },
   {
-    "id": 253,
-    "word": "AI垃圾",
-    "meaning": "低质量、重复性强的AI生成内容",
-    "example": "识别AI垃圾 → 识别低质量AI生成内容",
-    "categoryId": 6,
-    "tags": [
-      "AI糟粕",
-      "AI污染",
-      "网络流行语"
-    ]
-  },
-  {
     "id": 313,
     "word": "AGI",
-    "meaning": "通用人工智能,具备像人类一样处理广泛任务的能力",
+    "meaning": "通用人工智能，具备像人类一样处理广泛任务的能力",
     "example": "迈向AGI → 朝着通用人工智能发展",
     "categoryId": 6,
     "tags": [
@@ -3775,9 +3533,9 @@ const allWords = [
   {
     "id": 314,
     "word": "智性沸腾",
-    "meaning": "2026年B站报告提出的年轻消费趋势,指通过消费为自我认同的价值投票",
+    "meaning": "2026年B站报告提出的年轻消费趋势，指通过消费为自我认同的价值投票",
     "example": "智性沸腾一代 → 理性消费、注重价值的年轻群体",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "智性沸腾",
       "Z世代",
@@ -3785,21 +3543,9 @@ const allWords = [
     ]
   },
   {
-    "id": 315,
-    "word": "抽象力",
-    "meaning": "用玩梗、解构、荒诞幽默消解压力的能力",
-    "example": "抽象力拉满 → 很会玩梗解构",
-    "categoryId": 5,
-    "tags": [
-      "抽象力",
-      "玩梗",
-      "2026热词"
-    ]
-  },
-  {
     "id": 316,
     "word": "合成数据",
-    "meaning": "人工生成的训练数据,用于解决真实数据不足或版权问题",
+    "meaning": "人工生成的训练数据，用于解决真实数据不足或版权问题",
     "example": "合成数据训练 → 用AI生成的数据训练模型",
     "categoryId": 6,
     "tags": [
@@ -3837,7 +3583,7 @@ const allWords = [
     "word": "电子布洛芬",
     "meaning": "能让人快速开心的短视频/音乐/综艺",
     "example": "刷短视频是电子布洛芬 → 能快速止痛的娱乐内容",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "电子布洛芬",
       "娱乐",
@@ -3860,8 +3606,8 @@ const allWords = [
     "id": 321,
     "word": "数字游民",
     "meaning": "利用互联网远程工作、边旅行边工作的人群",
-    "example": "成为数字游民 → 利用网络远程工作,边旅行边赚钱",
-    "categoryId": 5,
+    "example": "成为数字游民 → 利用网络远程工作，边旅行边赚钱",
+    "categoryId": 15,
     "tags": [
       "数字游民",
       "远程工作",
@@ -3873,7 +3619,7 @@ const allWords = [
     "word": "赛博养生",
     "meaning": "用智能设备和App管理健康的新型养生方式",
     "example": "赛博养生流行 → 用智能设备管理健康成新趋势",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "赛博养生",
       "健康管理",
@@ -3885,7 +3631,7 @@ const allWords = [
     "word": "松弛感",
     "meaning": "追求从容不迫、不内耗的生活态度",
     "example": "保持松弛感 → 保持从容不焦虑的状态",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "松弛感",
       "生活态度",
@@ -3909,7 +3655,7 @@ const allWords = [
     "word": "公园20分钟效应",
     "meaning": "每天在公园待20分钟即可显著减压的现象",
     "example": "公园20分钟效应 → 在公园待20分钟能有效减压",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "公园20分钟",
       "减压",
@@ -3931,9 +3677,9 @@ const allWords = [
   {
     "id": 327,
     "word": "断舍离2.0",
-    "meaning": "新一代极简主义,强调在数字时代放下手机、减少信息焦虑",
+    "meaning": "新一代极简主义，强调在数字时代放下手机、减少信息焦虑",
     "example": "断舍离2.0时代 → 从物质极简到数字极简的升级",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "断舍离",
       "极简主义",
@@ -3943,7 +3689,7 @@ const allWords = [
   {
     "id": 328,
     "word": "Context Engineering",
-    "meaning": "上下文工程,给AI足够的信息让它干对的事",
+    "meaning": "上下文工程，给AI足够的信息让它干对的事",
     "example": "Context Engineering优化 → 优化AI的上下文输入",
     "categoryId": 6,
     "tags": [
@@ -3955,7 +3701,7 @@ const allWords = [
   {
     "id": 329,
     "word": "Intent-driven Computing",
-    "meaning": "意图驱动计算,AI从被动回答转向主动理解意图并执行",
+    "meaning": "意图驱动计算，AI从被动回答转向主动理解意图并执行",
     "example": "Intent-driven Computing时代 → AI能理解意图并主动规划执行",
     "categoryId": 6,
     "tags": [
@@ -3967,9 +3713,9 @@ const allWords = [
   {
     "id": 331,
     "word": "算了",
-    "meaning": "彻底放弃、不再挣扎的心态,继躺平后更深层的精神退出",
-    "example": "面对求职失败,算了,不找了 → 直接放弃,不再尝试",
-    "categoryId": 5,
+    "meaning": "彻底放弃、不再挣扎的心态，继躺平后更深层的精神退出",
+    "example": "面对求职失败，算了，不找了 → 直接放弃，不再尝试",
+    "categoryId": 15,
     "tags": [
       "算了",
       "躺平",
@@ -3980,7 +3726,7 @@ const allWords = [
   {
     "id": 332,
     "word": "GEO",
-    "meaning": "生成式引擎优化,AI搜索时代的内容优化策略",
+    "meaning": "生成式引擎优化，AI搜索时代的内容优化策略",
     "example": "GEO优化 → 针对AI搜索结果的内容优化",
     "categoryId": 6,
     "tags": [
@@ -3995,7 +3741,7 @@ const allWords = [
     "word": "活人感",
     "meaning": "真实、自然、不像被生活彻底格式化的状态",
     "example": "他很有活人感 → 他看起来很真实、不机械",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "活人感",
       "真实",
@@ -4008,7 +3754,7 @@ const allWords = [
     "word": "赛博对账",
     "meaning": "在网上核对彼此的生活细节、成长经历和共同记忆",
     "example": "赛博对账开始了 → 网友开始互相核对彼此的经历",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "赛博对账",
       "网络社交",
@@ -4021,7 +3767,7 @@ const allWords = [
     "word": "预制xx",
     "meaning": "像预制菜一样敷衍、不走心的批量制作版本",
     "example": "预制朋友圈 → 批量精修、套路化发布的朋友圈内容",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "预制",
       "敷衍",
@@ -4032,9 +3778,9 @@ const allWords = [
   {
     "id": 336,
     "word": "敬自己一杯",
-    "meaning": "对努力与平凡的接纳,一种温柔的自我和解表达",
-    "example": "敬自己一杯 → 干杯,为自己的付出和坚持",
-    "categoryId": 5,
+    "meaning": "对努力与平凡的接纳，一种温柔的自我和解表达",
+    "example": "敬自己一杯 → 干杯，为自己的付出和坚持",
+    "categoryId": 15,
     "tags": [
       "敬自己一杯",
       "自我和解",
@@ -4057,9 +3803,9 @@ const allWords = [
   {
     "id": 338,
     "word": "xx基础,xx就不基础",
-    "meaning": "调侃理想与现实落差的万能句式,指顾此失彼",
-    "example": "上班基础,下班就不基础 → 上班累成狗,下班只想躺",
-    "categoryId": 5,
+    "meaning": "调侃理想与现实落差的万能句式，指顾此失彼",
+    "example": "上班基础，下班就不基础 → 上班累成狗，下班只想躺",
+    "categoryId": 15,
     "tags": [
       "反差",
       "自嘲",
@@ -4070,9 +3816,9 @@ const allWords = [
   {
     "id": 339,
     "word": "谷子",
-    "meaning": "二次元/IP周边产品,即Goods(商品)的音译",
+    "meaning": "二次元/IP周边产品，即Goods(商品)的音译",
     "example": "买谷子 → 买二次元周边",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "谷子",
       "二次元",
@@ -4082,24 +3828,11 @@ const allWords = [
     ]
   },
   {
-    "id": 340,
-    "word": "随橙想",
-    "meaning": "乌兰图雅采访被网友空耳后的二创句式,原意被听成荒诞内容后大量模仿",
-    "example": "随橙想,这反耳给了我一些古力 → 用来调侃空耳和二创的万能句式",
-    "categoryId": 5,
-    "tags": [
-      "随橙想",
-      "空耳",
-      "乌兰图雅",
-      "2026热词"
-    ]
-  },
-  {
     "id": 341,
     "word": "助我破鼎",
-    "meaning": "源自《哪吒之魔童闹海》经典台词,后被网友用来自我打气",
+    "meaning": "源自《哪吒之魔童闹海》经典台词，后被网友用来自我打气",
     "example": "助我破鼎! → 给自己加油打气的热血表达",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "助我破鼎",
       "哪吒",
@@ -4111,9 +3844,9 @@ const allWords = [
   {
     "id": 342,
     "word": "不讲不讲",
-    "meaning": "2025年度十大网络流行语,带有拒绝沟通、拒绝内耗的摆烂式幽默",
-    "example": "不讲不讲,我不想听 → 拒绝被卷入、拒绝消耗的表达",
-    "categoryId": 5,
+    "meaning": "2025年度十大网络流行语，带有拒绝沟通、拒绝内耗的摆烂式幽默",
+    "example": "不讲不讲，我不想听 → 拒绝被卷入、拒绝消耗的表达",
+    "categoryId": 15,
     "tags": [
       "不讲不讲",
       "摆烂",
@@ -4125,9 +3858,9 @@ const allWords = [
   {
     "id": 343,
     "word": "绝摆",
-    "meaning": "闽南语'很棒、厉害'的音译,2026年在网络迅速走红",
+    "meaning": "闽南语'很棒、厉害'的音译，2026年在网络迅速走红",
     "example": "这个东西绝摆 → 这个东西太厉害了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "绝摆",
       "闽南语",
@@ -4138,7 +3871,7 @@ const allWords = [
   {
     "id": 344,
     "word": "LLM",
-    "meaning": "大语言模型,Large Language Model的缩写",
+    "meaning": "大语言模型，Large Language Model的缩写",
     "example": "LLM训练 → 大语言模型训练",
     "categoryId": 6,
     "tags": [
@@ -4151,7 +3884,7 @@ const allWords = [
   {
     "id": 345,
     "word": "AIGC",
-    "meaning": "生成式人工智能内容,AI自动生成文本、图像、视频等内容的技术",
+    "meaning": "生成式人工智能内容，AI自动生成文本、图像、视频等内容的技术",
     "example": "AIGC应用 → AI生成内容应用",
     "categoryId": 6,
     "tags": [
@@ -4164,7 +3897,7 @@ const allWords = [
   {
     "id": 346,
     "word": "向量数据库",
-    "meaning": "存储AI生成向量嵌入的数据库,用于RAG和语义搜索",
+    "meaning": "存储AI生成向量嵌入的数据库，用于RAG和语义搜索",
     "example": "向量数据库检索 → 通过向量相似度搜索内容",
     "categoryId": 6,
     "tags": [
@@ -4177,9 +3910,9 @@ const allWords = [
   {
     "id": 347,
     "word": "高丽菜煮蛋那桌",
-    "meaning": "台湾Threads爆红梗,来自模仿餐厅场景的幽默对话",
+    "meaning": "台湾Threads爆红梗，来自模仿餐厅场景的幽默对话",
     "example": "高丽菜煮蛋那桌 → 用来调侃尴尬或混乱场合的梗",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "高丽菜",
       "台湾",
@@ -4190,9 +3923,9 @@ const allWords = [
   {
     "id": 348,
     "word": "ㄅ级分",
-    "meaning": "台湾Threads社群用语,'A级分'的谐音,指最高评价",
+    "meaning": "台湾Threads社群用语，'A级分'的谐音，指最高评价",
     "example": "这部电影ㄅ级分! → 这部电影最高评价!",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "ㄅ级分",
       "台湾",
@@ -4203,7 +3936,7 @@ const allWords = [
   {
     "id": 349,
     "word": "Fine-tuning",
-    "meaning": "模型微调,用特定数据对预训练模型进行二次训练",
+    "meaning": "模型微调，用特定数据对预训练模型进行二次训练",
     "example": "Fine-tuning大模型 → 用特定数据微调大模型",
     "categoryId": 6,
     "tags": [
@@ -4214,24 +3947,11 @@ const allWords = [
     ]
   },
   {
-    "id": 350,
-    "word": "我去不早说",
-    "meaning": "2026年爆红句式,用来表达'事后诸葛亮'的懊恼或调侃",
-    "example": "我去不早说,原来这么简单 → 事后才反应过来的懊恼表达",
-    "categoryId": 5,
-    "tags": [
-      "我去不早说",
-      "吐槽",
-      "2026热词",
-      "句式"
-    ]
-  },
-  {
     "id": 352,
     "word": "痛文化",
     "meaning": "用痛苦经历来定义和展示自我认同的亚文化趋势",
     "example": "痛文化崛起 → 用痛苦叙事来获得共鸣和身份认同",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "痛文化",
       "Z世代",
@@ -4244,7 +3964,7 @@ const allWords = [
     "word": "特种兵旅游",
     "meaning": "高强度、短时间、多景点打卡式的旅行方式",
     "example": "特种兵旅游周末刷10个景点 → 周末极限打卡式旅游",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "特种兵旅游",
       "穷游",
@@ -4255,9 +3975,9 @@ const allWords = [
   {
     "id": 355,
     "word": "显眼包",
-    "meaning": "过于张扬、爱出风头的人,或形容引人注目、个性鲜明的事物",
+    "meaning": "过于张扬、爱出风头的人，或形容引人注目、个性鲜明的事物",
     "example": "他是部门里的显眼包 → 他是部门里最张扬爱表现的那个",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "显眼包",
       "张扬",
@@ -4268,7 +3988,7 @@ const allWords = [
   {
     "id": 356,
     "word": "遥遥领先",
-    "meaning": "远远走在前面,描述技术或产品的绝对优势",
+    "meaning": "远远走在前面，描述技术或产品的绝对优势",
     "example": "我们的技术遥遥领先 → 我们的技术远超竞争对手",
     "categoryId": 1,
     "tags": [
@@ -4281,9 +4001,9 @@ const allWords = [
   {
     "id": 357,
     "word": "多巴胺穿搭",
-    "meaning": "高饱和色彩、鲜艳明亮的服装风格,传递快乐情绪",
+    "meaning": "高饱和色彩、鲜艳明亮的服装风格，传递快乐情绪",
     "example": "多巴胺穿搭风格 → 明亮色彩释放快乐情绪的穿搭",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "多巴胺",
       "穿搭",
@@ -4296,7 +4016,7 @@ const allWords = [
     "word": "孔乙己文学",
     "meaning": "高学历却难以实现价值、自嘲困境的无奈表达",
     "example": "孔乙己文学流行 → 高学历人群自嘲难以阶层跨越",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "孔乙己",
       "学历",
@@ -4309,7 +4029,7 @@ const allWords = [
     "word": "公主请上车",
     "meaning": "请求对方给予尊重和礼貌照顾的网络表达",
     "example": "公主请上车 → 请礼貌地说请让我上车",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "公主",
       "请",
@@ -4320,9 +4040,9 @@ const allWords = [
   {
     "id": 360,
     "word": "你人还怪好的嘞",
-    "meaning": "用于调侃尴尬处境,明明被坑还要称赞对方的无奈语气",
+    "meaning": "用于调侃尴尬处境，明明被坑还要称赞对方的无奈语气",
     "example": "你人还怪好的嘞 → 虽然被坑但还是要客气地说",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "你人还怪好的",
       "吐槽",
@@ -4333,9 +4053,9 @@ const allWords = [
   {
     "id": 361,
     "word": "不讲了",
-    "meaning": "2026年流行句式,表达'知道但不说透'的默契或故意卖关子",
-    "example": "不讲了,懂的都懂 → 不说了,懂的人自然懂",
-    "categoryId": 5,
+    "meaning": "2026年流行句式，表达'知道但不说透'的默契或故意卖关子",
+    "example": "不讲了，懂的都懂 → 不说了，懂的人自然懂",
+    "categoryId": 15,
     "tags": [
       "不讲了",
       "网络梗",
@@ -4346,9 +4066,9 @@ const allWords = [
   {
     "id": 362,
     "word": "随橙想",
-    "meaning": "2026年空耳梗,源自乌兰图雅采访被空耳二创,表达'随便想'的意思",
-    "example": "随橙想,随便想想 → 随便想想,无所谓的态度",
-    "categoryId": 5,
+    "meaning": "2026年空耳梗，源自乌兰图雅采访被空耳二创，表达'随便想'的意思",
+    "example": "随橙想，随便想想 → 随便想想，无所谓的态度",
+    "categoryId": 15,
     "tags": [
       "随橙想",
       "空耳",
@@ -4359,9 +4079,9 @@ const allWords = [
   {
     "id": 363,
     "word": "浪浪山小妖怪",
-    "meaning": "源自《年中国诗词大会》,小人物在大舞台上的自我定位和共鸣",
+    "meaning": "源自《年中国诗词大会》，小人物在大舞台上的自我定位和共鸣",
     "example": "浪浪山小妖怪也有大梦想 → 小镇青年也有大理想",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "浪浪山",
       "小妖怪",
@@ -4372,9 +4092,9 @@ const allWords = [
   {
     "id": 364,
     "word": "美拉德穿搭",
-    "meaning": "棕色系服装风格,源自美拉德反应的颜色",
+    "meaning": "棕色系服装风格，源自美拉德反应的颜色",
     "example": "美拉德穿搭秋冬很火 → 棕色调冬季穿搭很流行",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "美拉德",
       "穿搭",
@@ -4385,7 +4105,7 @@ const allWords = [
   {
     "id": 365,
     "word": "RAG",
-    "meaning": "检索增强生成,通过检索知识库来增强AI回答质量的技术",
+    "meaning": "检索增强生成，通过检索知识库来增强AI回答质量的技术",
     "example": "RAG系统提升LLM准确性 → 检索增强生成提升大模型回答准确率",
     "categoryId": 6,
     "tags": [
@@ -4398,7 +4118,7 @@ const allWords = [
   {
     "id": 366,
     "word": "Agent",
-    "meaning": "AI智能体,能够自主决策和执行任务的AI系统",
+    "meaning": "AI智能体，能够自主决策和执行任务的AI系统",
     "example": "部署AI Agent → 部署人工智能智能体",
     "categoryId": 6,
     "tags": [
@@ -4411,7 +4131,7 @@ const allWords = [
   {
     "id": 367,
     "word": "Embedding",
-    "meaning": "将文本转换为向量表示的技术,用于语义匹配和检索",
+    "meaning": "将文本转换为向量表示的技术，用于语义匹配和检索",
     "example": "使用Embedding模型向量化文本 → 用向量模型表示文本语义",
     "categoryId": 6,
     "tags": [
@@ -4437,7 +4157,7 @@ const allWords = [
   {
     "id": 369,
     "word": "AI糟粕",
-    "meaning": "低质量、批量生成的AI内容,看似信息丰富实则缺乏价值甚至有误导性",
+    "meaning": "低质量、批量生成的AI内容，看似信息丰富实则缺乏价值甚至有误导性",
     "example": "这些都是AI糟粕 → 都是些AI生成的垃圾内容",
     "categoryId": 6,
     "tags": [
@@ -4448,22 +4168,9 @@ const allWords = [
     ]
   },
   {
-    "id": 370,
-    "word": "电力鸿沟",
-    "meaning": "AI发展中电力供应能力的差距,反映不同国家在能源基础设施上的显著差异",
-    "example": "电力鸿沟影响AI普惠 → 国家间电力供应差距影响AI技术普及",
-    "categoryId": 6,
-    "tags": [
-      "电力鸿沟",
-      "AI",
-      "能源",
-      "2026热词"
-    ]
-  },
-  {
     "id": 371,
     "word": "数智化",
-    "meaning": "数字化和智能化的融合,是新型工业化的鲜明特征",
+    "meaning": "数字化和智能化的融合，是新型工业化的鲜明特征",
     "example": "数智化转型 → 数字化智能化双重升级",
     "categoryId": 6,
     "tags": [
@@ -4502,9 +4209,9 @@ const allWords = [
   {
     "id": 374,
     "word": "city不city",
-    "meaning": "形容时髦、洋气、现代化的程度,源自外国游客对中国城市的感叹",
+    "meaning": "形容时髦、洋气、现代化的程度，源自外国游客对中国城市的感叹",
     "example": "这家店好city啊 → 这家店好时髦啊",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "city不city",
       "网络梗",
@@ -4515,9 +4222,9 @@ const allWords = [
   {
     "id": 375,
     "word": "水灵灵地",
-    "meaning": "形容人漂亮有精神、润泽有生气,也可用于自嘲",
+    "meaning": "形容人漂亮有精神、润泽有生气，也可用于自嘲",
     "example": "水灵灵地出道 → 精神饱满地出道",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "水灵灵",
       "网络梗",
@@ -4543,7 +4250,7 @@ const allWords = [
     "word": "小孩哥/小孩姐",
     "meaning": "在某方面具有过人才能的孩子",
     "example": "这个小孩哥太厉害了 → 这个小朋友太厉害了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "小孩哥",
       "小孩姐",
@@ -4554,9 +4261,9 @@ const allWords = [
   {
     "id": 378,
     "word": "村咖",
-    "meaning": "乡村咖啡馆,代表慢生活氛围和轻度逃离城市的生活方式",
+    "meaning": "乡村咖啡馆，代表慢生活氛围和轻度逃离城市的生活方式",
     "example": "去村咖打卡 → 去乡村咖啡馆拍照",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "村咖",
       "乡村",
@@ -4568,8 +4275,8 @@ const allWords = [
     "id": 379,
     "word": "外耗",
     "meaning": "将负面情绪和压力向外发泄的行为方式",
-    "example": "停止精神内耗,拒绝外耗 → 不再自我消耗,不再向外发泄",
-    "categoryId": 5,
+    "example": "停止精神内耗，拒绝外耗 → 不再自我消耗，不再向外发泄",
+    "categoryId": 15,
     "tags": [
       "外耗",
       "精神内耗",
@@ -4582,7 +4289,7 @@ const allWords = [
     "word": "丝瓜汤文学",
     "meaning": "一种看似无用实则治愈的文艺风格表达",
     "example": "今天喝碗丝瓜汤文学 → 今天看点治愈的文字",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "丝瓜汤文学",
       "网络文学",
@@ -4619,39 +4326,13 @@ const allWords = [
   {
     "id": 383,
     "word": "小多边主义",
-    "meaning": "由少数国家组成的小型联盟,灵活高效地应对特定挑战",
+    "meaning": "由少数国家组成的小型联盟，灵活高效地应对特定挑战",
     "example": "小多边主义合作 → 小国集团合作",
     "categoryId": 3,
     "tags": [
       "小多边主义",
       "国际关系",
       "联盟",
-      "2026热词"
-    ]
-  },
-  {
-    "id": 384,
-    "word": "监管科技",
-    "meaning": "推动监管机构建立更具韧性、透明、可靠的新体系的技术",
-    "example": "发展监管科技 → 用技术加强金融监管",
-    "categoryId": 9,
-    "tags": [
-      "监管科技",
-      "Suptech",
-      "金融监管",
-      "2026热词"
-    ]
-  },
-  {
-    "id": 385,
-    "word": "普惠AI",
-    "meaning": "确保所有人能平等获取AI技术基础的设计理念",
-    "example": "推动普惠AI发展 → 让AI技术惠及所有人",
-    "categoryId": 6,
-    "tags": [
-      "普惠AI",
-      "AI平权",
-      "包容性设计",
       "2026热词"
     ]
   },
@@ -4682,23 +4363,11 @@ const allWords = [
     ]
   },
   {
-    "id": 388,
-    "word": "痛文化",
-    "meaning": "用玩梗和自嘲消解痛苦的网络文化现象",
-    "example": "痛文化来袭 → 年轻人用幽默消解压力",
-    "categoryId": 5,
-    "tags": [
-      "痛文化",
-      "自嘲",
-      "2026热词"
-    ]
-  },
-  {
     "id": 389,
     "word": "误闯天家",
     "meaning": "意外进入高门槛场景(如名校、大厂)的自嘲说法",
     "example": "纯属于误闯天家 → 实际上是误打误撞进去的",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "误闯天家",
       "自嘲",
@@ -4710,7 +4379,7 @@ const allWords = [
     "word": "魔丸",
     "meaning": "特立独行、看似离经叛道的特质",
     "example": "我就是个魔丸 → 我这个人比较特立独行",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "魔丸",
       "哪吒",
@@ -4722,7 +4391,7 @@ const allWords = [
     "word": "灵珠",
     "meaning": "乖巧优秀、温和理性的属性",
     "example": "她是个灵珠型选手 → 她是乖巧理性的类型",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "灵珠",
       "哪吒",
@@ -4732,9 +4401,9 @@ const allWords = [
   {
     "id": 392,
     "word": "高雅人士",
-    "meaning": "举止文雅、审美高级的群体,也用于反讽",
+    "meaning": "举止文雅、审美高级的群体，也用于反讽",
     "example": "高雅人士视察中 → 假装很优雅地做某事",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "高雅人士",
       "企鹅",
@@ -4746,7 +4415,7 @@ const allWords = [
     "word": "当个事儿办",
     "meaning": "用夸张的郑重形式回应小事",
     "example": "减肥必须当个事儿办 → 减肥要非常认真地对待",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "当个事儿办",
       "认真",
@@ -4758,7 +4427,7 @@ const allWords = [
     "word": "千百次练习",
     "meaning": "通过长期重复训练精通技能的坚持精神",
     "example": "千百次练习只为这一刻 → 台上一分钟台下十年功",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "千百次练习",
       "坚持",
@@ -4768,9 +4437,9 @@ const allWords = [
   {
     "id": 395,
     "word": "来财",
-    "meaning": "对好运和财富的期待,源自歌曲",
+    "meaning": "对好运和财富的期待，源自歌曲",
     "example": "来财来财 → 招财进宝",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "来财",
       "好运",
@@ -4782,7 +4451,7 @@ const allWords = [
     "word": "少癲",
     "meaning": "有少少夸张、离谱",
     "example": "这个操作有点少癲 → 这个操作有点离谱",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "少癲",
       "夸张",
@@ -4794,7 +4463,7 @@ const allWords = [
     "word": "大癲",
     "meaning": "非常夸张、极度离谱",
     "example": "这件事真的好大癲 → 这件事真的太离谱了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "大癲",
       "夸张",
@@ -4806,7 +4475,7 @@ const allWords = [
     "word": "老best",
     "meaning": "老友兼最好的朋友",
     "example": "这是我老best → 这是我最好的朋友",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "老best",
       "朋友",
@@ -4816,9 +4485,9 @@ const allWords = [
   {
     "id": 399,
     "word": "Fam J",
-    "meaning": "零尊重,对人不尊重的态度",
+    "meaning": "零尊重，对人不尊重的态度",
     "example": "这个人Fam J → 这个人完全不尊重人",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Fam J",
       "尊重",
@@ -4828,9 +4497,9 @@ const allWords = [
   {
     "id": 400,
     "word": "跌嘢唔好搵",
-    "meaning": "东西丢了不用找,属于你的自然会回来",
-    "example": "跌嘢唔好搵,当升级啦 → 丢了就丢了,当升级了",
-    "categoryId": 5,
+    "meaning": "东西丢了不用找，属于你的自然会回来",
+    "example": "跌嘢唔好搵，当升级啦 → 丢了就丢了，当升级了",
+    "categoryId": 15,
     "tags": [
       "跌嘢唔好搵",
       "自我安慰",
@@ -4840,9 +4509,9 @@ const allWords = [
   {
     "id": 401,
     "word": "拍咗先",
-    "meaning": "先拍了再说,象征放手尝试的精神",
-    "example": "拍咗先,剪咗先,上咗先 → 先做了再说",
-    "categoryId": 5,
+    "meaning": "先拍了再说，象征放手尝试的精神",
+    "example": "拍咗先，剪咗先，上咗先 → 先做了再说",
+    "categoryId": 15,
     "tags": [
       "拍咗先",
       "尝试",
@@ -4850,33 +4519,9 @@ const allWords = [
     ]
   },
   {
-    "id": 402,
-    "word": "Agent",
-    "meaning": "AI智能体,能自主规划和执行任务的AI系统",
-    "example": "部署Agent → 部署AI智能体",
-    "categoryId": 6,
-    "tags": [
-      "AI",
-      "智能体",
-      "自动化"
-    ]
-  },
-  {
-    "id": 403,
-    "word": "AIGC",
-    "meaning": "AI生成内容,人工智能创作的文字、图像、视频等",
-    "example": "AIGC创作 → AI生成内容创作",
-    "categoryId": 6,
-    "tags": [
-      "AI",
-      "生成",
-      "内容"
-    ]
-  },
-  {
     "id": 404,
     "word": "具身智能",
-    "meaning": "让AI拥有物理身体,能在现实世界中执行任务",
+    "meaning": "让AI拥有物理身体，能在现实世界中执行任务",
     "example": "具身智能机器人 → 能在现实世界行动的AI机器人",
     "categoryId": 6,
     "tags": [
@@ -4888,7 +4533,7 @@ const allWords = [
   {
     "id": 405,
     "word": "Skill",
-    "meaning": "AI技能模块,封装好的工作流程模板",
+    "meaning": "AI技能模块，封装好的工作流程模板",
     "example": "加载Skill → 加载技能模块",
     "categoryId": 6,
     "tags": [
@@ -4898,71 +4543,11 @@ const allWords = [
     ]
   },
   {
-    "id": 406,
-    "word": "Harness Engineering",
-    "meaning": "AI系统安全约束工程,保障AI安全可控",
-    "example": "Harness Engineering实践 → AI安全约束工程实践",
-    "categoryId": 6,
-    "tags": [
-      "AI",
-      "安全",
-      "工程"
-    ]
-  },
-  {
-    "id": 407,
-    "word": "赛博对账",
-    "meaning": "在网上核对彼此的生活细节和成长经历",
-    "example": "赛博对账 → 在网上对账生活",
-    "categoryId": 5,
-    "tags": [
-      "赛博对账",
-      "网络流行语",
-      "社交"
-    ]
-  },
-  {
-    "id": 408,
-    "word": "谷子",
-    "meaning": "二次元IP周边产品,也指代相关消费文化",
-    "example": "买谷子 → 买周边",
-    "categoryId": 5,
-    "tags": [
-      "谷子",
-      "二次元",
-      "周边"
-    ]
-  },
-  {
-    "id": 409,
-    "word": "村咖",
-    "meaning": "乡村咖啡馆,代表慢生活和小镇氛围",
-    "example": "去村咖坐坐 → 去乡村咖啡馆放松",
-    "categoryId": 5,
-    "tags": [
-      "村咖",
-      "乡村",
-      "生活"
-    ]
-  },
-  {
-    "id": 410,
-    "word": "浪浪山小妖怪",
-    "meaning": "出自动画,形容普通人在大环境中奋斗的小角色",
-    "example": "我也是浪浪山小妖怪 → 我也是普通打工人",
-    "categoryId": 5,
-    "tags": [
-      "浪浪山",
-      "小妖怪",
-      "动画"
-    ]
-  },
-  {
     "id": 411,
     "word": "爱你老己",
-    "meaning": "好好爱自己,悦己表达的轻松说法",
+    "meaning": "好好爱自己，悦己表达的轻松说法",
     "example": "今天也要爱你老己 → 今天也要好好爱自己",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "爱你老己",
       "自我关怀",
@@ -4970,35 +4555,11 @@ const allWords = [
     ]
   },
   {
-    "id": 412,
-    "word": "丝瓜汤文学",
-    "meaning": "一种自嘲摆烂的幽默表达方式",
-    "example": "躺平丝瓜汤 → 彻底摆烂",
-    "categoryId": 5,
-    "tags": [
-      "丝瓜汤",
-      "摆烂",
-      "自嘲"
-    ]
-  },
-  {
-    "id": 413,
-    "word": "脆",
-    "meaning": "指社交平台Threads",
-    "example": "在脆上看到 → 在Threads上看到",
-    "categoryId": 5,
-    "tags": [
-      "脆",
-      "Threads",
-      "网络用语"
-    ]
-  },
-  {
     "id": 414,
     "word": "我要验牌",
     "meaning": "要求对方证明资质或真伪的温和质疑",
     "example": "这数据靠谱吗?我要验牌 → 让我核验一下这数据是否真实",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "我要验牌",
       "网络流行语",
@@ -5007,35 +4568,11 @@ const allWords = [
     ]
   },
   {
-    "id": 415,
-    "word": "做完你的做你的",
-    "meaning": "多线程处理任务时安抚他人稍等的状态",
-    "example": "催什么催,做完你的做你的 → 稍等,处理完这个就到你了",
-    "categoryId": 5,
-    "tags": [
-      "做完你的做你的",
-      "多线程",
-      "网络流行语"
-    ]
-  },
-  {
-    "id": 416,
-    "word": "如何呢又能怎",
-    "meaning": "带无奈与轻度摆烂的认命感表达",
-    "example": "又被加班了,如何呢又能怎 → 又被加班了,能怎么办",
-    "categoryId": 5,
-    "tags": [
-      "如何呢又能怎",
-      "摆烂",
-      "网络流行语"
-    ]
-  },
-  {
     "id": 417,
     "word": "从从容容游刃有余",
     "meaning": "与「匆匆忙忙连滚带爬」对仗的万能反差句式",
-    "example": "上班从从容容游刃有余,下班匆匆忙忙连滚带爬 → 理想与现实强烈反差",
-    "categoryId": 5,
+    "example": "上班从从容容游刃有余，下班匆匆忙忙连滚带爬 → 理想与现实强烈反差",
+    "categoryId": 15,
     "tags": [
       "从从容容",
       "游刃有余",
@@ -5048,7 +4585,7 @@ const allWords = [
     "word": "匆匆忙忙连滚带爬",
     "meaning": "形容手忙脚乱、鸡飞狗跳的状态",
     "example": "加班到匆匆忙忙连滚带爬 → 加班到手忙脚乱",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "匆匆忙忙",
       "连滚带爬",
@@ -5059,8 +4596,8 @@ const allWords = [
     "id": 419,
     "word": "我将辞职在家研究",
     "meaning": "用夸张辞职表达对事物极度好奇的句式",
-    "example": "这个太有意思了,我将辞职在家研究 → 这件事太有趣了我要深入研究",
-    "categoryId": 5,
+    "example": "这个太有意思了，我将辞职在家研究 → 这件事太有趣了我要深入研究",
+    "categoryId": 15,
     "tags": [
       "辞职研究",
       "夸张",
@@ -5072,7 +4609,7 @@ const allWords = [
     "word": "讲不讲话",
     "meaning": "「敢不敢说」的闽南语谐音挑衅式回应",
     "example": "你倒是讲不讲话 → 你敢不敢说",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "讲不讲话",
       "闽南语",
@@ -5082,26 +4619,13 @@ const allWords = [
   {
     "id": 421,
     "word": "托我转交",
-    "meaning": "闽南语谐音梗,意为「拜托转告/帮我传达」",
+    "meaning": "闽南语谐音梗，意为「拜托转告/帮我传达」",
     "example": "托我转交给你 → 拜托帮我转告他",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "托我转交",
       "闽南语",
       "谐音"
-    ]
-  },
-  {
-    "id": 422,
-    "word": "Subagent",
-    "meaning": "主Agent派出去的子代理,负责跑腿处理单一任务",
-    "example": "调用Subagent → 调用子代理执行子任务",
-    "categoryId": 6,
-    "tags": [
-      "Subagent",
-      "子代理",
-      "AI",
-      "Claude"
     ]
   },
   {
@@ -5120,7 +4644,7 @@ const allWords = [
   {
     "id": 424,
     "word": "Agent Card",
-    "meaning": "Agent数字名片,描述Agent身份与能力的元数据文件",
+    "meaning": "Agent数字名片，描述Agent身份与能力的元数据文件",
     "example": "发布Agent Card → 发布Agent能力描述卡片",
     "categoryId": 6,
     "tags": [
@@ -5131,22 +4655,9 @@ const allWords = [
     ]
   },
   {
-    "id": 425,
-    "word": "词元",
-    "meaning": "Token的中文官方定名,大模型处理信息的最小计量单位",
-    "example": "调用词元 → 调用AI大模型的Token",
-    "categoryId": 6,
-    "tags": [
-      "词元",
-      "Token",
-      "AI",
-      "国家数据局"
-    ]
-  },
-  {
     "id": 426,
     "word": "数字水印",
-    "meaning": "嵌入AI生成内容中的隐形标识,用于追溯内容来源",
+    "meaning": "嵌入AI生成内容中的隐形标识，用于追溯内容来源",
     "example": "内容嵌入数字水印 → AI生成内容带可追溯水印",
     "categoryId": 6,
     "tags": [
@@ -5167,32 +4678,6 @@ const allWords = [
       "Copilot",
       "AI",
       "范式"
-    ]
-  },
-  {
-    "id": 428,
-    "word": "Coding Agent",
-    "meaning": "能独立完成从需求理解、编码、测试到部署全流程的AI智能体",
-    "example": "部署Coding Agent → 部署能独立写代码并上线的AI",
-    "categoryId": 6,
-    "tags": [
-      "Coding Agent",
-      "编码智能体",
-      "Devin",
-      "AI"
-    ]
-  },
-  {
-    "id": 429,
-    "word": "Browser Agent",
-    "meaning": "能像人一样操控浏览器、自动完成网页任务的AI智能体",
-    "example": "用Browser Agent填表 → 用AI自动操作浏览器填写表单",
-    "categoryId": 6,
-    "tags": [
-      "Browser Agent",
-      "浏览器智能体",
-      "自动化",
-      "AI"
     ]
   },
   {
@@ -5317,7 +4802,7 @@ const allWords = [
     "word": "真没空陪你闹了",
     "meaning": "表示没精力参与无意义的事，对内耗式社交的温和拒绝",
     "example": "真没空陪你闹了 → 我没空跟你瞎折腾了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "真没空陪你闹了",
       "拒绝内耗",
@@ -5328,8 +4813,8 @@ const allWords = [
   {
     "id": 440,
     "word": "Harness Engineering",
-    "meaning": "驾驭工程,为AI Agent设计控制系统的工程学科,含约束规则、反馈循环和验证机制",
-    "example": "做Harness Engineering → 给AI Agent搭好围栏和反馈,让它可靠地干活",
+    "meaning": "驾驭工程，为AI Agent设计控制系统的工程学科，含约束规则、反馈循环和验证机制",
+    "example": "做Harness Engineering → 给AI Agent搭好围栏和反馈，让它可靠地干活",
     "categoryId": 6,
     "tags": [
       "Harness Engineering",
@@ -5341,7 +4826,7 @@ const allWords = [
   {
     "id": 441,
     "word": "Subagent",
-    "meaning": "子代理,主Agent拆分复杂任务后,委派给专门的子Agent处理特定子任务",
+    "meaning": "子代理，主Agent拆分复杂任务后，委派给专门的子Agent处理特定子任务",
     "example": "用Subagent分工 → 把大任务拆给几个子Agent并行处理",
     "categoryId": 6,
     "tags": [
@@ -5354,7 +4839,7 @@ const allWords = [
   {
     "id": 442,
     "word": "Multi-Agent",
-    "meaning": "多智能体协作,多个AI Agent分工配合、互相通信共同完成复杂任务",
+    "meaning": "多智能体协作，多个AI Agent分工配合、互相通信共同完成复杂任务",
     "example": "用Multi-Agent架构 → 让多个Agent像团队一样分工协作",
     "categoryId": 6,
     "tags": [
@@ -5367,7 +4852,7 @@ const allWords = [
   {
     "id": 443,
     "word": "Sovereign AI",
-    "meaning": "主权AI,由国家或组织自建、数据不依赖外部云端、技术自主可控的AI",
+    "meaning": "主权AI，由国家或组织自建、数据不依赖外部云端、技术自主可控的AI",
     "example": "发展Sovereign AI → 推动AI基础设施自主可控",
     "categoryId": 6,
     "tags": [
@@ -5379,7 +4864,7 @@ const allWords = [
   {
     "id": 444,
     "word": "AI Workforce",
-    "meaning": "AI员工,把AI Agent当作企业里的虚拟员工,与人协作完成工作",
+    "meaning": "AI员工，把AI Agent当作企业里的虚拟员工，与人协作完成工作",
     "example": "打造AI Workforce → 组建AI虚拟员工团队和人协作",
     "categoryId": 6,
     "tags": [
@@ -5392,7 +4877,7 @@ const allWords = [
   {
     "id": 445,
     "word": "Coding Agent",
-    "meaning": "编程智能体,能独立完成需求分析、代码编写、测试到部署全流程的AI",
+    "meaning": "编程智能体，能独立完成需求分析、代码编写、测试到部署全流程的AI",
     "example": "用Coding Agent开发 → 让AI从读需求到自动部署全包",
     "categoryId": 6,
     "tags": [
@@ -5405,7 +4890,7 @@ const allWords = [
   {
     "id": 446,
     "word": "Browser Agent",
-    "meaning": "浏览器智能体,能像人一样操作网页、完成点击、填表、抓取等任务的AI",
+    "meaning": "浏览器智能体，能像人一样操作网页、完成点击、填表、抓取等任务的AI",
     "example": "用Browser Agent自动化 → 让AI自己开浏览器点网页办事",
     "categoryId": 6,
     "tags": [
@@ -5418,7 +4903,7 @@ const allWords = [
   {
     "id": 447,
     "word": "AI Skills",
-    "meaning": "AI技能包,赋予Agent特定领域专业能力的模块化配置,如搜索、写代码等",
+    "meaning": "AI技能包，赋予Agent特定领域专业能力的模块化配置，如搜索、写代码等",
     "example": "配置AI Skills → 给Agent装上特定领域的专业能力",
     "categoryId": 6,
     "tags": [
@@ -5429,58 +4914,10 @@ const allWords = [
     ]
   },
   {
-    "id": 448,
-    "word": "痛文化",
-    "meaning": "2026年流行趋势,把日常压力、情绪都包装成痛,带点夸张的自我消解",
-    "example": "痛文化席卷年轻人 → 上班痛、恋爱痛、学业痛都被玩成梗",
-    "categoryId": 5,
-    "tags": [
-      "痛文化",
-      "情绪",
-      "2026热词"
-    ]
-  },
-  {
-    "id": 449,
-    "word": "做完你的做你的",
-    "meaning": "出自景德镇鸡排主理人,被网友二创形容多线程忙碌、忙中控场的状态",
-    "example": "别催了,做完你的做你的 → 手头忙着,别催我",
-    "categoryId": 5,
-    "tags": [
-      "做完你的做你的",
-      "忙中控场",
-      "2026热梗"
-    ]
-  },
-  {
-    "id": 450,
-    "word": "我去不早说",
-    "meaning": "2026年新晋吐槽句式,用于后知后觉式自嘲,类似'早说啊'的夸张版",
-    "example": "这东西免费?我去不早说 → 早说啊,白白错过",
-    "categoryId": 5,
-    "tags": [
-      "我去不早说",
-      "后悔",
-      "2026新梗"
-    ]
-  },
-  {
-    "id": 451,
-    "word": "如何呢又能怎",
-    "meaning": "2025年度十大网络流行语,带无奈感、认命感和轻度摆烂式幽默的反问",
-    "example": "如何呢又能怎 → 能怎么办,也只能这样了",
-    "categoryId": 5,
-    "tags": [
-      "如何呢又能怎",
-      "摆烂",
-      "2025流行语"
-    ]
-  },
-  {
     "id": 452,
     "word": "锚定",
-    "meaning": "让AI生成的内容与真实世界数据、事实或特定知识库关联,避免幻觉,提升准确性与时效性",
-    "example": "AI回答先锚定到企业知识库 → 让AI基于真实数据回答,避免瞎编",
+    "meaning": "让AI生成的内容与真实世界数据、事实或特定知识库关联，避免幻觉，提升准确性与时效性",
+    "example": "AI回答先锚定到企业知识库 → 让AI基于真实数据回答，避免瞎编",
     "categoryId": 6,
     "tags": [
       "锚定",
@@ -5492,7 +4929,7 @@ const allWords = [
   {
     "id": 453,
     "word": "扩散模型",
-    "meaning": "通过学习逆转'加噪→去噪'过程来生成图像/音频/视频的生成式AI架构,Stable Diffusion和Sora都基于它",
+    "meaning": "通过学习逆转'加噪→去噪'过程来生成图像/音频/视频的生成式AI架构，Stable Diffusion和Sora都基于它",
     "example": "用扩散模型生成图片 → 通过去噪过程从纯噪声生成逼真图像",
     "categoryId": 6,
     "tags": [
@@ -5505,8 +4942,8 @@ const allWords = [
   {
     "id": 454,
     "word": "密度法则",
-    "meaning": "2026年中国信通院提出的AI产业新趋势——用更少算力和数据获得更多智能,大模型从'拼规模'转向'拼密度'",
-    "example": "遵循密度法则训练模型 → 不再盲目堆参数,而是提升单位算力的智能产出",
+    "meaning": "2026年中国信通院提出的AI产业新趋势——用更少算力和数据获得更多智能，大模型从'拼规模'转向'拼密度'",
+    "example": "遵循密度法则训练模型 → 不再盲目堆参数，而是提升单位算力的智能产出",
     "categoryId": 6,
     "tags": [
       "密度法则",
@@ -5518,7 +4955,7 @@ const allWords = [
   {
     "id": 455,
     "word": "Qwen3",
-    "meaning": "阿里巴巴通义千问团队2026年发布的大语言模型系列,具备百万token超长上下文,在Agent编程和复杂任务执行上处于业界领先",
+    "meaning": "阿里巴巴通义千问团队2026年发布的大语言模型系列，具备百万token超长上下文，在Agent编程和复杂任务执行上处于业界领先",
     "example": "用Qwen3做代码Agent → 用阿里千问2026模型做智能编程",
     "categoryId": 6,
     "tags": [
@@ -5531,7 +4968,7 @@ const allWords = [
   {
     "id": 456,
     "word": "GLM-5",
-    "meaning": "智谱AI 2026年发布的Agent大模型系列,原生多模态Coding基座,深度适配Agent场景,可理解设计稿/截图/网页界面并直接生成代码",
+    "meaning": "智谱AI 2026年发布的Agent大模型系列，原生多模态Coding基座，深度适配Agent场景，可理解设计稿/截图/网页界面并直接生成代码",
     "example": "用GLM-5做视觉编程 → 让AI读懂设计稿直接生成可运行代码",
     "categoryId": 6,
     "tags": [
@@ -5544,8 +4981,8 @@ const allWords = [
   {
     "id": 457,
     "word": "词元经济",
-    "meaning": "2026年3月国家数据局正式定名的新经济形态,以词元(Token)为计量和定价单位,把AI推理能力变成像水电一样可计量的服务",
-    "example": "发展词元经济 → 把AI服务按词元调用量定价交易,像云服务一样",
+    "meaning": "2026年3月国家数据局正式定名的新经济形态，以词元(Token)为计量和定价单位，把AI推理能力变成像水电一样可计量的服务",
+    "example": "发展词元经济 → 把AI服务按词元调用量定价交易，像云服务一样",
     "categoryId": 6,
     "tags": [
       "词元经济",
@@ -5557,8 +4994,8 @@ const allWords = [
   {
     "id": 458,
     "word": "智能经济",
-    "meaning": "2026年政府工作报告首次提出的经济新形态,以大模型+智能体为核心,AI赋能实体经济形成自主感知/推理/调度的闭环",
-    "example": "打造智能经济新形态 → 让AI深入各行各业,催生新业态",
+    "meaning": "2026年政府工作报告首次提出的经济新形态，以大模型+智能体为核心，AI赋能实体经济形成自主感知/推理/调度的闭环",
+    "example": "打造智能经济新形态 → 让AI深入各行各业，催生新业态",
     "categoryId": 6,
     "tags": [
       "智能经济",
@@ -5570,7 +5007,7 @@ const allWords = [
   {
     "id": 459,
     "word": "Kimi K3",
-    "meaning": "月之暗面2026年7月发布的AI大模型,2.8万亿参数为全球最大开源模型,支持100万token上下文,被称'2026 DeepSeek时刻',性能接近GPT-5.6",
+    "meaning": "月之暗面2026年7月发布的AI大模型，2.8万亿参数为全球最大开源模型，支持100万token上下文，被称'2026 DeepSeek时刻'，性能接近GPT-5.6",
     "example": "Kimi K3发布引发全球AI圈震动 → 中国大模型再次震惊硅谷",
     "categoryId": 6,
     "tags": [
@@ -5583,9 +5020,9 @@ const allWords = [
   {
     "id": 460,
     "word": "细味老菠萝",
-    "meaning": "2026年新晋流行语,来自'安全警长啦咘啦哆'的谐音,形容慢慢品味、细细体会的意思",
+    "meaning": "2026年新晋流行语，来自'安全警长啦咘啦哆'的谐音，形容慢慢品味、细细体会的意思",
     "example": "这件事得细味老菠萝 → 这件事得慢慢体会",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "细味老菠萝",
       "谐音梗",
@@ -5596,9 +5033,9 @@ const allWords = [
   {
     "id": 461,
     "word": "奶绿波",
-    "meaning": "2026年顶流爆款刷屏梗,源于高速堵车或密集恐惧场景的视频,画面像奶绿波纹一样层层扩散,引发全网模仿拍摄",
+    "meaning": "2026年顶流爆款刷屏梗，源于高速堵车或密集恐惧场景的视频，画面像奶绿波纹一样层层扩散，引发全网模仿拍摄",
     "example": "这个奶绿波视频太上头了 → 这个密集刷屏视频太魔性了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "奶绿波",
       "刷屏梗",
@@ -5609,9 +5046,9 @@ const allWords = [
   {
     "id": 462,
     "word": "酸黄瓜",
-    "meaning": "打工人自嘲梗,形容自己普通、平平无奇、收入不高的状态,与'精英'形成反差",
+    "meaning": "打工人自嘲梗，形容自己普通、平平无奇、收入不高的状态，与'精英'形成反差",
     "example": "我就是一颗酸黄瓜 → 我就是普通打工人一个",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "酸黄瓜",
       "打工人",
@@ -5622,9 +5059,9 @@ const allWords = [
   {
     "id": 463,
     "word": "中奖概率倍儿高",
-    "meaning": "源自抖音天津方言搞笑动画,形容运气极差、总是中招的自嘲,后引申为凡事都往坏的方向发展的悲观心态",
-    "example": "这个坑我踩了,中奖概率倍儿高 → 这个坑我必踩,运气就是这么背",
-    "categoryId": 5,
+    "meaning": "源自抖音天津方言搞笑动画，形容运气极差、总是中招的自嘲，后引申为凡事都往坏的方向发展的悲观心态",
+    "example": "这个坑我踩了，中奖概率倍儿高 → 这个坑我必踩，运气就是这么背",
+    "categoryId": 15,
     "tags": [
       "中奖概率",
       "天津方言",
@@ -5635,7 +5072,7 @@ const allWords = [
   {
     "id": 464,
     "word": "精神离职",
-    "meaning": "打工人自嘲梗,指身体还在工位,但心理上已经脱离工作状态,只想摆烂的心理状态",
+    "meaning": "打工人自嘲梗，指身体还在工位，但心理上已经脱离工作状态，只想摆烂的心理状态",
     "example": "今天又是精神离职的一天 → 今天又是人在心不在、只想摆烂的一天",
     "categoryId": 5,
     "tags": [
@@ -5649,7 +5086,7 @@ const allWords = [
   {
     "id": 465,
     "word": "龙虾",
-    "meaning": "AI智能体OpenClaw的昵称,因其图标酷似红色龙虾而得名,2026年初全网掀起'养龙虾'热潮",
+    "meaning": "AI智能体OpenClaw的昵称，因其图标酷似红色龙虾而得名，2026年初全网掀起'养龙虾'热潮",
     "example": "你养龙虾了吗 → 你用OpenClaw了吗",
     "categoryId": 6,
     "tags": [
@@ -5662,9 +5099,9 @@ const allWords = [
   {
     "id": 466,
     "word": "含机量爆表",
-    "meaning": "2026年网络热词,指视频或内容中AI/机器人元素占比极高,一眼AI生成的感觉",
+    "meaning": "2026年网络热词，指视频或内容中AI/机器人元素占比极高，一眼AI生成的感觉",
     "example": "这个视频含机量爆表 → 这个视频一看就是AI生成的",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "含机量",
       "AI生成",
@@ -5675,9 +5112,9 @@ const allWords = [
   {
     "id": 467,
     "word": "背手负鼠",
-    "meaning": "2026年全网爆火的表情包,一只北美负鼠背手站立的姿态神似'领导架子',精准复刻打工人表面体面内心崩溃的状态",
+    "meaning": "2026年全网爆火的表情包，一只北美负鼠背手站立的姿态神似'领导架子'，精准复刻打工人表面体面内心崩溃的状态",
     "example": "背手负鼠上班 → 假装成熟稳重实际快撑不住了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "背手负鼠",
       "表情包",
@@ -5689,9 +5126,9 @@ const allWords = [
   {
     "id": 468,
     "word": "给我擦皮鞋",
-    "meaning": "2026年热门梗,'我要验牌'的配套梗,源自周星驰电影法国赌神台词,现用于调侃或嘲讽对方",
-    "example": "我要验牌,给我擦皮鞋 → 质疑对方后嘲讽式炫耀",
-    "categoryId": 5,
+    "meaning": "2026年热门梗，'我要验牌'的配套梗，源自周星驰电影法国赌神台词，现用于调侃或嘲讽对方",
+    "example": "我要验牌，给我擦皮鞋 → 质疑对方后嘲讽式炫耀",
+    "categoryId": 15,
     "tags": [
       "擦皮鞋",
       "周星驰",
@@ -5702,7 +5139,7 @@ const allWords = [
   {
     "id": 469,
     "word": "养龙虾",
-    "meaning": "2026年科技圈热潮,指在设备中安装部署OpenClaw AI智能体的过程,因其图标似龙虾而得名",
+    "meaning": "2026年科技圈热潮，指在设备中安装部署OpenClaw AI智能体的过程，因其图标似龙虾而得名",
     "example": "今天成功养了一只龙虾 → 今天部署好了OpenClaw",
     "categoryId": 6,
     "tags": [
@@ -5715,7 +5152,7 @@ const allWords = [
   {
     "id": 470,
     "word": "NSP",
-    "meaning": "Next-State Prediction世界状态预测,AI从'预测下一个词'转向'预测世界下一个状态'的新范式",
+    "meaning": "Next-State Prediction世界状态预测，AI从'预测下一个词'转向'预测世界下一个状态'的新范式",
     "example": "NSP范式崛起 → AI开始学习预测世界状态变化",
     "categoryId": 6,
     "tags": [
@@ -5728,7 +5165,7 @@ const allWords = [
   {
     "id": 471,
     "word": "TinyML",
-    "meaning": "微型机器学习,将AI能力压缩到微控制器级别,让每个传感器都具备本地AI推理能力",
+    "meaning": "微型机器学习，将AI能力压缩到微控制器级别，让每个传感器都具备本地AI推理能力",
     "example": "TinyML部署 → 在微小设备上运行AI模型",
     "categoryId": 6,
     "tags": [
@@ -5741,7 +5178,7 @@ const allWords = [
   {
     "id": 472,
     "word": "Physical AI",
-    "meaning": "实体AI,能感知物理世界并直接参与生产、物流与服务的实际应用",
+    "meaning": "实体AI，能感知物理世界并直接参与生产、物流与服务的实际应用",
     "example": "Physical AI机器人 → 能操控物理世界的AI系统",
     "categoryId": 6,
     "tags": [
@@ -5754,7 +5191,7 @@ const allWords = [
   {
     "id": 473,
     "word": "Federated AI",
-    "meaning": "联邦AI,通过组合多个不同模型来提高准确性、灵活性和成本效率的AI架构",
+    "meaning": "联邦AI，通过组合多个不同模型来提高准确性、灵活性和成本效率的AI架构",
     "example": "Federated AI方案 → 用多模型协作而非依赖单一模型",
     "categoryId": 6,
     "tags": [
@@ -5767,7 +5204,7 @@ const allWords = [
   {
     "id": 474,
     "word": "Domain-Specific LLM",
-    "meaning": "领域专用大语言模型,针对单一行业训练,更懂专业术语和合规要求的AI模型",
+    "meaning": "领域专用大语言模型，针对单一行业训练，更懂专业术语和合规要求的AI模型",
     "example": "医疗Domain-Specific LLM → 专用于医疗行业的AI",
     "categoryId": 6,
     "tags": [
@@ -5780,7 +5217,7 @@ const allWords = [
   {
     "id": 475,
     "word": "Digital Twin",
-    "meaning": "数字孪生,在虚拟空间构建物理世界的数字化映射,用于模拟、预测和优化",
+    "meaning": "数字孪生，在虚拟空间构建物理世界的数字化映射，用于模拟、预测和优化",
     "example": "构建数字孪生 → 创建物理系统的虚拟复制品",
     "categoryId": 6,
     "tags": [
@@ -5793,8 +5230,8 @@ const allWords = [
   {
     "id": 476,
     "word": "AI-Native",
-    "meaning": "AI原生,以AI为核心从零开始设计软件开发的模式,自然语言即可生成完整应用",
-    "example": "AI-Native开发 → 用自然语言描述需求,AI生成完整代码",
+    "meaning": "AI原生，以AI为核心从零开始设计软件开发的模式，自然语言即可生成完整应用",
+    "example": "AI-Native开发 → 用自然语言描述需求，AI生成完整代码",
     "categoryId": 7,
     "tags": [
       "AI-Native",
@@ -5806,9 +5243,9 @@ const allWords = [
   {
     "id": 477,
     "word": "主体性",
-    "meaning": "2026年小红书十大热词之一,强调个人在信息洪流中保持独立判断和自主选择的能力",
+    "meaning": "2026年小红书十大热词之一，强调个人在信息洪流中保持独立判断和自主选择的能力",
     "example": "保持主体性 → 在算法包围中坚守自我判断",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "主体性",
       "自我",
@@ -5819,9 +5256,9 @@ const allWords = [
   {
     "id": 478,
     "word": "柔软力",
-    "meaning": "2026年小红书十大热词之一,指以柔克刚、用灵活方式化解困境的智慧和能力",
+    "meaning": "2026年小红书十大热词之一，指以柔克刚、用灵活方式化解困境的智慧和能力",
     "example": "柔软力处理 → 用温和方式化解冲突",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "柔软力",
       "生活智慧",
@@ -5832,9 +5269,9 @@ const allWords = [
   {
     "id": 479,
     "word": "反精致",
-    "meaning": "2026年小红书十大热词之一,拒绝过度包装和精致人设,追求真实自然的生活态度",
-    "example": "反精致风潮 → 抛弃精致偶像包袱,接受真实自我",
-    "categoryId": 5,
+    "meaning": "2026年小红书十大热词之一，拒绝过度包装和精致人设，追求真实自然的生活态度",
+    "example": "反精致风潮 → 抛弃精致偶像包袱，接受真实自我",
+    "categoryId": 15,
     "tags": [
       "反精致",
       "真实",
@@ -5845,9 +5282,9 @@ const allWords = [
   {
     "id": 480,
     "word": "文化力",
-    "meaning": "2026年小红书十大热词之一,指文化内容和文化产品带来的影响力和消费驱动力",
+    "meaning": "2026年小红书十大热词之一，指文化内容和文化产品带来的影响力和消费驱动力",
     "example": "文化力崛起 → 年轻人更愿意为文化体验付费",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "文化力",
       "文化消费",
@@ -5858,7 +5295,7 @@ const allWords = [
   {
     "id": 481,
     "word": "词元",
-    "meaning": "Token的中文官方表述,大模型处理信息的最小单元,兼具计量、定价、交易三重属性",
+    "meaning": "Token的中文官方表述，大模型处理信息的最小单元，兼具计量、定价、交易三重属性",
     "example": "日均词元调用量140万亿 → 模型每日处理的最小信息单元次数",
     "categoryId": 6,
     "tags": [
@@ -5871,7 +5308,7 @@ const allWords = [
   {
     "id": 482,
     "word": "电力鸿沟",
-    "meaning": "2026年达沃斯与OpenAI共同提出的概念,指AI时代各国电力供应能力的差距,电力成为新的战略资源",
+    "meaning": "2026年达沃斯与OpenAI共同提出的概念，指AI时代各国电力供应能力的差距，电力成为新的战略资源",
     "example": "电力鸿沟扩大 → 中美两国电力产能差距影响AI发展",
     "categoryId": 6,
     "tags": [
@@ -5884,7 +5321,7 @@ const allWords = [
   {
     "id": 483,
     "word": "普惠AI",
-    "meaning": "2026年达沃斯报告核心概念,指AI技术应具备包容性与可及性,让所有人都能平等享受AI红利",
+    "meaning": "2026年达沃斯报告核心概念，指AI技术应具备包容性与可及性，让所有人都能平等享受AI红利",
     "example": "普惠AI生态 → 让AI惠及最广泛人群而非少数公司",
     "categoryId": 6,
     "tags": [
@@ -5897,7 +5334,7 @@ const allWords = [
   {
     "id": 484,
     "word": "量子经济",
-    "meaning": "2026年达沃斯报告提出,指由量子计算、量子通信、量子加密带来的颠覆性经济变革,预计2035年创造2万亿美元价值",
+    "meaning": "2026年达沃斯报告提出，指由量子计算、量子通信、量子加密带来的颠覆性经济变革，预计2035年创造2万亿美元价值",
     "example": "拥抱量子经济 → 提前布局量子技术抢占新赛道",
     "categoryId": 6,
     "tags": [
@@ -5910,9 +5347,9 @@ const allWords = [
   {
     "id": 485,
     "word": "监管科技",
-    "meaning": "Suptech,2026年达沃斯热词,指用AI和大数据帮助监管机构建立更透明、更可靠的金融监管体系",
+    "meaning": "Suptech，2026年达沃斯热词，指用AI和大数据帮助监管机构建立更透明、更可靠的金融监管体系",
     "example": "监管科技应用 → 用AI提升金融监管的效率和韧性",
-    "categoryId": 6,
+    "categoryId": 9,
     "tags": [
       "监管科技",
       "Suptech",
@@ -5923,9 +5360,9 @@ const allWords = [
   {
     "id": 486,
     "word": "我去不早说",
-    "meaning": "2026年爆火反差凡尔赛句式,假装抱怨对方没早告诉自己某事,实则炫耀自己已知或经历过",
-    "example": "这东西超好吃,你怎么不早说 → 故意装埋怨的凡尔赛表达",
-    "categoryId": 5,
+    "meaning": "2026年爆火反差凡尔赛句式，假装抱怨对方没早告诉自己某事，实则炫耀自己已知或经历过",
+    "example": "这东西超好吃，你怎么不早说 → 故意装埋怨的凡尔赛表达",
+    "categoryId": 15,
     "tags": [
       "我去不早说",
       "凡尔赛",
@@ -5936,9 +5373,9 @@ const allWords = [
   {
     "id": 487,
     "word": "做完你的做你的",
-    "meaning": "2026年火爆职场梗,源自景德镇鸡排主理人安抚顾客名场面,形容多线程处理任务、被催但仍能控场的状态",
-    "example": "你先别催,做完你的做你的 → 忙碌中保持节奏,淡定应对催促",
-    "categoryId": 5,
+    "meaning": "2026年火爆职场梗，源自景德镇鸡排主理人安抚顾客名场面，形容多线程处理任务、被催但仍能控场的状态",
+    "example": "你先别催，做完你的做你的 → 忙碌中保持节奏，淡定应对催促",
+    "categoryId": 15,
     "tags": [
       "做完你的",
       "控场",
@@ -5949,9 +5386,9 @@ const allWords = [
   {
     "id": 488,
     "word": "如何呢又能怎",
-    "meaning": "2026年职场万能回应梗,用戏谑语气表达'你能拿我怎样'的不在乎态度",
-    "example": "如何呢又能怎 → 你说我也没用,我不在乎",
-    "categoryId": 5,
+    "meaning": "2026年职场万能回应梗，用戏谑语气表达'你能拿我怎样'的不在乎态度",
+    "example": "如何呢又能怎 → 你说我也没用，我不在乎",
+    "categoryId": 15,
     "tags": [
       "如何呢又能怎",
       "摆烂",
@@ -5962,9 +5399,9 @@ const allWords = [
   {
     "id": 489,
     "word": "杀猪式告白",
-    "meaning": "2026年热梗,源自剧集《逐玉》,指朴实、真诚、不浪漫但诚意满满的告白方式",
+    "meaning": "2026年热梗，源自剧集《逐玉》，指朴实、真诚、不浪漫但诚意满满的告白方式",
     "example": "我杀猪养你 → 我愿意用最朴实的方式照顾你一辈子",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "杀猪式告白",
       "逐玉",
@@ -5975,9 +5412,9 @@ const allWords = [
   {
     "id": 490,
     "word": "夯爆",
-    "meaning": "2026年流行语,形容场面火爆、造型封神、表现极佳,源自'硬'字的网络谐音梗",
+    "meaning": "2026年流行语，形容场面火爆、造型封神、表现极佳，源自'硬'字的网络谐音梗",
     "example": "这个舞台夯爆了 → 这个表演简直炸裂全场",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "夯爆",
       "炸裂",
@@ -5988,9 +5425,9 @@ const allWords = [
   {
     "id": 491,
     "word": "别太荒谬",
-    "meaning": "2026年年轻人万能吐槽句式,对离谱事情表达无语又无奈的感叹",
+    "meaning": "2026年年轻人万能吐槽句式，对离谱事情表达无语又无奈的感叹",
     "example": "别太荒谬了! → 这也太离谱了吧!",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "别太荒谬",
       "吐槽",
@@ -6001,9 +5438,9 @@ const allWords = [
   {
     "id": 492,
     "word": "有效陪伴",
-    "meaning": "2026年情绪价值类热词,与无效社交相反,指能提供情感支持与高质量相处时间的陪伴方式",
-    "example": "有效陪伴 → 不在时长而在质量,真正给予情感支持",
-    "categoryId": 5,
+    "meaning": "2026年情绪价值类热词，与无效社交相反，指能提供情感支持与高质量相处时间的陪伴方式",
+    "example": "有效陪伴 → 不在时长而在质量，真正给予情感支持",
+    "categoryId": 15,
     "tags": [
       "有效陪伴",
       "情绪价值",
@@ -6014,9 +5451,9 @@ const allWords = [
   {
     "id": 493,
     "word": "赛博丐帮",
-    "meaning": "2026年自嘲类网络梗,指自愿放弃物质追求、在网络上互相取暖解压的群体,源自'自愿流浪'的延伸",
-    "example": "我加入赛博丐帮了 → 物质我不要了,只想精神自由",
-    "categoryId": 5,
+    "meaning": "2026年自嘲类网络梗，指自愿放弃物质追求、在网络上互相取暖解压的群体，源自'自愿流浪'的延伸",
+    "example": "我加入赛博丐帮了 → 物质我不要了，只想精神自由",
+    "categoryId": 15,
     "tags": [
       "赛博丐帮",
       "自嘲",
@@ -6027,7 +5464,7 @@ const allWords = [
   {
     "id": 494,
     "word": "摸鱼搭子",
-    "meaning": "2026年职场梗,指一起在工作时间偷懒、互相掩护摸鱼的同事组合",
+    "meaning": "2026年职场梗，指一起在工作时间偷懒、互相掩护摸鱼的同事组合",
     "example": "摸鱼搭子集合 → 一群工作偷懒的同盟伙伴",
     "categoryId": 5,
     "tags": [
@@ -6040,7 +5477,7 @@ const allWords = [
   {
     "id": 495,
     "word": "Model Router",
-    "meaning": "模型路由器,在应用层和模型层之间动态分配任务给最合适的AI模型(便宜/贵、文本/多模态等)",
+    "meaning": "模型路由器，在应用层和模型层之间动态分配任务给最合适的AI模型(便宜/贵、文本/多模态等)",
     "example": "用Model Router调度多个模型 → 根据任务类型自动选用最合适的模型",
     "categoryId": 6,
     "tags": [
@@ -6053,8 +5490,8 @@ const allWords = [
   {
     "id": 496,
     "word": "Cloud Sandbox",
-    "meaning": "云端沙箱,AI在隔离的云端容器里运行代码,本地电脑不参与,完成后容器销毁",
-    "example": "用Cloud Sandbox跑AI写的代码 → 让AI在云端安全执行,本地零风险",
+    "meaning": "云端沙箱，AI在隔离的云端容器里运行代码，本地电脑不参与，完成后容器销毁",
+    "example": "用Cloud Sandbox跑AI写的代码 → 让AI在云端安全执行，本地零风险",
     "categoryId": 6,
     "tags": [
       "Cloud Sandbox",
@@ -6066,8 +5503,8 @@ const allWords = [
   {
     "id": 497,
     "word": "Agentic Engineering",
-    "meaning": "智能体工程学,2026年从Prompt Engineering演进而来的AI工程新重心,聚焦Agent系统的工程化",
-    "example": "转向Agentic Engineering → 不再只调提示词,而是搭整套Agent系统",
+    "meaning": "智能体工程学，2026年从Prompt Engineering演进而来的AI工程新重心，聚焦Agent系统的工程化",
+    "example": "转向Agentic Engineering → 不再只调提示词，而是搭整套Agent系统",
     "categoryId": 6,
     "tags": [
       "Agentic Engineering",
@@ -6079,9 +5516,9 @@ const allWords = [
   {
     "id": 498,
     "word": "破防",
-    "meaning": "心理防线被突破,被某句话、某段视频强烈触动情绪,源自游戏术语",
+    "meaning": "心理防线被突破，被某句话、某段视频强烈触动情绪，源自游戏术语",
     "example": "这首歌直接把我破防了 → 这首歌深深触动了我",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "破防",
       "情绪",
@@ -6091,9 +5528,9 @@ const allWords = [
   {
     "id": 499,
     "word": "社恐",
-    "meaning": "社交恐惧,泛指在人际交往中感到紧张或不愿社交的人",
-    "example": "我是社恐,不想参加聚会 → 我不擅长社交,不想去聚会",
-    "categoryId": 5,
+    "meaning": "社交恐惧，泛指在人际交往中感到紧张或不愿社交的人",
+    "example": "我是社恐，不想参加聚会 → 我不擅长社交，不想去聚会",
+    "categoryId": 15,
     "tags": [
       "社恐",
       "社交",
@@ -6103,9 +5540,9 @@ const allWords = [
   {
     "id": 500,
     "word": "巨好吃",
-    "meaning": "非常非常好吃,用「巨」夸张修辞强调食物的美味程度",
+    "meaning": "非常非常好吃，用「巨」夸张修辞强调食物的美味程度",
     "example": "这家店巨好吃! → 这家店食物超级好吃!",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "巨好吃",
       "美食",
@@ -6115,9 +5552,9 @@ const allWords = [
   {
     "id": 501,
     "word": "笑屁笑",
-    "meaning": "带反讽、不满的语气,让对方别笑了,嘲讽其笑得不恰当",
-    "example": "笑屁笑啊,有什么好笑 → 别笑了,有什么可笑的",
-    "categoryId": 5,
+    "meaning": "带反讽、不满的语气，让对方别笑了，嘲讽其笑得不恰当",
+    "example": "笑屁笑啊，有什么好笑 → 别笑了，有什么可笑的",
+    "categoryId": 15,
     "tags": [
       "笑屁笑",
       "反讽",
@@ -6127,9 +5564,9 @@ const allWords = [
   {
     "id": 502,
     "word": "嘻嘻",
-    "meaning": "敷衍、装可爱的回复,常用于回避问题或不正面回答",
+    "meaning": "敷衍、装可爱的回复，常用于回避问题或不正面回答",
     "example": "你怎么想的?嘻嘻 → 我不打算回答你",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "嘻嘻",
       "敷衍",
@@ -6139,9 +5576,9 @@ const allWords = [
   {
     "id": 503,
     "word": "晕爛",
-    "meaning": "「晕」的加强版,形容对某人或某事极度迷恋到无法自拔",
-    "example": "我又晕爛了 → 我又迷上TA了,完全无法自拔",
-    "categoryId": 5,
+    "meaning": "「晕」的加强版，形容对某人或某事极度迷恋到无法自拔",
+    "example": "我又晕爛了 → 我又迷上TA了，完全无法自拔",
+    "categoryId": 15,
     "tags": [
       "晕爛",
       "迷恋",
@@ -6151,9 +5588,9 @@ const allWords = [
   {
     "id": 504,
     "word": "蛋雕",
-    "meaning": "台语「丢掉」的谐音,形容扔掉、不要了",
+    "meaning": "台语「丢掉」的谐音，形容扔掉、不要了",
     "example": "这件衣服我蛋雕了 → 这件衣服我扔了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "蛋雕",
       "台语",
@@ -6163,9 +5600,9 @@ const allWords = [
   {
     "id": 505,
     "word": "尊嘟假嘟",
-    "meaning": "「真的假的」的可爱谐音,发音时嘴巴会嘟起来,装可爱说法",
+    "meaning": "「真的假的」的可爱谐音，发音时嘴巴会嘟起来，装可爱说法",
     "example": "尊嘟假嘟?他真的辞职了? → 真的假的?",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "尊嘟假嘟",
       "谐音",
@@ -6175,9 +5612,9 @@ const allWords = [
   {
     "id": 506,
     "word": "近更",
-    "meaning": "近况更新的缩写,常用于社交平台发布自己的近况",
+    "meaning": "近况更新的缩写，常用于社交平台发布自己的近况",
     "example": "近更:周末去爬山了 → 近况更新:这周末去爬山了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "近更",
       "缩写",
@@ -6187,9 +5624,9 @@ const allWords = [
   {
     "id": 507,
     "word": "大奶微微",
-    "meaning": "「大杯奶茶微糖微冰」的速记缩写,点单省时用语",
-    "example": "老样子,大奶微微 → 还是大杯奶茶微糖微冰",
-    "categoryId": 5,
+    "meaning": "「大杯奶茶微糖微冰」的速记缩写，点单省时用语",
+    "example": "老样子，大奶微微 → 还是大杯奶茶微糖微冰",
+    "categoryId": 15,
     "tags": [
       "大奶微微",
       "奶茶",
@@ -6199,9 +5636,9 @@ const allWords = [
   {
     "id": 508,
     "word": "奶雞",
-    "meaning": "「奶茶配鸡排」的台式组合简称,经典下午茶搭配",
+    "meaning": "「奶茶配鸡排」的台式组合简称，经典下午茶搭配",
     "example": "今天下午茶就奶雞了 → 下午茶就奶茶加鸡排",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "奶雞",
       "奶茶",
@@ -6212,9 +5649,9 @@ const allWords = [
   {
     "id": 509,
     "word": "傳小",
-    "meaning": "「传统小吃」的缩写,常用于点餐或美食推荐",
+    "meaning": "「传统小吃」的缩写，常用于点餐或美食推荐",
     "example": "今晚去吃傳小 → 今晚去吃传统小吃",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "傳小",
       "小吃",
@@ -6224,9 +5661,9 @@ const allWords = [
   {
     "id": 510,
     "word": "各各",
-    "meaning": "聚餐时「各付各的」缩写,AA制的快捷说法",
-    "example": "今天我们各各吧 → 今天我们AA制,各付各的",
-    "categoryId": 5,
+    "meaning": "聚餐时「各付各的」缩写，AA制的快捷说法",
+    "example": "今天我们各各吧 → 今天我们AA制，各付各的",
+    "categoryId": 15,
     "tags": [
       "各各",
       "AA制",
@@ -6236,9 +5673,9 @@ const allWords = [
   {
     "id": 511,
     "word": "稳单",
-    "meaning": "稳定单身,长期单身的自我调侃说法",
+    "meaning": "稳定单身，长期单身的自我调侃说法",
     "example": "我又是稳单一年 → 我又稳定单身了一年",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "稳单",
       "单身",
@@ -6248,9 +5685,9 @@ const allWords = [
   {
     "id": 512,
     "word": "欢回",
-    "meaning": "「欢迎回来」的缩写,常用于直播或社交平台打招呼",
+    "meaning": "「欢迎回来」的缩写，常用于直播或社交平台打招呼",
     "example": "欢回直播间 → 欢迎回到直播间",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "欢回",
       "缩写",
@@ -6260,9 +5697,9 @@ const allWords = [
   {
     "id": 513,
     "word": "已购买小孩很爱",
-    "meaning": "源自电商购物评价的跟风梗,表示已下单且强烈推荐",
-    "example": "这个东西,已购买小孩很爱 → 我买了,真的很好用/很好吃",
-    "categoryId": 5,
+    "meaning": "源自电商购物评价的跟风梗，表示已下单且强烈推荐",
+    "example": "这个东西，已购买小孩很爱 → 我买了，真的很好用/很好吃",
+    "categoryId": 15,
     "tags": [
       "已购买",
       "小孩很爱",
@@ -6272,9 +5709,9 @@ const allWords = [
   {
     "id": 514,
     "word": "拆因",
-    "meaning": "拆解原因,理性分析问题根源的网络用法",
+    "meaning": "拆解原因，理性分析问题根源的网络用法",
     "example": "我先拆因一下这件事 → 我先理性分析一下原因",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "拆因",
       "分析",
@@ -6284,9 +5721,9 @@ const allWords = [
   {
     "id": 515,
     "word": "砸瓦鲁多",
-    "meaning": "源自JoJo的奇妙冒险,「ザ・ワールド」(ZA WARUDO)的空耳,表示'时间暂停'或戏剧性停顿",
+    "meaning": "源自JoJo的奇妙冒险，「ザ・ワールド」(ZA WARUDO)的空耳，表示'时间暂停'或戏剧性停顿",
     "example": "砸瓦鲁多! → 时间给我暂停!",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "砸瓦鲁多",
       "JoJo",
@@ -6297,9 +5734,9 @@ const allWords = [
   {
     "id": 516,
     "word": "xswl",
-    "meaning": "「笑死我了」的拼音缩写,形容某事非常好笑",
+    "meaning": "「笑死我了」的拼音缩写，形容某事非常好笑",
     "example": "这个视频xswl → 这个视频笑死我了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "xswl",
       "笑死我了",
@@ -6309,9 +5746,9 @@ const allWords = [
   {
     "id": 517,
     "word": "nsdd",
-    "meaning": "「你说得对」的拼音缩写,既可真诚认同也可敷衍同意",
-    "example": "nsdd,都听你的 → 你说得对,听你的",
-    "categoryId": 5,
+    "meaning": "「你说得对」的拼音缩写，既可真诚认同也可敷衍同意",
+    "example": "nsdd，都听你的 → 你说得对，听你的",
+    "categoryId": 15,
     "tags": [
       "nsdd",
       "拼音缩写",
@@ -6321,9 +5758,9 @@ const allWords = [
   {
     "id": 518,
     "word": "srds",
-    "meaning": "「虽然但是」的拼音缩写,用于句首表达观点转折",
-    "example": "srds我还是不喜欢 → 虽然但是,我还是不喜欢",
-    "categoryId": 5,
+    "meaning": "「虽然但是」的拼音缩写，用于句首表达观点转折",
+    "example": "srds我还是不喜欢 → 虽然但是，我还是不喜欢",
+    "categoryId": 15,
     "tags": [
       "srds",
       "虽然但是",
@@ -6333,9 +5770,9 @@ const allWords = [
   {
     "id": 519,
     "word": "姨母笑",
-    "meaning": "源自韩语,看到年轻人甜蜜场景时露出的慈爱欣慰式微笑",
+    "meaning": "源自韩语，看到年轻人甜蜜场景时露出的慈爱欣慰式微笑",
     "example": "看偶像剧忍不住姨母笑 → 看年轻情侣忍不住露出慈祥的笑",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "姨母笑",
       "慈爱",
@@ -6345,9 +5782,9 @@ const allWords = [
   {
     "id": 520,
     "word": "归刚欸",
-    "meaning": "台语「整天、成天」的谐音,斥责别人整天没事找麻烦",
+    "meaning": "台语「整天、成天」的谐音，斥责别人整天没事找麻烦",
     "example": "你归刚欸都在干嘛 → 你一整天都在搞什么",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "归刚欸",
       "台语",
@@ -6357,9 +5794,9 @@ const allWords = [
   {
     "id": 521,
     "word": "干饭人",
-    "meaning": "对吃饭有极大热情的群体,认真专注吃饭的人",
+    "meaning": "对吃饭有极大热情的群体，认真专注吃饭的人",
     "example": "干饭人干饭魂 → 吃饭就要专注、豪迈",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "干饭人",
       "吃饭",
@@ -6369,9 +5806,9 @@ const allWords = [
   {
     "id": 522,
     "word": "快乐星球",
-    "meaning": "源自抖音神曲《什么是快乐星球》,形容无忧无虑的小确幸状态",
+    "meaning": "源自抖音神曲《什么是快乐星球》，形容无忧无虑的小确幸状态",
     "example": "什么是快乐星球 → 什么是让我快乐的小世界",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "快乐星球",
       "抖音",
@@ -6381,9 +5818,9 @@ const allWords = [
   {
     "id": 523,
     "word": "留友看",
-    "meaning": "「留着给朋友看」的缩写,Threads上标记内容值得分享给朋友的互动暗语",
+    "meaning": "「留着给朋友看」的缩写，Threads上标记内容值得分享给朋友的互动暗语",
     "example": "这个帖子留友看 → 这个内容值得留着给朋友看",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "留友看",
       "Threads",
@@ -6395,9 +5832,9 @@ const allWords = [
   {
     "id": 524,
     "word": "偷感",
-    "meaning": "做事低调、偷偷摸摸不让人知道,怕被抓包的心态",
-    "example": "偷感很重 → 偷偷摸摸,怕被人发现",
-    "categoryId": 5,
+    "meaning": "做事低调、偷偷摸摸不让人知道，怕被抓包的心态",
+    "example": "偷感很重 → 偷偷摸摸，怕被人发现",
+    "categoryId": 15,
     "tags": [
       "偷感",
       "低调",
@@ -6409,9 +5846,9 @@ const allWords = [
   {
     "id": 525,
     "word": "后面有车",
-    "meaning": "源自台湾歌手瘦子E.SO直播意外,看到大淵站在路边误以为有车,大喊提醒结果闹乌龙,延伸为过度紧张、小题大做的调侃",
+    "meaning": "源自台湾歌手瘦子E.SO直播意外，看到大淵站在路边误以为有车，大喊提醒结果闹乌龙，延伸为过度紧张、小题大做的调侃",
     "example": "你后面有车!我在打工啦 → 反应过度、大惊小怪",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "后面有车",
       "瘦子",
@@ -6424,9 +5861,9 @@ const allWords = [
   {
     "id": 526,
     "word": "真冰凉",
-    "meaning": "源自台湾网红嘴哥(张译)美食评测,形容吃完热食后大口喝冰凉饮料的爽快感,搭配夸张高分贝表演成经典口头禅",
-    "example": "嘉义鱼羹配冰饮,真冰凉! → 形容极致的畅快消暑体验",
-    "categoryId": 5,
+    "meaning": "源自台湾网红嘴哥(张译)美食评测，形容吃完热食后大口喝冰凉饮料的爽快感，搭配夸张高分贝表演成经典口头禅",
+    "example": "嘉义鱼羹配冰饮，真冰凉! → 形容极致的畅快消暑体验",
+    "categoryId": 15,
     "tags": [
       "真冰凉",
       "嘴哥",
@@ -6439,9 +5876,9 @@ const allWords = [
   {
     "id": 527,
     "word": "Stan",
-    "meaning": "由stalker(跟踪狂)和fan(粉丝)组合而成,形容死忠支持某个人、理念或创作者",
+    "meaning": "由stalker(跟踪狂)和fan(粉丝)组合而成，形容死忠支持某个人、理念或创作者",
     "example": "我真的Stan她的生活态度 → 我是她的死忠粉丝",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Stan",
       "死忠",
@@ -6453,9 +5890,9 @@ const allWords = [
   {
     "id": 528,
     "word": "Cheugy",
-    "meaning": "发音CHOO-gee,形容曾经很流行现在看起来有点过时的事物,带幽默感承认时代在变化",
+    "meaning": "发音CHOO-gee，形容曾经很流行现在看起来有点过时的事物，带幽默感承认时代在变化",
     "example": "这个穿搭有点Cheugy → 这个穿搭有点过时了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Cheugy",
       "过时",
@@ -6468,8 +5905,8 @@ const allWords = [
     "id": 529,
     "word": "Crashing Out",
     "meaning": "形容在高压或高投入后情绪突然彻底耗尽、崩溃或直接开摆的状态",
-    "example": "今天加班到凌晨,我真的要Crashing Out了 → 我要崩溃了",
-    "categoryId": 5,
+    "example": "今天加班到凌晨，我真的要Crashing Out了 → 我要崩溃了",
+    "categoryId": 15,
     "tags": [
       "Crashing Out",
       "崩溃",
@@ -6484,7 +5921,7 @@ const allWords = [
     "word": "Aura Farming",
     "meaning": "指在社交平台上刻意发布有质感、很酷的照片来经营个人魅力值的行为",
     "example": "他又在Aura Farming了 → 他又在经营人设/装逼了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Aura Farming",
       "人设",
@@ -6497,9 +5934,9 @@ const allWords = [
   {
     "id": 531,
     "word": "Based",
-    "meaning": "形容一个人很真实、有自信、做自己,不在意他人眼光,是一种高度的称赞",
+    "meaning": "形容一个人很真实、有自信、做自己，不在意他人眼光，是一种高度的称赞",
     "example": "这个回答太Based了 → 这个回答太真实了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "Based",
       "真实",
@@ -6512,9 +5949,9 @@ const allWords = [
   {
     "id": 532,
     "word": "天菜",
-    "meaning": "Ta是我的菜的简称,用来指理想型情人,即完全符合自己审美和喜好的人",
+    "meaning": "Ta是我的菜的简称，用来指理想型情人，即完全符合自己审美和喜好的人",
     "example": "她是我的天菜 → 她是我的理想型",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "天菜",
       "理想型",
@@ -6525,9 +5962,9 @@ const allWords = [
   {
     "id": 533,
     "word": "炎上",
-    "meaning": "来自日语,指一个人在网络上失言或行为引起纷争,遭到大量网友猛烈攻击",
+    "meaning": "来自日语，指一个人在网络上失言或行为引起纷争，遭到大量网友猛烈攻击",
     "example": "这个明星炎上了 → 这个明星被网友骂翻了",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "炎上",
       "日语",
@@ -6538,9 +5975,9 @@ const allWords = [
   {
     "id": 534,
     "word": "估咩",
-    "meaning": "Google Maps的台语/谐音简称,出门找路时常用",
+    "meaning": "Google Maps的台语/谐音简称，出门找路时常用",
     "example": "用估咩查一下路线 → 用Google Maps查一下路线",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "估咩",
       "Google Maps",
@@ -6553,9 +5990,9 @@ const allWords = [
   {
     "id": 535,
     "word": "好99",
-    "meaning": "好cute cute(好可爱)的夸张式写法或谐音,用来表达极度的喜爱和称赞",
+    "meaning": "好cute cute(好可爱)的夸张式写法或谐音，用来表达极度的喜爱和称赞",
     "example": "这只猫猫好99! → 这只猫猫好可爱啊!",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "好99",
       "可爱",
@@ -6567,9 +6004,9 @@ const allWords = [
   {
     "id": 536,
     "word": "mm7",
-    "meaning": "广东话潮语,指普普通通、勉强过得去的情况,不是负评而是诚实的评价",
+    "meaning": "广东话潮语，指普普通通、勉强过得去的情况，不是负评而是诚实的评价",
     "example": "这家餐厅mm7啦 → 这家餐厅一般般啦",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "mm7",
       "广东话",
@@ -6580,23 +6017,22 @@ const allWords = [
   {
     "id": 537,
     "word": "涂山，我罩的",
-      "meaning": "源自《狐妖小红娘》竹业篇经典台词，霸气护短宣言，意思是'这个地方/这个人，我来保护'，常用于社交媒体表达守护承诺",
-      "example": "涂山，我罩的，懂？ → 我来罩着/保护你，懂？",
-      "categoryId": 5,
-      "tags": [
-        "涂山",
-        "狐妖小红娘",
-        "霸气",
-        "护短",
-        "网络流行语",
-        "2026热词"
-      ]
-    }
-,
+    "meaning": "源自《狐妖小红娘》竹业篇经典台词，霸气护短宣言，意思是'这个地方/这个人，我来保护'，常用于社交媒体表达守护承诺",
+    "example": "涂山，我罩的，懂？ → 我来罩着/保护你，懂？",
+    "categoryId": 15,
+    "tags": [
+      "涂山",
+      "狐妖小红娘",
+      "霸气",
+      "护短",
+      "网络流行语",
+      "2026热词"
+    ]
+  },
   {
     "id": 538,
     "word": "提示图工程",
-    "meaning": "Prompt Graph Engineering,将提示词工程从孤立字符串演变为复杂图结构的新范式,整合多步骤推理、多路径调用和结果聚合",
+    "meaning": "Prompt Graph Engineering，将提示词工程从孤立字符串演变为复杂图结构的新范式，整合多步骤推理、多路径调用和结果聚合",
     "example": "提示图工程优化 → 用图结构组织复杂AI工作流",
     "categoryId": 6,
     "tags": [
@@ -6610,9 +6046,9 @@ const allWords = [
   {
     "id": 539,
     "word": "去嗆",
-    "meaning": "台湾Threads流行语,闽南语去玩的谐音,指去某个地方玩耍或消费",
+    "meaning": "台湾Threads流行语，闽南语去玩的谐音，指去某个地方玩耍或消费",
     "example": "周末去嗆逢甲 → 周末去逢甲夜市玩",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "去嗆",
       "闽南语",
@@ -6624,9 +6060,9 @@ const allWords = [
   {
     "id": 540,
     "word": "9.4趴",
-    "meaning": "台湾网络用语,94分的谐音,指最高评价或A级评分",
+    "meaning": "台湾网络用语，94分的谐音，指最高评价或A级评分",
     "example": "这部电影9.4趴! → 这部电影评分超高达到了9.4分",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "9.4趴",
       "94分",
@@ -6638,7 +6074,7 @@ const allWords = [
   {
     "id": 541,
     "word": "硅基团队",
-    "meaning": "由多个AI智能体组成的虚拟团队,与人类员工协作完成企业级任务",
+    "meaning": "由多个AI智能体组成的虚拟团队，与人类员工协作完成企业级任务",
     "example": "硅基团队上岗 → AI智能体团队开始进入企业岗位",
     "categoryId": 6,
     "tags": [
@@ -6651,7 +6087,7 @@ const allWords = [
   {
     "id": 542,
     "word": "AgentOps",
-    "meaning": "智能体运营,管理、监控、优化AI智能体全生命周期的工程实践",
+    "meaning": "智能体运营，管理、监控、优化AI智能体全生命周期的工程实践",
     "example": "AgentOps体系 → 建立智能体的部署监控运营流程",
     "categoryId": 6,
     "tags": [
@@ -6664,7 +6100,7 @@ const allWords = [
   {
     "id": 543,
     "word": "数字员工",
-    "meaning": "AI智能体化身的企业虚拟员工,具备岗位技能并与人协作办公",
+    "meaning": "AI智能体化身的企业虚拟员工，具备岗位技能并与人协作办公",
     "example": "打造数字员工 → 用AI Agent承担具体岗位工作",
     "categoryId": 6,
     "tags": [
@@ -6677,7 +6113,7 @@ const allWords = [
   {
     "id": 544,
     "word": "L1-L5智能体",
-    "meaning": "腾讯研究院提出的智能体能力分级框架,从L1智能知识库到L5多智能体系统",
+    "meaning": "腾讯研究院提出的智能体能力分级框架，从L1智能知识库到L5多智能体系统",
     "example": "L3级推理Agent → AI自主规划任务的超级员工阶段",
     "categoryId": 6,
     "tags": [
@@ -6690,9 +6126,9 @@ const allWords = [
   {
     "id": 545,
     "word": "比比拉布",
-    "meaning": "源自国外搞笑视频的魔性音效梗,无具体含义,常用于短视频搞笑配乐",
+    "meaning": "源自国外搞笑视频的魔性音效梗，无具体含义，常用于短视频搞笑配乐",
     "example": "比比拉布! → 配合搞笑画面的魔性音效",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "比比拉布",
       "音效梗",
@@ -6703,9 +6139,9 @@ const allWords = [
   {
     "id": 546,
     "word": "我的刀盾",
-    "meaning": "源自What the dog doing空耳梗,因发音快被误听为中文我的刀盾,后画成持刀盾的狗狗形象",
+    "meaning": "源自What the dog doing空耳梗，因发音快被误听为中文我的刀盾，后画成持刀盾的狗狗形象",
     "example": "我的刀盾! → 课间打闹时配合动作的口头禅",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "我的刀盾",
       "空耳梗",
@@ -6716,9 +6152,9 @@ const allWords = [
   {
     "id": 547,
     "word": "马彪彪",
-    "meaning": "2026年山东美术馆推出的马文创IP,代表周一上班疲惫状态,刷屏社交媒体",
+    "meaning": "2026年山东美术馆推出的马文创IP，代表周一上班疲惫状态，刷屏社交媒体",
     "example": "周一的我:马彪彪 → 周一上班精神状态如马彪彪",
-    "categoryId": 5,
+    "categoryId": 15,
     "tags": [
       "马彪彪",
       "文创",
@@ -6729,9 +6165,9 @@ const allWords = [
   {
     "id": 548,
     "word": "愁马在手",
-    "meaning": "2026马年谐音梗,筹码在手的谐音,形容凡事有底气、不慌",
-    "example": "愁马在手,天下我有 → 有了底气就不怕了",
-    "categoryId": 5,
+    "meaning": "2026马年谐音梗，筹码在手的谐音，形容凡事有底气、不慌",
+    "example": "愁马在手，天下我有 → 有了底气就不怕了",
+    "categoryId": 15,
     "tags": [
       "愁马在手",
       "马年谐音",
@@ -6742,9 +6178,9 @@ const allWords = [
   {
     "id": 549,
     "word": "万物皆可老X",
-    "meaning": "万能造词模板,老己/老饭/老机的合集,表示对任何事物的亲切称呼",
-    "example": "万物皆可老X,老饭老机老床 → 万物皆可加老字,亲近又可爱",
-    "categoryId": 5,
+    "meaning": "万能造词模板，老己/老饭/老机的合集，表示对任何事物的亲切称呼",
+    "example": "万物皆可老X，老饭老机老床 → 万物皆可加老字，亲近又可爱",
+    "categoryId": 15,
     "tags": [
       "万物皆可老X",
       "造词模板",
@@ -6755,9 +6191,9 @@ const allWords = [
   {
     "id": 550,
     "word": "自愿流浪",
-    "meaning": "抛弃压力与物质,追求精神自由的解压生活态度",
-    "example": "我想自愿流浪 → 放下压力,只想精神自由",
-    "categoryId": 5,
+    "meaning": "抛弃压力与物质，追求精神自由的解压生活态度",
+    "example": "我想自愿流浪 → 放下压力，只想精神自由",
+    "categoryId": 15,
     "tags": [
       "自愿流浪",
       "释压",

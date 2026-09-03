@@ -13,7 +13,8 @@ const categories = [
   { id: 11, name: '后端开发', desc: '服务端开发技术', type: 'professional', iconType: 'emoji', icon: '⚙️' },
   { id: 12, name: '前端开发', desc: '用户界面开发技术', type: 'professional', iconType: 'emoji', icon: '🎨' },
   { id: 13, name: 'DevOps运维', desc: '开发运维一体化', type: 'professional', iconType: 'emoji', icon: '🔧' },
-  { id: 14, name: '大数据分析', desc: '大数据处理分析', type: 'professional', iconType: 'emoji', icon: '📊' }
+  { id: 14, name: '大数据分析', desc: '大数据处理分析', type: 'professional', iconType: 'emoji', icon: '📊' },
+  { id: 15, name: '网络热词', desc: '全网流行的热梗新词', type: 'jargon', iconType: 'emoji', icon: '🔥' }
 ]
 
 module.exports = categories

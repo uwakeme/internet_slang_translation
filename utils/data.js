@@ -47,6 +47,11 @@ function getAllWords() {
   return allWords
 }
 
+function getWordById(id) {
+  const target = Number(id)
+  return allWords.find(w => w.id === target) || null
+}
+
 // 搜索功能
 function searchWords(keyword) {
   if (!keyword || keyword.trim() === '') return []
@@ -101,6 +106,7 @@ module.exports = {
   getProfessionalCategories: () => getCategoriesByType('professional'),
   getWordsByCategory,
   getAllWords,
+  getWordById,
   searchWords,
   searchByTag,
   getPopularTags,

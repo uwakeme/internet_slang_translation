@@ -22,7 +22,7 @@
         class="hot-tag"
         wx:for="{{hotWords}}"
         wx:key="id"
-        data-word="{{item.word}}"
+        data-id="{{item.id}}"
         bindtap="goToWordDetail"
       >
         <text class="hot-tag-word">{{item.word}}</text>
@@ -64,7 +64,7 @@
           wx:for-item="word"
           wx:key="id"
           style="border-left-color: {{item.color}};"
-          data-word="{{word.word}}"
+          data-id="{{word.id}}"
           bindtap="goToWordDetail"
           hover-class="word-card-hover"
           hover-stay-time="80"

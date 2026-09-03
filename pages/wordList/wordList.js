@@ -32,19 +32,9 @@ Page({
   },
 
   goToWordDetail: function(e) {
-    var word = e.currentTarget.dataset.word
-    console.log('点击词语:', word)
-    var url = '/pages/wordDetail/wordDetail?word=' + encodeURIComponent(word)
-    console.log('跳转URL:', url)
-
+    var wordId = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: url,
-      success: function() {
-        console.log('跳转成功')
-      },
-      fail: function(err) {
-        console.error('跳转失败:', err)
-      }
+      url: '/pages/wordDetail/wordDetail?id=' + wordId
     })
   },
 

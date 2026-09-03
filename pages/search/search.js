@@ -113,9 +113,9 @@ Page({
   },
 
   goToWordDetail: function(e) {
-    var word = e.currentTarget.dataset.word
+    var wordId = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/wordDetail/wordDetail?word=' + encodeURIComponent(word)
+      url: '/pages/wordDetail/wordDetail?id=' + wordId
     })
   },
 

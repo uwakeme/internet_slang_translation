@@ -9,60 +9,47 @@ Page({
   },
 
   onLoad: function(options) {
-    console.log('词语详情页面接收参数:', options)
-    var word = options.word
-    if (word) {
-      var decodedWord = decodeURIComponent(word)
-      console.log('解码后的词语:', decodedWord)
-      this.loadWordDetail(decodedWord)
-    } else {
-      console.error('没有接收到词语参数')
+    var wordInfo = null
+    if (options.id !== undefined && options.id !== '') {
+      wordInfo = dataModule.getWordById(options.id)
+    } else if (options.word) {
+      // 兼容旧入口：按词名查找
+      var decoded = decodeURIComponent(options.word)
+      wordInfo = dataModule.getAllWords().find(function(item) {
+        return item.word === decoded
+      }) || null
     }
-  },
 
-  loadWordDetail: function(word) {
-    console.log('开始加载词语详情:', word)
-    var allWords = dataModule.getAllWords()
-    console.log('所有词语数量:', allWords.length)
-
-    var wordInfo = allWords.find(function(item) {
-      return item.word === word
-    })
-
-    if (wordInfo) {
-      console.log('找到词语信息:', wordInfo)
-      // 生成更多使用场景
-      var scenarios = this.generateScenarios(wordInfo)
-
-      // 判断是否有自定义场景
-      var customWords = ['赋能', '闭环', '颗粒度', '沉淀', '对齐']
-      var hasCustomScenario = customWords.indexOf(wordInfo.word) !== -1
-
-      // 查找分类名称
-      var categories = dataModule.getCategories()
-      var categoryInfo = categories.find(function(cat) {
-        return cat.id === wordInfo.categoryId
-      })
-      var categoryName = categoryInfo ? categoryInfo.name : ''
-
-      this.setData({
-        wordInfo: wordInfo,
-        scenarios: scenarios,
-        hasCustomScenario: hasCustomScenario,
-        categoryName: categoryName
-      })
-
-      // 设置导航栏标题
-      wx.setNavigationBarTitle({
-        title: wordInfo.word
-      })
-    } else {
-      console.error('未找到词语:', word)
+    if (!wordInfo) {
       wx.showToast({
         title: '词语不存在',
         icon: 'none'
       })
+      return
     }
+
+    var scenarios = this.generateScenarios(wordInfo)
+
+    // 判断是否有自定义场景
+    var customWords = ['赋能', '闭环', '颗粒度', '沉淀', '对齐']
+    var hasCustomScenario = customWords.indexOf(wordInfo.word) !== -1
+
+    var categories = dataModule.getCategories()
+    var categoryInfo = categories.find(function(cat) {
+      return cat.id === wordInfo.categoryId
+    })
+
+    this.setData({
+      wordInfo: wordInfo,
+      scenarios: scenarios,
+      hasCustomScenario: hasCustomScenario,
+      categoryName: categoryInfo ? categoryInfo.name : ''
+    })
+
+    // 设置导航栏标题
+    wx.setNavigationBarTitle({
+      title: wordInfo.word
+    })
   },
 
   generateScenarios: function(wordInfo) {
