@@ -89,8 +89,9 @@ internet_slang_translation/
 │   ├── data.js               # 数据管理模块 (统一接口)
 │   └── translator.js         # 翻译引擎模块
 │
-├── docs/                      # 文档目录
-│   └── 【求职】计算机行业求职简历中的专业术语解析.md  # 专业术语参考文档
+├── scripts/                   # 开发脚本
+│   ├── check.js              # 冒烟测试 (数据完整性+引擎回归+页面逻辑)
+│   └── clean-data.js         # 一次性数据清理脚本 (去重/迁移分类)
 │
 └── images/                    # 图片资源目录
     └── *.png                 # 导航图标资源
@@ -108,9 +109,10 @@ internet_slang_translation/
 ## 🎯 核心算法
 
 ### 智能翻译引擎
-- 按词长度优先匹配，避免短词覆盖长词问题
-- 支持正则表达式全局替换
-- 智能文本类型识别
+- 黑话→人话：词条最长优先单趟替换，无连锁替换，句中释义取第一义
+- 人话→黑话：保守的整段短语替换，不拆解句子，无匹配时保留原文并提示
+- 词典与正则在模块加载时一次性构建，翻译为同步单趟替换
+- 智能文本类型识别（auto 方向自动选择）
 - 扩展词典支持热门互联网术语
 
 ### 数据管理
@@ -204,20 +206,26 @@ internet_slang_translation/
    - 在模拟器中预览效果
    - 测试各个功能模块
 
+5. **运行冒烟测试**（可选，需 Node.js）
+   ```bash
+   node scripts/check.js
+   ```
+
 ### 自定义配置
 
 #### 扩展词汇数据
 1. **添加新分类**: 在 `data/categories.js` 中添加分类信息
    ```javascript
-   { id: 15, name: '新分类', desc: '分类描述', type: 'professional', icon: '🔥' }
+   { id: 16, name: '新分类', desc: '分类描述', type: 'professional', icon: '🔥' }
    ```
 
-2. **添加新词汇**: 在 `data/words.js` 中添加词汇数据
+2. **添加新词汇**: 在 `data/words.js` 中添加词汇数据（id 取现有最大值递增，当前为 550）
    ```javascript
-   { id: 231, word: '新术语', meaning: '中文解释', example: '使用示例', categoryId: 15, tags: ['标签1', '标签2'] }
+   { id: 551, word: '新术语', meaning: '中文解释', example: '使用示例', categoryId: 16, tags: ['标签1', '标签2'] }
    ```
 
 3. **数据自动同步**: `utils/data.js` 会自动加载新数据，无需额外配置
+4. **防重复**: 添加前建议先搜索确认词条不存在（`node scripts/check.js` 会校验重复）
 
 #### 其他配置
 - **修改样式**: 在各页面的 `.wxss` 文件中调整UI样式

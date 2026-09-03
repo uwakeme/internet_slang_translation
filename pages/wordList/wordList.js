@@ -2,32 +2,31 @@ var dataModule = require('../../utils/data.js')
 
 Page({
   data: {
-    categoryId: '',
+    categoryId: null,
     categoryName: '',
     categoryType: '',
     words: []
   },
 
   onLoad: function(options) {
-    var categoryId = options.categoryId
-    var categoryName = options.categoryName
-    var categoryType = options.categoryType
+    var categoryId = parseInt(options.categoryId, 10)
+    var categoryName = options.categoryName || ''
 
     this.setData({
       categoryId: categoryId,
       categoryName: categoryName,
-      categoryType: categoryType
+      categoryType: options.categoryType || ''
     })
 
     wx.setNavigationBarTitle({
       title: categoryName
     })
 
-    this.loadWords()
+    this.loadWords(categoryId)
   },
 
-  loadWords: function() {
-    var words = dataModule.getWordsByCategory(parseInt(this.data.categoryId))
+  loadWords: function(categoryId) {
+    var words = dataModule.getWordsByCategory(categoryId)
     this.setData({ words: words })
   },
 
@@ -45,7 +44,3 @@ Page({
     })
   }
 })
-
-
-
-

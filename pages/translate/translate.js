@@ -12,20 +12,14 @@ Page({
   },
 
   onLoad: function(options) {
-    console.log('翻译页面接收参数:', options) // 调试日志
-
-    // 如果从分类页面传来了词汇，自动填入
+    // 如果从其他页面传来了词汇，自动填入并翻译
     if (options.word) {
       var word = decodeURIComponent(options.word)
       this.setData({
         inputText: word,
         mode: 'toHuman'
       })
-      // 自动翻译
-      var self = this
-      setTimeout(function() {
-        self.translate()
-      }, 500)
+      this.translate()
     }
 
     // 加载历史记录
@@ -68,42 +62,37 @@ Page({
       translating: true
     })
 
-    // 模拟翻译延迟
-    var self = this
-    setTimeout(function() {
-      var res
-      if (self.data.mode === 'toHuman') {
-        res = translator.translateToHuman(self.data.inputText)
-      } else {
-        res = translator.translateToJargon(self.data.inputText)
-      }
+    // 词典为本地数据，同步翻译即可
+    var res = this.data.mode === 'toHuman'
+      ? translator.translateToHuman(this.data.inputText)
+      : translator.translateToJargon(this.data.inputText)
 
-      // 添加到历史记录
-      var history = self.data.history
-      var now = new Date()
-      var minutes = now.getMinutes()
-      var timeStr = now.getHours() + ':' + (minutes < 10 ? '0' + minutes : minutes)
+    // 添加到历史记录
+    var history = this.data.history
+    var now = new Date()
+    var hours = now.getHours()
+    var minutes = now.getMinutes()
+    var timeStr = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes)
 
-      history.unshift({
-        original: self.data.inputText,
-        translated: res.text,
-        time: timeStr,
-        mode: self.data.mode
-      })
+    history.unshift({
+      original: this.data.inputText,
+      translated: res.text,
+      time: timeStr,
+      mode: this.data.mode
+    })
 
-      self.setData({
-        result: res.text,
-        noMatch: res.matched === 0,
-        translating: false,
-        history: history.slice(0, 20) // 只保留最近20条
-      })
+    this.setData({
+      result: res.text,
+      noMatch: res.matched === 0,
+      translating: false,
+      history: history.slice(0, 20) // 只保留最近20条
+    })
 
-      // 保存历史记录
-      self.saveHistory()
+    // 保存历史记录
+    this.saveHistory()
 
-      // 触觉反馈
-      wx.vibrateShort({ type: 'light' })
-    }, 800)
+    // 触觉反馈
+    wx.vibrateShort({ type: 'light' })
   },
 
   copyResult: function() {
