@@ -12,8 +12,9 @@ function shortenMeaning(meaning) {
     : meaning
 }
 
-function buildHotWords(allWords) {
-  return allWords.slice(0, HOT_WORDS_LIMIT).map(function (w) {
+function buildHotWords() {
+  // 今日热词从「网络热词」分类按日期轮换（见 utils/data.js getTodayHotWords）
+  return dataModule.getTodayHotWords().slice(0, HOT_WORDS_LIMIT).map(function (w) {
     return { id: w.id, word: w.word, meaning: shortenMeaning(w.meaning) }
   })
 }
@@ -54,7 +55,7 @@ Page({
 
   onLoad: function () {
     try {
-      var hotWords = buildHotWords(dataModule.getAllWords())
+      var hotWords = buildHotWords()
       var sections = buildCategorySections(dataModule.getCategories())
       // 合并 setData，减少一次渲染通知
       this.setData({ hotWords: hotWords, categorySections: sections })
@@ -62,6 +63,17 @@ Page({
       console.error('[index onLoad] failed:', err)
       wx.showToast({ title: '首页加载失败,请重试', icon: 'none' })
     }
+  },
+
+  onShareAppMessage: function () {
+    return {
+      title: '互联网黑话翻译器｜黑话人话一键互译',
+      path: '/pages/index/index'
+    }
+  },
+
+  onShareTimeline: function () {
+    return { title: '互联网黑话翻译器｜黑话人话一键互译' }
   },
 
   goToSearch: function () {
@@ -79,9 +91,8 @@ Page({
 
   goToCategory: function (e) {
     var categoryId = e.currentTarget.dataset.id
-    var categoryName = e.currentTarget.dataset.name
     wx.navigateTo({
-      url: '/pages/wordList/wordList?categoryId=' + categoryId + '&categoryName=' + encodeURIComponent(categoryName)
+      url: '/pages/wordList/wordList?categoryId=' + categoryId
     })
   }
 })

@@ -223,6 +223,14 @@
   margin-bottom: 16rpx;
 }
 
+/* 搜索关键词高亮片段 */
+.highlight {
+  color: #ffffff;
+  background: rgba(245, 166, 35, 0.35);
+  border-radius: 6rpx;
+  padding: 0 4rpx;
+}
+
 /* 标签 */
 .word-tags {
   display: flex;

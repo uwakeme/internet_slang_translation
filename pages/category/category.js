@@ -19,11 +19,23 @@ Page({
     })
   },
 
-  goToWordList: function(e) {
-    var category = e.currentTarget.dataset.category
+  goToFavorites: function() {
     wx.navigateTo({
-      url: '/pages/wordList/wordList?categoryId=' + category.id + '&categoryName=' + category.name + '&categoryType=' + category.type
+      url: '/pages/wordList/wordList?favorites=1'
     })
+  },
+
+  goToWordList: function(e) {
+    var categoryId = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/wordList/wordList?categoryId=' + categoryId
+    })
+  },
+
+  onShareAppMessage: function() {
+    return {
+      title: '互联网黑话词库｜15大分类一次看懂',
+      path: '/pages/index/index'
+    }
   }
 })
-

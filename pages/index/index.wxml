@@ -46,7 +46,6 @@
       <view
         class="category-title-row"
         data-id="{{item.id}}"
-        data-name="{{item.name}}"
         bindtap="goToCategory"
       >
         <view class="category-color-dot" style="background: {{item.color}};"></view>

@@ -7,6 +7,38 @@ for (var i = 0; i < categories.length; i++) {
   categoryMap[categories[i].id] = categories[i].name
 }
 
+// 将文本按关键词切分为高亮片段，用于结果页着色
+function buildHighlightSegments(text, keyword) {
+  var full = [{ text: text, highlight: false }]
+  if (!keyword) return full
+
+  var lowerText = String(text).toLowerCase()
+  var lowerKey = String(keyword).toLowerCase()
+  if (!lowerKey || lowerText.indexOf(lowerKey) === -1) return full
+
+  var segments = []
+  var idx = 0
+  var pos = lowerText.indexOf(lowerKey)
+  while (pos !== -1) {
+    if (pos > idx) segments.push({ text: text.slice(idx, pos), highlight: false })
+    segments.push({ text: text.slice(pos, pos + lowerKey.length), highlight: true })
+    idx = pos + lowerKey.length
+    pos = lowerText.indexOf(lowerKey, idx)
+  }
+  if (idx < text.length) segments.push({ text: text.slice(idx), highlight: false })
+  return segments
+}
+
+function enrichResults(results, keyword) {
+  return results.map(function(word) {
+    return Object.assign({}, word, {
+      categoryName: categoryMap[word.categoryId] || '未分类',
+      wordSegs: buildHighlightSegments(word.word, keyword),
+      meaningSegs: buildHighlightSegments(word.meaning, keyword)
+    })
+  })
+}
+
 Page({
   data: {
     searchKeyword: '',
@@ -24,6 +56,13 @@ Page({
     this.loadSearchHistory()
   },
 
+  onShareAppMessage: function() {
+    return {
+      title: '互联网黑话翻译器｜搜黑话、查热梗',
+      path: '/pages/index/index'
+    }
+  },
+
   onInput: function(e) {
     var keyword = e.detail.value
     this.setData({
@@ -31,17 +70,23 @@ Page({
       showHistory: !keyword.trim()
     })
 
-    // 实时搜索（防抖）
+    // 输入过程只做防抖联想搜索，不写搜索历史，
+    // 避免中间态关键词（如想搜"赋能"时输入的"赋"）污染历史
     if (keyword.trim()) {
-      this.performSearch(keyword)
+      this.scheduleSearch(keyword)
     } else {
+      if (this._searchTimer) {
+        clearTimeout(this._searchTimer)
+        this._searchTimer = null
+      }
       this.setData({
-        searchResults: []
+        searchResults: [],
+        searching: false
       })
     }
   },
 
-  performSearch: function(keyword) {
+  scheduleSearch: function(keyword) {
     // 清除前一个定时器，实现防抖
     if (this._searchTimer) {
       clearTimeout(this._searchTimer)
@@ -52,52 +97,46 @@ Page({
 
     var self = this
     this._searchTimer = setTimeout(function() {
-      var results = dataModule.searchWords(keyword)
-
-      // 给每个结果附加分类名称
-      var enriched = results.map(function(word) {
-        return Object.assign({}, word, {
-          categoryName: categoryMap[word.categoryId] || '未分类'
-        })
-      })
-
-      self.setData({
-        searchResults: enriched,
-        searching: false
-      })
-
-      // 保存搜索历史
-      if (keyword.trim() && results.length > 0) {
-        self.saveSearchHistory(keyword.trim())
-      }
+      self._searchTimer = null
+      self.runSearch(keyword)
     }, 300)
   },
 
+  runSearch: function(keyword) {
+    var results = dataModule.searchWords(keyword)
+    this.setData({
+      searchResults: enrichResults(results, keyword),
+      searching: false
+    })
+    return results
+  },
+
   onSearch: function() {
-    if (!this.data.searchKeyword.trim()) {
+    var keyword = this.data.searchKeyword
+    if (!keyword.trim()) {
       wx.showToast({
         title: '请输入搜索内容',
         icon: 'none'
       })
       return
     }
-    this.performSearch(this.data.searchKeyword)
+
+    // 确认搜索：立即执行并写入历史
+    if (this._searchTimer) {
+      clearTimeout(this._searchTimer)
+      this._searchTimer = null
+    }
+    var results = this.runSearch(keyword)
+    if (results.length > 0) this.saveSearchHistory(keyword.trim())
   },
 
   searchByTag: function(e) {
     var tag = e.currentTarget.dataset.tag
     var results = dataModule.searchByTag(tag)
 
-    // 给每个结果附加分类名称
-    var enriched = results.map(function(word) {
-      return Object.assign({}, word, {
-        categoryName: categoryMap[word.categoryId] || '未分类'
-      })
-    })
-
     this.setData({
       searchKeyword: tag,
-      searchResults: enriched,
+      searchResults: enrichResults(results, tag),
       showHistory: false
     })
     this.saveSearchHistory(tag)
@@ -109,7 +148,8 @@ Page({
       searchKeyword: keyword,
       showHistory: false
     })
-    this.performSearch(keyword)
+    var results = this.runSearch(keyword)
+    if (results.length > 0) this.saveSearchHistory(keyword)
   },
 
   goToWordDetail: function(e) {

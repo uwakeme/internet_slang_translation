@@ -6,7 +6,11 @@
     </view>
   </view>
 
-  <view class="words-list">
+  <view class="empty-block" wx:if="{{words.length === 0}}">
+    <text class="empty-text">{{isFavorites ? '还没有收藏，去词条详情点 ☆ 收藏吧' : '该分类暂无词汇'}}</text>
+  </view>
+
+  <view class="words-list" wx:else>
     <view
       class="word-card fade-in-up"
       wx:for="{{words}}"
@@ -34,7 +38,7 @@
     </view>
   </view>
 
-  <view class="bottom-tip">
+  <view class="bottom-tip" wx:if="{{words.length > 0}}">
     <text class="tip-text">💡 点击任意词汇可查看详细信息</text>
   </view>
 </view>

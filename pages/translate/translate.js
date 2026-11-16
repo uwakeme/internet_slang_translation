@@ -67,8 +67,12 @@ Page({
       ? translator.translateToHuman(this.data.inputText)
       : translator.translateToJargon(this.data.inputText)
 
-    // 添加到历史记录
-    var history = this.data.history
+    // 添加到历史记录（同一原文+方向去重，只保留最新一条）
+    var input = this.data.inputText
+    var mode = this.data.mode
+    var history = this.data.history.filter(function(item) {
+      return item.original !== input || item.mode !== mode
+    })
     var now = new Date()
     var hours = now.getHours()
     var minutes = now.getMinutes()
@@ -156,5 +160,17 @@ Page({
         result: ''
       });
     }
+  },
+
+  onShareAppMessage: function() {
+    var input = this.data.inputText || '互联网黑话';
+    var result = this.data.result;
+    var title = result
+      ? input.slice(0, 12) + ' → ' + result.slice(0, 16)
+      : '黑话人话一键互译｜互联网黑话翻译器';
+    return {
+      title: title,
+      path: '/pages/index/index'
+    };
   }
 })

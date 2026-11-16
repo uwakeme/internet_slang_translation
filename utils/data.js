@@ -89,14 +89,34 @@ function getPopularTags() {
 function getRelatedWords(wordId, limit = 5) {
   const currentWord = allWords.find(w => w.id === wordId)
   if (!currentWord) return []
-  
+
   return allWords
-    .filter(word => 
-      word.id !== wordId && 
+    .filter(word =>
+      word.id !== wordId &&
       (word.categoryId === currentWord.categoryId ||
        word.tags.some(tag => currentWord.tags.includes(tag)))
     )
     .slice(0, limit)
+}
+
+// 今日热词：从网络热词分类中按日期轮换，同一天结果稳定
+const HOT_WORDS_COUNT = 8
+
+function getTodayHotWords(date) {
+  const pool = getWordsByCategory(15)
+  if (!pool.length) return []
+
+  const d = date || new Date()
+  const yearStart = new Date(d.getFullYear(), 0, 0)
+  const dayOfYear = Math.floor((d - yearStart) / 86400000)
+  const offset = (dayOfYear * HOT_WORDS_COUNT) % pool.length
+
+  const list = []
+  const count = Math.min(HOT_WORDS_COUNT, pool.length)
+  for (let i = 0; i < count; i++) {
+    list.push(pool[(offset + i) % pool.length])
+  }
+  return list
 }
 
 module.exports = {
@@ -110,5 +130,6 @@ module.exports = {
   searchWords,
   searchByTag,
   getPopularTags,
-  getRelatedWords
+  getRelatedWords,
+  getTodayHotWords
 }

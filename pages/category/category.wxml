@@ -4,6 +4,16 @@
     <text class="page-subtitle">探索不同领域的专业术语</text>
   </view>
 
+  <!-- 我的收藏入口 -->
+  <view class="favorites-entry" bindtap="goToFavorites" hover-class="favorites-entry-hover" hover-stay-time="80">
+    <text class="favorites-icon">⭐</text>
+    <view class="favorites-text">
+      <text class="favorites-title">我的收藏</text>
+      <text class="favorites-desc">点击查看收藏的词汇</text>
+    </view>
+    <text class="favorites-arrow">›</text>
+  </view>
+
   <!-- 互联网黑话 -->
   <view class="section">
     <view class="section-header">
@@ -18,7 +28,7 @@
         wx:for="{{jargonCategories}}" 
         wx:key="id"
         bindtap="goToWordList"
-        data-category="{{item}}"
+        data-id="{{item.id}}"
         style="animation-delay: {{index * 0.08}}s"
       >
         <view class="category-icon">
@@ -46,7 +56,7 @@
         wx:for="{{professionalCategories}}" 
         wx:key="id"
         bindtap="goToWordList"
-        data-category="{{item}}"
+        data-id="{{item.id}}"
         style="animation-delay: {{index * 0.08}}s"
       >
         <view class="category-icon">

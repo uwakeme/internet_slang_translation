@@ -6,6 +6,7 @@
     </view>
     <view class="word-meta">
       <button class="copy-btn" bindtap="copyWord" size="mini">复制</button>
+      <button class="copy-btn {{isFavorite ? 'fav-btn-active' : ''}}" bindtap="toggleFavorite" size="mini">{{isFavorite ? '★ 已收藏' : '☆ 收藏'}}</button>
       <text class="word-category-label">{{categoryName}}</text>
     </view>
     <!-- 词汇标签 -->
@@ -33,6 +34,29 @@
     </view>
     <view class="example-content">
       <text class="example-text">{{wordInfo.example}}</text>
+    </view>
+  </view>
+
+  <!-- 相关词条模块 -->
+  <view class="section related-section" wx:if="{{relatedWords.length > 0}}">
+    <view class="section-header">
+      <text class="section-icon">🔗</text>
+      <text class="section-title">相关词条</text>
+    </view>
+    <view class="related-list">
+      <view
+        class="related-item"
+        wx:for="{{relatedWords}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="goToRelated"
+        hover-class="related-item-hover"
+        hover-stay-time="80"
+      >
+        <text class="related-word">{{item.word}}</text>
+        <text class="related-meaning">{{item.meaning}}</text>
+        <text class="related-arrow">›</text>
+      </view>
     </view>
   </view>
 

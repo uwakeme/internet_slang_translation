@@ -314,3 +314,52 @@
   font-size: 28rpx;
   color: #9a9590;
 }
+
+/* 收藏按钮激活态 */
+.fav-btn-active {
+  color: #f5a623 !important;
+  border-color: rgba(245, 166, 35, 0.5) !important;
+}
+
+/* 相关词条 */
+.related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.related-item {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 20rpx 24rpx;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.06);
+}
+
+.related-item-hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.related-word {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #f0ece2;
+  flex-shrink: 0;
+}
+
+.related-meaning {
+  font-size: 24rpx;
+  color: #9a9590;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.related-arrow {
+  font-size: 28rpx;
+  color: #5c5855;
+  flex-shrink: 0;
+}

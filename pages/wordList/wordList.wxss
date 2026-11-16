@@ -178,3 +178,14 @@
   animation: fadeInUp 0.4s ease-out forwards;
   opacity: 0;
 }
+
+/* 空状态 */
+.empty-block {
+  text-align: center;
+  padding: 120rpx 40rpx;
+}
+
+.empty-block .empty-text {
+  font-size: 28rpx;
+  color: #9a9590;
+}

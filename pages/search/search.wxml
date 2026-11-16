@@ -45,10 +45,14 @@
         style="animation-delay: {{index * 0.05}}s"
       >
         <view class="word-header">
-          <text class="word-title">{{item.word}}</text>
+          <text class="word-title">
+            <text wx:for="{{item.wordSegs}}" wx:for-item="seg" wx:for-index="segIdx" wx:key="segIdx" class="{{seg.highlight ? 'highlight' : ''}}">{{seg.text}}</text>
+          </text>
           <text class="category-label">{{item.categoryName}}</text>
         </view>
-        <text class="word-meaning">{{item.meaning}}</text>
+        <text class="word-meaning">
+          <text wx:for="{{item.meaningSegs}}" wx:for-item="seg" wx:for-index="segIdx" wx:key="segIdx" class="{{seg.highlight ? 'highlight' : ''}}">{{seg.text}}</text>
+        </text>
         
         <view class="word-tags">
           <text 
