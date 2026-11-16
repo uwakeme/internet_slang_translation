@@ -113,6 +113,17 @@ test('第一义超过15字的词条均已配 brief', () => {
   assert.deepStrictEqual(bad, [], bad.join('\n'))
 })
 
+test('首义为元信息的词条均已配 brief', () => {
+  // 释义以「2026年…热词」「2025年度十大网络流行语」等元信息开头时，首义长度未必超 15 字，
+  // 上面的规则抓不到，但句中替换会把「2026年小红书十大热词之一」整句塞进译文
+  const first = s => String(s).split(/[、，,；;]/)[0].trim()
+  const meta = /^(20\d\d年|网络流行语|网络热词|当下流行)/
+  const bad = words
+    .filter(w => !w.brief && meta.test(first(w.meaning)))
+    .map(w => `${w.word}: ${first(w.meaning)}`)
+  assert.deepStrictEqual(bad, [], bad.join('\n'))
+})
+
 test('原 translator 硬编码词典已全部并入词库', () => {
   const extra = ['降本增效', '数字化转型', '精细化运营', '全链路', '一站式', '生态化', '平台化', '中台', '去中心化', '扁平化', '敏捷开发', '精益创业', '增长飞轮', '商业闭环', '护城河', '天花板', '风口', '赛道', '独角兽', 'KOL', 'ROI', 'GMV', 'DAU', 'MAU', 'LTV', 'MVP', 'PMF', 'B端', 'C端', 'SaaS', 'PaaS', 'IaaS']
   const wordSet = new Set(words.map(w => w.word))

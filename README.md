@@ -219,7 +219,7 @@ internet_slang_translation/
    ```bash
    node scripts/check.js
    ```
-   共43项测试，覆盖数据完整性、翻译引擎回归和页面核心逻辑。
+   共45项测试，覆盖数据完整性、翻译引擎回归和页面核心逻辑。
 
 ### 自定义配置
 
