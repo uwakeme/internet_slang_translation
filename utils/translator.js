@@ -1,56 +1,16 @@
 var dataModule = require('./data.js')
 
 // ---------- 词典构建（模块加载时一次完成） ----------
-
+// 黑话→人话的句中替换优先使用词条的 brief 短释义（见 data/briefs 约定），
+// 无 brief 的词条回退到 meaning，替换时取第一义。
 function buildDictionaries() {
   var words = dataModule.getAllWords()
   var jargonToHuman = {}
   var humanToJargon = {}
 
   words.forEach(function(item) {
-    jargonToHuman[item.word] = item.meaning
+    jargonToHuman[item.word] = item.brief || item.meaning
     if (!humanToJargon[item.meaning]) humanToJargon[item.meaning] = item.word
-  })
-
-  // 扩展词典 - 添加更多常见的互联网黑话
-  var extraJargon = {
-    '降本增效': '减少成本提高效率',
-    '数字化转型': '用技术改造业务',
-    '精细化运营': '细致管理运营',
-    '全链路': '完整流程',
-    '一站式': '全套服务',
-    '生态化': '形成完整体系',
-    '平台化': '建设统一平台',
-    '中台': '共享服务平台',
-    '去中心化': '分散式管理',
-    '扁平化': '减少管理层级',
-    '敏捷开发': '快速迭代开发',
-    '精益创业': '低成本试错创业',
-    '增长飞轮': '持续增长模式',
-    '商业闭环': '完整商业模式',
-    '护城河': '竞争优势',
-    '天花板': '发展上限',
-    '风口': '发展机会',
-    '赛道': '行业领域',
-    '独角兽': '高价值创业公司',
-    'KOL': '意见领袖',
-    'ROI': '投资回报率',
-    'GMV': '交易总额',
-    'DAU': '日活跃用户',
-    'MAU': '月活跃用户',
-    'LTV': '用户生命周期价值',
-    'MVP': '最小可行产品',
-    'PMF': '产品市场匹配',
-    'B端': '企业客户',
-    'C端': '个人用户',
-    'SaaS': '软件即服务',
-    'PaaS': '平台即服务',
-    'IaaS': '基础设施即服务'
-  }
-
-  Object.assign(jargonToHuman, extraJargon)
-  Object.keys(extraJargon).forEach(function(key) {
-    humanToJargon[extraJargon[key]] = key
   })
 
   return { jargonToHuman: jargonToHuman, humanToJargon: humanToJargon }
@@ -63,6 +23,16 @@ function escapeRegExp(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
+// 英文词条大小写不敏感：命中文本先查原表，查不到再查小写表
+function buildLowerLookup(table) {
+  var lower = {}
+  Object.keys(table).forEach(function(key) {
+    var lk = key.toLowerCase()
+    if (!(lk in lower)) lower[lk] = table[key]
+  })
+  return lower
+}
+
 function countMatches(text, pattern) {
   var hits = text.match(pattern)
   return hits ? hits.length : 0
@@ -73,10 +43,11 @@ function countMatches(text, pattern) {
 var jargonTerms = Object.keys(dict.jargonToHuman).sort(function(a, b) {
   return b.length - a.length
 })
-var jargonPattern = new RegExp(jargonTerms.map(escapeRegExp).join('|'), 'g')
+var jargonPattern = new RegExp(jargonTerms.map(escapeRegExp).join('|'), 'gi')
+var jargonLower = buildLowerLookup(dict.jargonToHuman)
 
 // 人话→黑话：只做整段短语替换（保守策略），不按关键词拆句。
-// 短语来源：词库中的人工表达（如「完整流程」→「闭环」）+ 少量高频动宾短语。
+// 短语来源：词库中的人工表达（如「完整流程」→「全链路」）+ 少量高频动宾短语。
 var humanPhrases = {
   '多沟通交流': '深度对齐',
   '需要帮助': '需要赋能',
@@ -99,7 +70,8 @@ Object.keys(dict.humanToJargon).forEach(function(phrase) {
 var humanTerms = Object.keys(humanPhrases).sort(function(a, b) {
   return b.length - a.length
 })
-var humanPattern = new RegExp(humanTerms.map(escapeRegExp).join('|'), 'g')
+var humanPattern = new RegExp(humanTerms.map(escapeRegExp).join('|'), 'gi')
+var humanLower = buildLowerLookup(humanPhrases)
 
 // 句中替换时释义取第一义（如「帮助、支持」→「帮助」），避免顿号破坏句子
 function firstSense(meaning) {
@@ -107,11 +79,11 @@ function firstSense(meaning) {
   return head || meaning
 }
 
-function replaceAll(text, pattern, table, useFirstSense) {
+function replaceAll(text, pattern, table, lowerTable, useFirstSense) {
   var matched = 0
   var result = text.replace(pattern, function(hit) {
     matched++
-    var mapped = table[hit]
+    var mapped = table[hit] !== undefined ? table[hit] : lowerTable[hit.toLowerCase()]
     return useFirstSense ? firstSense(mapped) : mapped
   })
   return { text: result, matched: matched }
@@ -138,11 +110,11 @@ function analyzeAndTranslate(text, targetType) {
   }
 
   if (direction === 'toHuman') {
-    var toHuman = replaceAll(trimmed, jargonPattern, dict.jargonToHuman, true)
+    var toHuman = replaceAll(trimmed, jargonPattern, dict.jargonToHuman, jargonLower, true)
     return { text: toHuman.text, matched: toHuman.matched, direction: direction }
   }
 
-  var toJargon = replaceAll(trimmed, humanPattern, humanPhrases, false)
+  var toJargon = replaceAll(trimmed, humanPattern, humanPhrases, humanLower, false)
   return { text: toJargon.text, matched: toJargon.matched, direction: direction }
 }
 
