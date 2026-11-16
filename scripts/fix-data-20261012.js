@@ -20,9 +20,9 @@ const ENTRY_FIXES = {
     meaning: 'Live Action Role Playing（实况角色扮演），泛指扮演某种身份或生活方式',
     example: '她在LARPing一种自律精致女孩的人设 → 她在扮演一种自律精致女孩的形象'
   },
-  254: { meaning: 'AI辅助编程，用自然语言描述需求让AI生成代码，2025柯林斯词典年度词汇' },
-  670: { meaning: 'AI Agent的可复用能力包，将完成特定目标所需的全部知识和工作流封装打包；区别于一次性提示词，技能可跨任务复用' }
 }
+// 注：254 Vibe Coding、670 Agent Skills 的释义由 CONTENT_MERGE 接管，不再在这里维护，
+// 否则重复运行时会被这里的旧文本覆盖。
 
 // ---------- 1b. 重复词条的内容合并（两版各有独有信息，丢弃任一方都会丢信息） ----------
 const CONTENT_MERGE = {
@@ -196,7 +196,49 @@ const BRIEFS = {
   702: '天生精力旺盛的人',
   705: '智能体通信协议',
   706: '浏览器级MCP协议',
-  707: '智能体网络协议'
+  707: '智能体网络协议',
+  // 释义以「2026年…热词」这类元信息开头的词条：首义本身不够长，检查规则抓不到，
+  // 但句中替换会把「2026年小红书十大热词之一」整句塞进译文，必须单独配 brief。
+  342: '拒绝沟通',
+  361: '知道但不说',
+  362: '随便想',
+  460: '慢慢体会',
+  461: '密集刷屏梗',
+  466: 'AI味很重',
+  467: '负鼠表情包',
+  468: '嘲讽式炫耀',
+  469: '部署AI智能体',
+  483: '人人都能用的AI',
+  484: '量子产业',
+  486: '你怎么不早说',
+  488: '你能拿我怎样',
+  489: '朴实真诚的告白',
+  490: '表现炸裂',
+  491: '太离谱',
+  492: '有情感支持的陪伴',
+  493: '网上互暖解压的群体',
+  494: '一起摸鱼的搭子',
+  614: '高能破局',
+  627: '分寸感',
+  629: '有性格的AI助手',
+  631: '沉浸感',
+  636: '活力老年博主',
+  673: '踩过坑才记住',
+  675: '年轻有活力',
+  676: '在城里办事',
+  683: '我拼命也要养你',
+  684: '开工猝不及防',
+  685: '脑子停不下来',
+  686: '白加班',
+  687: '低沉魔性嗓音',
+  688: '轮着吃快餐',
+  689: '鬼才信',
+  690: '有点像吴世勋',
+  691: '接受一切变化',
+  692: '不被路径定义',
+  703: '爱庆祝的小家庭',
+  708: '被压榨的打工人',
+  714: '不敢离职的人'
 }
 
 // ---------- 5. 繁体→简体映射（词库中出现过的高频繁体） ----------
@@ -248,19 +290,22 @@ words.forEach(w => {
 })
 const kept = []
 Object.values(groups).forEach(g => {
-  if (g.length === 1) { kept.push(g[0]); return }
   const base = g.reduce((a, b) => (a.id < b.id ? a : b))
   const src = g.reduce((a, b) => (b.meaning.length > a.meaning.length ? b : a))
   const merged = CONTENT_MERGE[base.word]
+  // CONTENT_MERGE 无条件生效：重复组已去重（组内只剩一条）时也要套用合并文本，
+  // 否则「在已处理过的数据上再跑一次」会把释义打回旧版本。
   const out = Object.assign({}, base, {
     meaning: merged ? merged.meaning : src.meaning,
     example: merged ? merged.example : src.example
   })
-  const tagSet = new Set()
-  g.forEach(w => (w.tags || []).forEach(t => tagSet.add(t)))
-  out.tags = Array.from(tagSet)
+  if (g.length > 1) {
+    const tagSet = new Set()
+    g.forEach(w => (w.tags || []).forEach(t => tagSet.add(t)))
+    out.tags = Array.from(tagSet)
+  }
   kept.push(out)
-  g.forEach(w => { if (w.id !== base.id) report.deleted.push(w.id + ' ' + w.word) })
+  if (g.length > 1) g.forEach(w => { if (w.id !== base.id) report.deleted.push(w.id + ' ' + w.word) })
 })
 words = kept.sort((a, b) => a.id - b.id)
 
