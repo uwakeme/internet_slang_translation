@@ -48,17 +48,56 @@
 
 ## 提交与分支
 
-- 从 `main` 切分支，不直接推 `main`
+- 人工开发：从 `main` 切分支，不直接推 `main`
+- 例外：每日自动化任务产出的词条数据提交按约定直推 `main`（词条类改动，无需评审）
 - 提交信息用中文 + Conventional Commits：`feat:` `fix:` `data:` `docs:` `refactor:` `test:` `chore:`
 - 例：`data: 补充 2026-11-23 网络热词`
 
 ## 发布流程
 
-- 上传开发版本：`node ~/.config/wxci/release.js`（miniprogram-ci 在 `~/.config/wxci/node_modules`，忽略 `secret/`、`scripts/`、`docs/`）
-- 上传密钥 `private.<appid>.key` 放在仓库外 `secret/`（已 gitignore）或 `~/.config/wxci/`
-- 脚本会自动带 `--no-experimental-webstorage --dns-result-order=ipv4first` 重启子进程：前者规避 Node 22+ 内置 Web Storage 导致 miniprogram-ci 崩溃，后者强制走 IPv4（微信后台 IP 白名单只接受 IPv4/CIDR）
-- 「提交审核 / 发布」接口不向自有小程序开放（需开放平台 `authorizer_access_token`）：上传成功后需人工到微信公众平台「版本管理」提交审核并发布
+### 完整流水线（人工或定时任务都按这个顺序）
+
+1. 更新词条 → `data/words.js`
+2. 校验：`node scripts/check.js` 必须全绿；不绿则按 `scripts/fix-data-20261012.js` 的规则修正后重跑，仍不绿就 `git checkout` 撤销本次改动，绝不留脏数据
+3. 同步网页版主页：`node scripts/build-homepage.js`
+4. 提交并推送：`git add data/words.js docs/index.html && git commit -m "data: 补充 N 个网络热词（YYYY-MM-DD）" && git push origin main`
+5. 上传开发版本：`node ~/.config/wxci/release.js`
+
+### 上传脚本（仓库外 `~/.config/wxci/release.js`）
+
+- miniprogram-ci 装在 `~/.config/wxci/node_modules`；上传包忽略 `secret/`、`scripts/`、`docs/`、`node_modules/`、`.git/`——**密钥不会进上传包**
+- 上传密钥 `private.<appid>.key` 放仓库内 `secret/`（已 gitignore，权限 600）或 `~/.config/wxci/`，脚本按「项目 secret/ → `~/.config/wxci/`」顺序查找
+- 版本号规则：`1.0.<自 2026-01-01 起的日序号>`，单调递增（如 `1.0.326`）
+- 参数：`--status` 看上次上传记录、`--preview` 只做预览上传（校验密钥与白名单，不产生版本）、默认上传开发版本
 - 上传记录与日志：`~/.config/wxci/state.json`、`~/.config/wxci/release.log`
+
+### 运行时兼容（脚本已内置，别删）
+
+- 脚本会自动带 `--no-experimental-webstorage --dns-result-order=ipv4first` 重启子进程（fork 会继承 execArgv，编译子进程同样生效）：
+  - `--no-experimental-webstorage`：规避 Node 22+ 内置 Web Storage 让 miniprogram-ci 编译器误判环境而崩溃（`TypeError: r.getItem is not a function`），父进程清 `global.localStorage` 不够，编译器在子进程里同样受影响
+  - `--dns-result-order=ipv4first`：强制走 IPv4，见下方「IP 白名单」
+
+### IP 白名单（最容易卡住的一环）
+
+- 微信公众平台「开发管理 - 开发设置 - IP 白名单」**只接受 IPv4 / CIDR**（`172.0.0.1`、`172.0.0.1/24`），加不了 IPv6
+- 家用宽带是双栈，`servicewechat.com` 又优先解析出 IPv6（6 个 AAAA 排在 2 个 A 前面），Node 默认 `verbatim` 顺序会走 IPv6 出口 → 微信拿到的来源 IP 与白名单不符 → `errCode -10008 invalid ip`
+- 脚本已强制 IPv4，所以白名单里填本机 IPv4 即可
+- **家用宽带公网 IPv4 会变**：再遇 `invalid ip` 时用 `curl -s https://ipinfo.io/ip` 查当前 IPv4，更新白名单后重跑上传；嫌麻烦可直接在后台关闭白名单
+
+### 审核与发布（人工，无法自动化）
+
+- 「提交审核 / 发布」属开放平台（第三方平台）代码管理接口，需要 `authorizer_access_token`；自有小程序用自身 access_token 会被拒（86000），官方小程序服务端 API 索引里也没有这两项 → **自动化止于上传开发版本**
+- 上传成功后需人工到微信公众平台「版本管理」提交审核并发布
+- 人工提交时常见错误码：`85009` 已有版本在审核中、`85085` 近 7 天提交审核次数过多、`85008` 类目填写错误、`86002` 昵称/头像/简介未设置
+
+### git 推送
+
+- 远端是 SSH（`git@github.com:uwakeme/internet_slang_translation.git`）；原本是 HTTPS，因 keychain 无凭证 push 直接失败（`could not read Username for 'https://github.com'`），已改为 SSH 才能无人值守推送
+- 本机 `~/.ssh/id_ed25519` 已认证为 `uwakeme`
+
+### 定时任务
+
+- 已配置每天 09:00（Asia/Shanghai）的定时任务「每日补充网络热词」，在**任务专用对话**中持续执行上述流水线并汇报；任务只上传开发版本，不调用送审/发布接口
 
 ## 安全
 
