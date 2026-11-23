@@ -1,0 +1,6 @@
+# 密钥与凭证：禁止提交到仓库
+secret/
+*.key
+
+# macOS 系统文件
+.DS_Store
