@@ -8823,8 +8823,21 @@ const allWords = [
     "categoryId": 15,
     "tags": [
       "AI账号",
-      "B站",
+      "大肥鱼",
       "赛博鱼塘"
+    ]
+  },
+  {
+    "id": 780,
+    "word": "大肥鱼",
+    "meaning": "网友对DeepSeek的昵称与二创形象",
+    "brief": "DeepSeek的萌系昵称",
+    "example": "这条蓝色大肥鱼又开始摸鱼了 → 这条DeepSeek又开小差了",
+    "categoryId": 15,
+    "tags": [
+      "DeepSeek",
+      "AI拟人",
+      "鲸鱼娘"
     ]
   }
 ]
