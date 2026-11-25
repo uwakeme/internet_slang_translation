@@ -73,9 +73,10 @@
 
 ### 运行时兼容（脚本已内置，别删）
 
-- 脚本会自动带 `--no-experimental-webstorage --dns-result-order=ipv4first` 重启子进程（fork 会继承 execArgv，编译子进程同样生效）：
+- 脚本会自动带 `--no-experimental-webstorage --dns-result-order=ipv4first --no-network-family-autoselection` 重启子进程（fork 会继承 execArgv，编译子进程同样生效）：
   - `--no-experimental-webstorage`：规避 Node 22+ 内置 Web Storage 让 miniprogram-ci 编译器误判环境而崩溃（`TypeError: r.getItem is not a function`），父进程清 `global.localStorage` 不够，编译器在子进程里同样受影响
-  - `--dns-result-order=ipv4first`：强制走 IPv4，见下方「IP 白名单」
+  - `--dns-result-order=ipv4first`：让 DNS 结果把 IPv4 排在前面，见下方「IP 白名单」
+  - `--no-network-family-autoselection`：**必需**，不能只靠上面的 DNS 顺序。Node 20+ 默认开启 family 自动选择（Happy Eyeballs），IPv4 握手稍慢时会自动改走 IPv6 出口 → 微信拿到的来源 IP 是 IPv6 → `errCode -10008 invalid ip` 且报错里直接印出 IPv6 地址。关掉后只连第一个 DNS 结果（IPv4）。同时父进程调用 `net.setDefaultAutoSelectFamily(false)` 兜底
 
 ### IP 白名单（最容易卡住的一环）
 
@@ -83,6 +84,9 @@
 - 家用宽带是双栈，`servicewechat.com` 又优先解析出 IPv6（6 个 AAAA 排在 2 个 A 前面），Node 默认 `verbatim` 顺序会走 IPv6 出口 → 微信拿到的来源 IP 与白名单不符 → `errCode -10008 invalid ip`
 - 脚本已强制 IPv4，所以白名单里填本机 IPv4 即可
 - **家用宽带公网 IPv4 会变**：再遇 `invalid ip` 时用 `curl -s https://ipinfo.io/ip` 查当前 IPv4，更新白名单后重跑上传；嫌麻烦可直接在后台关闭白名单
+- **先看报错里的 IP 形态再动手**（2026-11-25 踩坑）：
+  - 报错印出 IPv6（如 `240e:345:92:d01:...`）→ **不是白名单变了**，是请求走了 IPv6 出口，属于脚本强制 IPv4 失效，检查 `--no-network-family-autoselection` 是否还在
+  - 报错印出 IPv4 → 才是白名单里缺当前公网 IPv4，按上面流程更新即可
 
 ### 审核与发布（人工，无法自动化）
 
