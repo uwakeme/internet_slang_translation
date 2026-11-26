@@ -67,8 +67,8 @@
 
 - miniprogram-ci 装在 `~/.config/wxci/node_modules`；上传包忽略 `secret/`、`scripts/`、`docs/`、`node_modules/`、`.git/`——**密钥不会进上传包**
 - 上传密钥 `private.<appid>.key` 放仓库内 `secret/`（已 gitignore，权限 600）或 `~/.config/wxci/`，脚本按「项目 secret/ → `~/.config/wxci/`」顺序查找
-- 版本号规则：`1.0.<自 2026-01-01 起的日序号>`，单调递增（如 `1.0.326`）
-- 参数：`--status` 看上次上传记录、`--preview` 只做预览上传（校验密钥与白名单，不产生版本）、默认上传开发版本
+- 版本号规则：`<versionPrefix>.<自 2026-01-01 起的日序号>`；前缀配在 `~/.config/wxci/credentials.json` 的 `versionPrefix`（默认 `2.0`）。**必须高于线上版本**（线上是 `2.0.0`），所以前缀不能留 `1.0`；同一天重试/补跑会自动 +1，保证严格递增（如 `2.0.329`）
+- 参数：`--status` 看上次上传记录、`--preview` 只做预览上传（校验密钥与白名单，不产生版本）、`--version` 只打印下一个版本号、默认上传开发版本
 - 上传记录与日志：`~/.config/wxci/state.json`、`~/.config/wxci/release.log`
 
 ### 运行时兼容（脚本已内置，别删）
