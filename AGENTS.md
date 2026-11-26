@@ -71,6 +71,14 @@
 - 参数：`--status` 看上次上传记录、`--preview` 只做预览上传（校验密钥与白名单，不产生版本）、`--version` 只打印下一个版本号、默认上传开发版本
 - 上传记录与日志：`~/.config/wxci/state.json`、`~/.config/wxci/release.log`
 
+### 发版信息与版本描述
+
+- 每次上传成功后，脚本输出「发版信息」区块（**版本号 + 版本描述**），任务汇报时原样带上
+- 版本描述要**简短说明本次升级内容**：用 `--desc "..."` 传入（例：`补充 8 个网络热词：背后蛐蛐、世另我 等`），上限 60 字符，超出自动截断
+- 不传 `--desc` 时，脚本自动从最近一次改动 `data/words.js` 的提交里提取新增词条生成描述
+- 校验用：`node ~/.config/wxci/release.js --dry-run` 只打印版本号与版本描述、不执行上传
+- 目前只需要版本描述；以后要补审核单号、发布时间等字段，在脚本的 `reportRelease()` 里加
+
 ### 运行时兼容（脚本已内置，别删）
 
 - 脚本会自动带 `--no-experimental-webstorage --dns-result-order=ipv4first --no-network-family-autoselection` 重启子进程（fork 会继承 execArgv，编译子进程同样生效）：
