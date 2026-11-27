@@ -1,21 +1,20 @@
 var dataModule = require('../../utils/data.js')
+var storage = require('../../utils/storage.js')
 
-// 构建分类 ID → 名称映射
+var HISTORY_KEY = 'search_history'
+var PAGE_SIZE = 20
+
 var categoryMap = {}
-var categories = dataModule.getCategories()
-for (var i = 0; i < categories.length; i++) {
-  categoryMap[categories[i].id] = categories[i].name
-}
+dataModule.getCategories().forEach(function(category) {
+  categoryMap[category.id] = category.name
+})
 
-// 将文本按关键词切分为高亮片段，用于结果页着色
 function buildHighlightSegments(text, keyword) {
   var full = [{ text: text, highlight: false }]
   if (!keyword) return full
-
   var lowerText = String(text).toLowerCase()
   var lowerKey = String(keyword).toLowerCase()
-  if (!lowerKey || lowerText.indexOf(lowerKey) === -1) return full
-
+  if (lowerText.indexOf(lowerKey) === -1) return full
   var segments = []
   var idx = 0
   var pos = lowerText.indexOf(lowerKey)
@@ -43,6 +42,8 @@ Page({
   data: {
     searchKeyword: '',
     searchResults: [],
+    resultTotal: 0,
+    hasMore: false,
     popularTags: [],
     searchHistory: [],
     showHistory: true,
@@ -50,10 +51,17 @@ Page({
   },
 
   _searchTimer: null,
+  _searchGeneration: 0,
+  _visibleCount: PAGE_SIZE,
+  _allResults: [],
 
   onLoad: function() {
     this.loadPopularTags()
     this.loadSearchHistory()
+  },
+
+  onUnload: function() {
+    this.cancelSearch()
   },
 
   onShareAppMessage: function() {
@@ -65,111 +73,114 @@ Page({
 
   onInput: function(e) {
     var keyword = e.detail.value
-    this.setData({
-      searchKeyword: keyword,
-      showHistory: !keyword.trim()
-    })
-
-    // 输入过程只做防抖联想搜索，不写搜索历史，
-    // 避免中间态关键词（如想搜"赋能"时输入的"赋"）污染历史
-    if (keyword.trim()) {
-      this.scheduleSearch(keyword)
-    } else {
-      if (this._searchTimer) {
-        clearTimeout(this._searchTimer)
-        this._searchTimer = null
-      }
-      this.setData({
-        searchResults: [],
-        searching: false
-      })
+    this.setData({ searchKeyword: keyword, showHistory: !keyword.trim() })
+    if (keyword.trim()) this.scheduleSearch(keyword)
+    else {
+      this.cancelSearch()
+      this._allResults = []
+      this.setData({ searchResults: [], resultTotal: 0, hasMore: false })
     }
   },
 
+  cancelSearch: function() {
+    if (this._searchTimer) clearTimeout(this._searchTimer)
+    this._searchTimer = null
+    this._searchGeneration++
+    this.setData({ searching: false })
+  },
+
   scheduleSearch: function(keyword) {
-    // 清除前一个定时器，实现防抖
-    if (this._searchTimer) {
-      clearTimeout(this._searchTimer)
-      this._searchTimer = null
-    }
-
+    this.cancelSearch()
+    var normalized = keyword.trim()
+    var generation = this._searchGeneration
     this.setData({ searching: true })
-
     var self = this
     this._searchTimer = setTimeout(function() {
       self._searchTimer = null
-      self.runSearch(keyword)
+      if (generation !== self._searchGeneration) return
+      self.runSearch(normalized)
     }, 300)
   },
 
   runSearch: function(keyword) {
-    var results = dataModule.searchWords(keyword)
+    var normalized = String(keyword || '').trim()
+    var results = dataModule.searchWords(normalized)
+    this._allResults = enrichResults(results, normalized)
+    this._visibleCount = PAGE_SIZE
     this.setData({
-      searchResults: enrichResults(results, keyword),
+      searchResults: this._allResults.slice(0, this._visibleCount),
+      resultTotal: results.length,
+      hasMore: results.length > this._visibleCount,
       searching: false
     })
     return results
   },
 
+  loadMore: function() {
+    if (!this.data.hasMore) return
+    this._visibleCount += PAGE_SIZE
+    this.setData({
+      searchResults: this._allResults.slice(0, this._visibleCount),
+      hasMore: this._allResults.length > this._visibleCount
+    })
+  },
+
   onSearch: function() {
-    var keyword = this.data.searchKeyword
-    if (!keyword.trim()) {
-      wx.showToast({
-        title: '请输入搜索内容',
-        icon: 'none'
-      })
+    var keyword = this.data.searchKeyword.trim()
+    if (!keyword) {
+      wx.showToast({ title: '请输入搜索内容', icon: 'none' })
       return
     }
-
-    // 确认搜索：立即执行并写入历史
-    if (this._searchTimer) {
-      clearTimeout(this._searchTimer)
-      this._searchTimer = null
-    }
+    this.cancelSearch()
+    this.setData({ searchKeyword: keyword, showHistory: false })
     var results = this.runSearch(keyword)
-    if (results.length > 0) this.saveSearchHistory(keyword.trim())
+    if (results.length > 0) this.saveSearchHistory(keyword)
   },
 
   searchByTag: function(e) {
-    var tag = e.currentTarget.dataset.tag
+    var tag = String(e.currentTarget.dataset.tag || '').trim()
+    if (!tag) return
+    this.cancelSearch()
     var results = dataModule.searchByTag(tag)
-
+    this._allResults = enrichResults(results, tag)
+    this._visibleCount = PAGE_SIZE
     this.setData({
       searchKeyword: tag,
-      searchResults: enrichResults(results, tag),
+      searchResults: this._allResults.slice(0, this._visibleCount),
+      resultTotal: results.length,
+      hasMore: results.length > this._visibleCount,
       showHistory: false
     })
     this.saveSearchHistory(tag)
   },
 
   searchFromHistory: function(e) {
-    var keyword = e.currentTarget.dataset.keyword
-    this.setData({
-      searchKeyword: keyword,
-      showHistory: false
-    })
+    var keyword = String(e.currentTarget.dataset.keyword || '').trim()
+    if (!keyword) return
+    this.cancelSearch()
+    this.setData({ searchKeyword: keyword, showHistory: false })
     var results = this.runSearch(keyword)
     if (results.length > 0) this.saveSearchHistory(keyword)
   },
 
   goToWordDetail: function(e) {
-    var wordId = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/wordDetail/wordDetail?id=' + wordId
-    })
+    wx.navigateTo({ url: '/pages/wordDetail/wordDetail?id=' + e.currentTarget.dataset.id })
   },
 
   goToTranslate: function(e) {
-    var word = e.currentTarget.dataset.word
-    wx.navigateTo({
-      url: '/pages/translate/translate?word=' + encodeURIComponent(word)
-    })
+    var app = getApp()
+    app.globalData.pendingTranslate = { text: e.currentTarget.dataset.word, mode: 'toHuman' }
+    wx.switchTab({ url: '/pages/translate/translate' })
   },
 
   clearSearch: function() {
+    this.cancelSearch()
+    this._allResults = []
     this.setData({
       searchKeyword: '',
       searchResults: [],
+      resultTotal: 0,
+      hasMore: false,
       showHistory: true
     })
   },
@@ -180,60 +191,29 @@ Page({
       title: '确认清空',
       content: '确定要清空搜索历史吗？',
       success: function(res) {
-        if (res.confirm) {
-          self.setData({
-            searchHistory: []
-          })
-          wx.removeStorageSync('search_history')
-          wx.showToast({
-            title: '已清空',
-            icon: 'success'
-          })
+        if (!res.confirm) return
+        if (!storage.removeKey(HISTORY_KEY)) {
+          wx.showToast({ title: '清空失败，请重试', icon: 'none' })
+          return
         }
+        self.setData({ searchHistory: [] })
+        wx.showToast({ title: '已清空', icon: 'success' })
       }
     })
   },
 
   loadPopularTags: function() {
-    var tags = dataModule.getPopularTags()
-    this.setData({
-      popularTags: tags.slice(0, 12)
-    })
+    this.setData({ popularTags: dataModule.getPopularTags().slice(0, 12) })
   },
 
   loadSearchHistory: function() {
-    try {
-      var history = wx.getStorageSync('search_history') || []
-      this.setData({
-        searchHistory: history
-      })
-    } catch (e) {
-      console.error('加载搜索历史失败', e)
-    }
+    this.setData({ searchHistory: storage.readHistory(HISTORY_KEY) })
   },
 
   saveSearchHistory: function(keyword) {
-    try {
-      var history = wx.getStorageSync('search_history') || []
-
-      // 移除重复项
-      history = history.filter(function(item) {
-        return item !== keyword
-      })
-
-      // 添加到开头
-      history.unshift(keyword)
-
-      // 只保留最近10条
-      history = history.slice(0, 10)
-
-      this.setData({
-        searchHistory: history
-      })
-
-      wx.setStorageSync('search_history', history)
-    } catch (e) {
-      console.error('保存搜索历史失败', e)
-    }
+    var history = this.data.searchHistory.filter(function(item) { return item !== keyword })
+    history.unshift(keyword)
+    history = history.slice(0, 10)
+    if (storage.writeArray(HISTORY_KEY, history)) this.setData({ searchHistory: history })
   }
 })

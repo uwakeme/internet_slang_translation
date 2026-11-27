@@ -1,4 +1,4 @@
-<view class="container" wx:if="{{wordInfo}}">
+<view class="container safe-bottom" wx:if="{{wordInfo}}">
   <!-- 词汇标题区域 -->
   <view class="word-header">
     <view class="word-name-wrap">
@@ -115,6 +115,14 @@
 
 </view>
 
-<view class="empty-state" wx:else>
+<view class="empty-state safe-bottom" wx:if="{{loading}}">
   <text class="empty-text">词汇信息加载中...</text>
+</view>
+
+<view class="empty-state error-state safe-bottom" wx:elif="{{error}}">
+  <text class="empty-text">{{error}}</text>
+  <view class="error-actions">
+    <button class="retry-btn" bindtap="retry" size="mini">重试</button>
+    <button class="back-btn" bindtap="goBack" size="mini">返回</button>
+  </view>
 </view>

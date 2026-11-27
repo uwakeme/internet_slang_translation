@@ -2828,8 +2828,7 @@ const allWords = [
     "tags": [
       "AI",
       "Agent",
-      "智能体",
-      "AI"
+      "智能体"
     ]
   },
   {

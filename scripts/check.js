@@ -75,6 +75,11 @@ test('必填字段非空且类型正确', () => {
   assert.deepStrictEqual(bad, [], bad.join('\n'))
 })
 
+test('单条词目标签不重复', () => {
+  const bad = words.filter(w => new Set(w.tags).size !== w.tags.length).map(w => w.word)
+  assert.deepStrictEqual(bad, [], bad.join('、'))
+})
+
 test('词条文本无半角逗号/分号残留', () => {
   const bad = words
     .filter(w => /[;,]/.test(w.meaning + w.example))

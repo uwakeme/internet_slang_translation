@@ -1,7 +1,6 @@
 var dataModule = require('../../utils/data.js')
 var scenariosData = require('./scenarios.js')
-
-var FAVORITE_KEY = 'favorite_words'
+var storage = require('../../utils/storage.js')
 var RELATED_MEANING_MAX_LEN = 20
 
 function shortenMeaning(meaning) {
@@ -17,26 +16,32 @@ Page({
     hasCustomScenario: false,
     categoryName: '',
     relatedWords: [],
-    isFavorite: false
+    isFavorite: false,
+    loading: true,
+    error: ''
   },
 
   onLoad: function(options) {
+    options = options || {}
+    this._loadOptions = options
+    this.setData({ loading: true, error: '', wordInfo: null })
     var wordInfo = null
     if (options.id !== undefined && options.id !== '') {
       wordInfo = dataModule.getWordById(options.id)
     } else if (options.word) {
-      // 兼容旧入口：按词名查找
-      var decoded = decodeURIComponent(options.word)
+      var decoded = ''
+      try {
+        decoded = decodeURIComponent(options.word)
+      } catch (error) {
+        console.error('词条参数编码无效', error)
+      }
       wordInfo = dataModule.getAllWords().find(function(item) {
         return item.word === decoded
       }) || null
     }
 
     if (!wordInfo) {
-      wx.showToast({
-        title: '词语不存在',
-        icon: 'none'
-      })
+      this.setData({ loading: false, error: '词条不存在或链接已失效' })
       return
     }
 
@@ -56,7 +61,8 @@ Page({
       relatedWords: dataModule.getRelatedWords(wordInfo.id).map(function(w) {
         return { id: w.id, word: w.word, meaning: shortenMeaning(w.meaning) }
       }),
-      isFavorite: this.getFavorites().indexOf(wordInfo.id) !== -1
+      isFavorite: this.getFavorites().indexOf(wordInfo.id) !== -1,
+      loading: false
     })
 
     // 设置导航栏标题
@@ -66,11 +72,15 @@ Page({
   },
 
   getFavorites: function() {
-    try {
-      return wx.getStorageSync(FAVORITE_KEY) || []
-    } catch (e) {
-      return []
-    }
+    return storage.getFavoriteIds()
+  },
+
+  retry: function() {
+    this.onLoad(this._loadOptions || {})
+  },
+
+  goBack: function() {
+    wx.navigateBack({ delta: 1 })
   },
 
   toggleFavorite: function() {
@@ -79,24 +89,16 @@ Page({
     var favorites = this.getFavorites()
     var idx = favorites.indexOf(wordId)
 
-    if (idx === -1) {
-      favorites.push(wordId)
-    } else {
-      favorites.splice(idx, 1)
-    }
+    if (idx === -1) favorites.push(wordId)
+    else favorites.splice(idx, 1)
 
-    try {
-      wx.setStorageSync(FAVORITE_KEY, favorites)
-    } catch (e) {
-      console.error('保存收藏失败', e)
+    if (!storage.saveFavoriteIds(favorites)) {
+      wx.showToast({ title: '保存失败，请重试', icon: 'none' })
       return
     }
 
     this.setData({ isFavorite: idx === -1 })
-    wx.showToast({
-      title: idx === -1 ? '已收藏' : '已取消收藏',
-      icon: 'none'
-    })
+    wx.showToast({ title: idx === -1 ? '已收藏' : '已取消收藏', icon: 'none' })
   },
 
   goToRelated: function(e) {

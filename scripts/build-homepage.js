@@ -1,122 +1,247 @@
-// 主页生成器：从 data/words.js 提取真实词库，注入 docs/index.html
-//
-// 用法：
-//   node scripts/build-homepage.js
-//
-// 原理：
-//   1) 读取 data/words.js 与 data/categories.js（小程序运行时用的同一份数据）
-//   2) 把全部文本抽成字符串池，词条只存下标，得到无损紧凑编码
-//   3) 写入 docs/index.html 的 PAYLOAD 载荷（可重复运行，结果一致）
-//
-// 词库更新后重新跑一次即可，主页数据即与小程序保持一致。
 /* eslint-disable no-console */
-const fs = require('fs')
-const path = require('path')
+const assert = require('node:assert/strict')
+const crypto = require('node:crypto')
+const fs = require('node:fs')
+const path = require('node:path')
+const vm = require('node:vm')
 
+const root = path.join(__dirname, '..')
+const docsDir = path.join(root, 'docs')
+const assetsDir = path.join(docsDir, 'assets')
+const iconsDir = path.join(assetsDir, 'categories')
 const words = require('../data/words.js')
 const categories = require('../data/categories.js')
 const dataModule = require('../utils/data.js')
+const miniTranslator = require('../utils/translator.js')
+const coreSource = fs.readFileSync(path.join(root, 'utils', 'translator-core.js'), 'utf8')
+const checkOnly = process.argv.includes('--check')
 
-// 与 utils/translator.js 里的 humanPhrases 手工短语表保持一致
-const hard = {
-  '多沟通交流': '深度对齐',
-  '需要帮助': '需要赋能',
-  '完整的流程': '业务闭环',
-  '具体方法': '抓手',
-  '统一认识': '对齐认知',
-  '协调资源': '拉通资源',
-  '总结经验': '沉淀经验',
-  '提供方案': '输出方案',
-  '专注重点': '聚焦核心',
-  '概括问题': '抽象问题',
-  '提高效率': '降本增效',
-  '提升效率': '降本增效',
-  '降低成本': '降本增效',
-  '减少成本': '降本增效'
+function sha256(content) {
+  return crypto.createHash('sha256').update(content).digest('hex')
 }
 
-// 字符串池：所有文本只存一份，词条用下标引用
-const pool = []
-const poolIndex = new Map()
-function sid(str) {
-  if (poolIndex.has(str)) return poolIndex.get(str)
-  const i = pool.length
-  pool.push(str)
-  poolIndex.set(str, i)
-  return i
+function version(content) {
+  return sha256(content).slice(0, 16)
 }
 
-const countMap = {}
-words.forEach(w => { countMap[w.categoryId] = (countMap[w.categoryId] || 0) + 1 })
+function serializeForScript(value) {
+  return JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029')
+}
 
-// forward: wordIdx~displayIdx~categoryId~exampleIdx~tagIdx,tagIdx...
-const forward = words.map(w => {
-  const tags = (w.tags || []).map(sid)
-  return [
-    sid(w.word),
-    sid(w.brief || w.meaning),
-    w.categoryId,
-    w.example ? sid(w.example) : -1,
-    tags
-  ].join('~')
-})
+function replaceMarker(html, name, content) {
+  const pattern = new RegExp('<!-- STAT:' + name + ' -->[\\s\\S]*?<!-- \\/STAT:' + name + ' -->', 'g')
+  assert(pattern.test(html), '缺少统计标记：' + name)
+  return html.replace(pattern, () => '<!-- STAT:' + name + ' -->' + content + '<!-- /STAT:' + name + ' -->')
+}
 
-// reverse: meaningIdx~wordIdx（释义 → 词条，用于「人话 → 黑话」）
-const seenMeaning = new Set()
-const reverse = []
-words.forEach(w => {
-  if (!seenMeaning.has(w.meaning)) {
-    seenMeaning.add(w.meaning)
-    reverse.push(sid(w.meaning) + '~' + sid(w.word))
+function replaceBlock(html, name, content) {
+  const pattern = new RegExp('<!-- ' + name + ':START -->[\\s\\S]*?<!-- ' + name + ':END -->')
+  assert(pattern.test(html), '缺少生成块：' + name)
+  return html.replace(pattern, () => '<!-- ' + name + ':START -->\n' + content + '\n<!-- ' + name + ':END -->')
+}
+
+function atomicWrite(filePath, content) {
+  if (fs.existsSync(filePath) && fs.readFileSync(filePath, 'utf8') === content) return false
+  const temporary = filePath + '.tmp'
+  fs.writeFileSync(temporary, content, 'utf8')
+  fs.renameSync(temporary, filePath)
+  return true
+}
+
+function validateData() {
+  assert(Array.isArray(words) && words.length > 0, '词库不能为空')
+  assert(Array.isArray(categories) && categories.length > 0, '分类不能为空')
+  const categoryIds = new Set()
+  categories.forEach(category => {
+    assert(Number.isInteger(category.id) && !categoryIds.has(category.id), '分类 ID 无效或重复')
+    categoryIds.add(category.id)
+    assert(category.name && category.desc, '分类缺少名称或描述')
+    assert(['jargon', 'professional'].includes(category.type), '分类类型无效')
+    assert(['image', 'emoji'].includes(category.iconType), '分类图标类型无效')
+  })
+  const wordIds = new Set()
+  const names = new Set()
+  words.forEach(word => {
+    assert(Number.isInteger(word.id) && !wordIds.has(word.id), '词条 ID 无效或重复：' + word.id)
+    assert(word.word && !names.has(word.word), '词条为空或重复：' + word.word)
+    assert(categoryIds.has(word.categoryId), '词条分类不存在：' + word.word)
+    assert(typeof word.meaning === 'string' && word.meaning, '词条缺少释义：' + word.word)
+    assert(typeof word.example === 'string', '词条示例格式无效：' + word.word)
+    assert(Array.isArray(word.tags) && word.tags.every(tag => typeof tag === 'string'), '词条标签格式无效：' + word.word)
+    wordIds.add(word.id)
+    names.add(word.word)
+  })
+}
+
+function buildPayload() {
+  validateData()
+  const counts = new Map()
+  words.forEach(word => counts.set(word.categoryId, (counts.get(word.categoryId) || 0) + 1))
+  const normalizedCategories = categories.map(category => Object.assign({}, category, {
+    count: counts.get(category.id) || 0
+  }))
+  return {
+    words: words.map(word => ({
+      id: word.id,
+      word: word.word,
+      meaning: word.meaning,
+      brief: word.brief || '',
+      example: word.example || '',
+      categoryId: word.categoryId,
+      tags: (word.tags || []).slice()
+    })),
+    categories: normalizedCategories,
+    hotTags: dataModule.getPopularTags().slice(0, 12),
+    stats: {
+      wordCount: words.length,
+      categoryCount: categories.length,
+      briefCount: words.filter(word => word.brief).length
+    }
   }
-})
-
-// 分类元数据：图标类型与文件名取自 data/categories.js
-const cats = categories.map(c => {
-  let iconRef = c.icon
-  if (c.iconType === 'image') {
-    iconRef = path.basename(c.icon).replace(/\.png$/, '.svg')
-  }
-  return [c.id, c.name, c.desc, c.type, countMap[c.id] || 0, c.iconType, iconRef]
-})
-
-const payload = {
-  cats: cats,
-  fwd: forward.join('^'),
-  rev: reverse.join('^'),
-  pool: pool.join('|'),
-  hard: hard,
-  hot: dataModule.getPopularTags().slice(0, 12)
 }
-const payloadJson = JSON.stringify(payload)
 
-const htmlPath = path.join(__dirname, '..', 'docs', 'index.html')
-let html = fs.readFileSync(htmlPath, 'utf8')
-
-// 载荷写在 PAYLOAD 标记之间；首次生成时标记为空对象，之后替换旧载荷
-const marker = /var PAYLOAD = (\{[\s\S]*?\});/
-if (!marker.test(html)) {
-  console.error('未找到 PAYLOAD 标记，请检查 docs/index.html')
-  process.exit(1)
+function buildCategoryTable(payload) {
+  const categoryMap = new Map(payload.categories.map(category => [category.id, category]))
+  const jargon = payload.categories.filter(category => category.type === 'jargon')
+  const professional = payload.categories.filter(category => category.type === 'professional')
+  const lines = payload.categories.map(category => {
+    const type = category.type === 'jargon' ? '互联网黑话' : '专业术语'
+    return '| ' + category.name + ' | ' + type + ' | ' + category.count + '个 |'
+  })
+  const all = ['| 分类 | 类型 | 词汇数量 |', '|------|------|----------|'].concat(lines)
+  all.push('| **总计** | | **' + payload.words.length + '个** |')
+  assert(categoryMap.size === payload.categories.length)
+  return all.join('\n') + '\n\n其中' + payload.stats.briefCount + '个长释义词条配有 `brief` 短释义，供翻译句中替换使用。'
 }
-html = html.replace(marker, 'var PAYLOAD = ' + payloadJson + ';')
-fs.writeFileSync(htmlPath, html, 'utf8')
 
-// 把分类图标拷进 docs/assets/categories/
-const outDir = path.join(__dirname, '..', 'docs', 'assets', 'categories')
-fs.mkdirSync(outDir, { recursive: true })
-let copied = 0
-categories.forEach(c => {
-  if (c.iconType !== 'image') return
-  const src = path.join(__dirname, '..', 'images', 'categories', path.basename(c.icon).replace(/\.png$/, '.svg'))
-  if (fs.existsSync(src)) {
-    fs.copyFileSync(src, path.join(outDir, path.basename(src)))
-    copied++
+function buildReadme(payload) {
+  const readmePath = path.join(root, 'README.md')
+  let readme = fs.readFileSync(readmePath, 'utf8')
+  readme = replaceMarker(readme, 'WORD_COUNT', String(payload.stats.wordCount))
+  readme = replaceMarker(readme, 'CATEGORY_COUNT', String(payload.stats.categoryCount))
+  readme = replaceBlock(readme, 'CATEGORY_STATS', buildCategoryTable(payload))
+  readme = replaceMarker(readme, 'MAX_WORD_ID', String(Math.max.apply(null, words.map(word => word.id))))
+  return readme
+}
+
+function buildHtml(payload, dataSource) {
+  const htmlPath = path.join(docsDir, 'index.html')
+  let html = fs.readFileSync(htmlPath, 'utf8')
+  const description = '开源微信小程序：内置 ' + words.length + ' 个互联网黑话与专业术语，覆盖 ' + categories.length + ' 个分类，支持黑话↔人话双向翻译、搜索、收藏与分享。'
+  const shortDescription = words.length + ' 个词条，' + categories.length + ' 个分类，黑话与人话双向翻译。一个开源的微信小程序。'
+  const descriptionPattern = /(<meta name="description" content=")[^"]*(")/
+  const socialPattern = /((?:name|property)="(?:og:description|twitter:description)" content=")[^"]*(")/g
+  const jsonLdPattern = /("description": ")[^"]*(",\r?\n  "applicationCategory")/
+  assert(descriptionPattern.test(html), '缺少主页描述元信息')
+  assert(socialPattern.test(html), '缺少社交分享描述元信息')
+  assert(jsonLdPattern.test(html), '缺少结构化数据描述')
+  html = html.replace(descriptionPattern, (match, prefix, suffix) => prefix + description + suffix)
+  html = html.replace(socialPattern, (match, prefix, suffix) => prefix + shortDescription + suffix)
+  html = html.replace(jsonLdPattern, (match, prefix, suffix) => prefix + description + suffix)
+  html = replaceMarker(html, 'WORD_COUNT', String(words.length))
+  html = replaceMarker(html, 'CATEGORY_COUNT', String(categories.length))
+  const scripts = '<script src="assets/data.js?v=' + version(dataSource) + '"></script>\n' +
+    '<script src="assets/translator-core.js?v=' + version(coreSource) + '"></script>'
+  html = replaceBlock(html, 'BUILD:SCRIPTS', scripts)
+  assert(!html.includes('var PAYLOAD'), '主页仍残留旧 PAYLOAD')
+  assert(!html.includes('fonts.googleapis.com'), '主页仍加载外部字体')
+  return html
+}
+
+function verifyGeneratedAssets(payload, dataSource) {
+  const safetyValue = '</script>\u2028\u2029$&};|^~%'
+  const sandbox = {}
+  vm.runInNewContext(coreSource, sandbox)
+  vm.runInNewContext(dataSource, sandbox)
+  assert.equal(typeof sandbox.SlangTranslator.createTranslator, 'function', '浏览器翻译核心不可用')
+  assert.deepEqual(JSON.parse(JSON.stringify(sandbox.SLANG_DATA)), payload, '主页数据回读不一致')
+  const browserTranslator = sandbox.SlangTranslator.createTranslator({ words: sandbox.SLANG_DATA.words })
+  const cases = words.map(word => ({ text: word.word, mode: 'toHuman' }))
+    .concat(words.map(word => ({ text: word.meaning, mode: 'toJargon' })))
+    .concat([
+      { text: 'dragon storage xrag ragx 脆弱 干脆', mode: 'toHuman' },
+      { text: 'rag RAG AI Agent', mode: 'auto' },
+      { text: safetyValue, mode: 'auto' },
+      { text: '完整的流程', mode: 'toJargon' }
+    ])
+  cases.forEach(testCase => {
+    const expected = testCase.mode === 'auto'
+      ? miniTranslator.translateText(testCase.text)
+      : testCase.mode === 'toHuman'
+        ? miniTranslator.translateToHuman(testCase.text)
+        : miniTranslator.translateToJargon(testCase.text)
+    const actual = testCase.mode === 'auto'
+      ? browserTranslator.translateText(testCase.text)
+      : testCase.mode === 'toHuman'
+        ? browserTranslator.translateToHuman(testCase.text)
+        : browserTranslator.translateToJargon(testCase.text)
+    assert.deepEqual(JSON.parse(JSON.stringify(actual)), JSON.parse(JSON.stringify(expected)), '双端翻译结果不一致：' + testCase.text)
+  })
+  const htmlPath = path.join(docsDir, 'index.html')
+  const html = fs.readFileSync(htmlPath, 'utf8')
+  const dataTag = html.match(/<script src="assets\/data\.js\?v=([a-f0-9]{16})"><\/script>/)
+  const coreTag = html.match(/<script src="assets\/translator-core\.js\?v=([a-f0-9]{16})"><\/script>/)
+  assert(dataTag && dataTag[1] === version(dataSource), '主页数据版本哈希不正确')
+  assert(coreTag && coreTag[1] === version(coreSource), '主页核心版本哈希不正确')
+}
+
+function syncIcons() {
+  const expected = new Map()
+  categories.forEach(category => {
+    if (category.iconType !== 'image') return
+    const name = path.basename(category.icon).replace(/\.png$/, '.svg')
+    const source = path.join(root, 'images', 'categories', name)
+    assert(fs.existsSync(source), '缺少分类图标：' + name)
+    expected.set(name, fs.readFileSync(source))
+  })
+  const actualNames = fs.existsSync(iconsDir)
+    ? fs.readdirSync(iconsDir).filter(name => name.endsWith('.svg'))
+    : []
+  if (!checkOnly) {
+    fs.mkdirSync(iconsDir, { recursive: true })
+    actualNames.filter(name => !expected.has(name)).forEach(name => fs.unlinkSync(path.join(iconsDir, name)))
   }
-})
+  const remainingNames = fs.existsSync(iconsDir)
+    ? fs.readdirSync(iconsDir).filter(name => name.endsWith('.svg'))
+    : []
+  assert.deepEqual(remainingNames.filter(name => !expected.has(name)), [], '主页存在过期分类图标')
+  expected.forEach((content, name) => {
+    const target = path.join(iconsDir, name)
+    assert(fs.existsSync(target), '缺少生成图标：' + name)
+    assert(fs.readFileSync(target).equals(content), '生成图标与源文件不一致：' + name)
+  })
+}
 
-console.log('词库载荷注入完成')
-console.log('  词条 ' + words.length + ' 条，分类 ' + categories.length + ' 个')
-console.log('  载荷 ' + (Buffer.byteLength(payloadJson, 'utf8') / 1024).toFixed(1) + ' KB')
-console.log('  页面 ' + (Buffer.byteLength(html, 'utf8') / 1024).toFixed(1) + ' KB')
-console.log('  分类图标 ' + copied + ' 个已拷贝到 docs/assets/categories/')
+const payload = buildPayload()
+const dataSource = 'var SLANG_DATA = ' + serializeForScript(payload) + ';\n'
+const dataPath = path.join(assetsDir, 'data.js')
+const corePath = path.join(assetsDir, 'translator-core.js')
+const readme = buildReadme(payload)
+const html = buildHtml(payload, dataSource)
+const outputs = [
+  [dataPath, dataSource],
+  [corePath, coreSource],
+  [path.join(docsDir, 'index.html'), html],
+  [path.join(root, 'README.md'), readme]
+]
+
+if (checkOnly) {
+  outputs.forEach(([filePath, expected]) => {
+    assert(fs.existsSync(filePath), '生成文件不存在：' + path.relative(root, filePath))
+    assert.equal(fs.readFileSync(filePath, 'utf8'), expected, '生成文件已过期：' + path.relative(root, filePath))
+  })
+  verifyGeneratedAssets(payload, dataSource)
+  syncIcons()
+  console.log('主页构建校验通过：数据、双端核心、版本哈希和图标一致')
+} else {
+  fs.mkdirSync(assetsDir, { recursive: true })
+  const changed = outputs.filter(([filePath, content]) => atomicWrite(filePath, content)).length
+  verifyGeneratedAssets(payload, dataSource)
+  syncIcons()
+  console.log('主页生成完成：' + words.length + ' 个词条，' + categories.length + ' 个分类，更新 ' + changed + ' 个文件')
+}

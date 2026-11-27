@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container safe-bottom">
   <view class="page-header">
     <text class="page-title">黑话分类</text>
     <text class="page-subtitle">探索不同领域的专业术语</text>

@@ -1,4 +1,10 @@
 <view class="container">
+  <view class="error-state" wx:if="{{error}}">
+    <text class="error-text">{{error}}</text>
+    <button class="retry-btn" bindtap="loadData" size="mini">重新加载</button>
+  </view>
+
+  <block wx:else>
   <!-- 标题区域 -->
   <view class="header fade-in">
     <text class="title">互联网黑话翻译器</text>
@@ -37,7 +43,7 @@
       <view class="section-bar"></view>
       <text class="section-title">分类速览</text>
     </view>
-    <view wx:if="{{categorySections.length === 0}}" class="empty-block">分类加载中...</view>
+    <view wx:if="{{categorySections.length === 0 && !loading}}" class="empty-block">暂无分类内容</view>
     <view
       class="category-block"
       wx:for="{{categorySections}}"
@@ -73,5 +79,5 @@
         </view>
       </view>
     </view>
-  </view>
+  </block>
 </view>

@@ -67,8 +67,9 @@ function searchWords(keyword) {
 }
 
 function searchByTag(tag) {
-  return allWords.filter(word => 
-    word.tags.some(t => t.toLowerCase().includes(tag.toLowerCase()))
+  const normalized = String(tag).trim().toLowerCase()
+  return allWords.filter(word =>
+    word.tags.some(t => t.toLowerCase() === normalized)
   )
 }
 

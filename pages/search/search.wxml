@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container safe-bottom">
   <!-- 搜索框 -->
   <view class="search-header">
     <view class="search-box {{searchKeyword ? 'search-box-focus' : ''}}">
@@ -6,13 +6,13 @@
       <input 
         class="search-input"
         placeholder="搜索黑话、含义或标签"
-        placeholder-style="color: #5c5855"
+        placeholder-style="color: #b8b2aa"
         value="{{searchKeyword}}"
         bindinput="onInput"
         bindconfirm="onSearch"
         focus="{{true}}"
       />
-      <view wx:if="{{searchKeyword}}" class="clear-btn" bindtap="clearSearch">
+      <view wx:if="{{searchKeyword}}" class="clear-btn" bindtap="clearSearch" aria-role="button" aria-label="清空搜索内容">
         <text class="clear-icon">×</text>
       </view>
     </view>
@@ -26,7 +26,7 @@
   <!-- 搜索结果 -->
   <view class="search-results" wx:if="{{!showHistory && !searching}}">
     <view class="results-header" wx:if="{{searchResults.length > 0}}">
-      <text class="results-count">找到 {{searchResults.length}} 个结果</text>
+      <text class="results-count">找到 {{resultTotal}} 个结果</text>
     </view>
     
     <view class="no-results" wx:if="{{searchResults.length === 0}}">
@@ -37,12 +37,14 @@
 
     <view class="word-list">
       <view 
-        class="word-item fade-in-up" 
-        wx:for="{{searchResults}}" 
+        class="word-item {{index < 8 ? 'fade-in-up' : ''}}"
+        wx:for="{{searchResults}}"
         wx:key="id"
         bindtap="goToWordDetail"
         data-id="{{item.id}}"
-        style="animation-delay: {{index * 0.05}}s"
+        aria-role="button"
+        aria-label="{{item.word}}，查看词条详情"
+        style="{{index < 8 ? 'animation-delay: ' + (index * 0.035) + 's' : ''}}"
       >
         <view class="word-header">
           <text class="word-title">
@@ -62,6 +64,8 @@
             wx:key="*this"
             catchtap="searchByTag"
             data-tag="{{tag}}"
+            aria-role="button"
+            aria-label="搜索标签 {{tag}}"
           >{{tag}}</text>
         </view>
         
@@ -75,6 +79,7 @@
         </view>
       </view>
     </view>
+    <button class="load-more-btn" wx:if="{{hasMore}}" bindtap="loadMore">加载更多（已显示 {{searchResults.length}}/{{resultTotal}}）</button>
   </view>
 
   <!-- 搜索历史和热门标签 -->

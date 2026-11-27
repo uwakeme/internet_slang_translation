@@ -2,7 +2,7 @@
 
 .container {
   min-height: 100vh;
-  padding: 0 0 48rpx 0;
+  padding: 0 0 calc(48rpx + env(safe-area-inset-bottom)) 0;
   position: relative;
 }
 
@@ -31,7 +31,7 @@
 
 .word-count {
   font-size: 26rpx;
-  color: #9a9590;
+  color: #b8b2aa;
   font-weight: 300;
   letter-spacing: 1rpx;
 }
@@ -45,17 +45,13 @@
 
 .word-card {
   background: linear-gradient(180deg, rgba(38, 41, 54, 0.95) 0%, rgba(22, 24, 32, 0.95) 100%);
-  backdrop-filter: blur(32rpx);
-  -webkit-backdrop-filter: blur(32rpx);
   border-radius: 24rpx;
   padding: 34rpx;
   border: 1rpx solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, 0.4), inset 0 1rpx 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.25), inset 0 1rpx 0 rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
-  opacity: 0;
-  animation-fill-mode: forwards;
 }
 
 .word-card::before {
@@ -87,7 +83,9 @@
   font-size: 36rpx;
   font-weight: 700;
   color: #f5a623;
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .word-meaning {
@@ -115,7 +113,7 @@
 
 .word-tag {
   background: rgba(255, 255, 255, 0.04);
-  color: #9a9590;
+  color: #b8b2aa;
   padding: 6rpx 14rpx;
   border-radius: 16rpx;
   font-size: 22rpx;
@@ -142,13 +140,13 @@
 
 .label-text {
   font-size: 24rpx;
-  color: #5c5855;
+  color: #b8b2aa;
   font-weight: 500;
 }
 
 .example-text {
   font-size: 26rpx;
-  color: #9a9590;
+  color: #b8b2aa;
   line-height: 1.6;
 }
 
@@ -159,7 +157,7 @@
 
 .tip-text {
   font-size: 24rpx;
-  color: #5c5855;
+  color: #b8b2aa;
 }
 
 /* 淡入动画 */
@@ -187,5 +185,17 @@
 
 .empty-block .empty-text {
   font-size: 28rpx;
-  color: #9a9590;
+  color: #b8b2aa;
+}
+
+@media (max-width: 375px) {
+  .word-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .word-meaning {
+    max-width: 100%;
+    white-space: normal;
+  }
 }

@@ -1,0 +1,17 @@
+{
+  "name": "internet-slang-translator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "互联网黑话翻译器微信小程序与静态主页",
+  "scripts": {
+    "test": "node scripts/check.js && node scripts/test-regressions.js",
+    "build:homepage": "node scripts/build-homepage.js",
+    "build:check": "node scripts/build-homepage.js --check",
+    "data:clean": "node scripts/clean-data.js",
+    "data:clean:write": "node scripts/clean-data.js --write",
+    "verify": "npm test && npm run build:check"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

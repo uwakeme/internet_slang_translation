@@ -50,18 +50,24 @@ function buildCategorySections(categories) {
 Page({
   data: {
     hotWords: [],
-    categorySections: []
+    categorySections: [],
+    loading: true,
+    error: ''
   },
 
   onLoad: function () {
+    this.loadData()
+  },
+
+  loadData: function () {
+    this.setData({ loading: true, error: '' })
     try {
       var hotWords = buildHotWords()
       var sections = buildCategorySections(dataModule.getCategories())
-      // 合并 setData，减少一次渲染通知
-      this.setData({ hotWords: hotWords, categorySections: sections })
+      this.setData({ hotWords: hotWords, categorySections: sections, loading: false })
     } catch (err) {
       console.error('[index onLoad] failed:', err)
-      wx.showToast({ title: '首页加载失败,请重试', icon: 'none' })
+      this.setData({ loading: false, error: '首页加载失败，请重试' })
     }
   },
 

@@ -2,5 +2,9 @@
 secret/
 *.key
 
+node_modules/
+*.tmp
+*.log
+
 # macOS 系统文件
 .DS_Store

@@ -1,8 +1,8 @@
-<view class="container">
+<view class="container safe-bottom">
   <view class="page-header">
     <view class="header-content">
       <text class="page-title">{{categoryName}}</text>
-      <text class="word-count">共{{words.length}}个词汇</text>
+      <text class="word-count">共{{total}}个词汇</text>
     </view>
   </view>
 
@@ -12,12 +12,14 @@
 
   <view class="words-list" wx:else>
     <view
-      class="word-card fade-in-up"
+      class="word-card {{index < 8 ? 'fade-in-up' : ''}}"
       wx:for="{{words}}"
       wx:key="id"
       bindtap="goToWordDetail"
       data-id="{{item.id}}"
-      style="animation-delay: {{index * 0.05}}s"
+      aria-role="button"
+      aria-label="{{item.word}}，查看词条详情"
+      style="{{index < 8 ? 'animation-delay: ' + (index * 0.035) + 's' : ''}}"
     >
       <view class="word-header">
         <text class="word-title">{{item.word}}</text>
@@ -37,6 +39,8 @@
       </view>
     </view>
   </view>
+
+  <button class="load-more-btn" wx:if="{{hasMore}}" bindtap="loadMore">加载更多（已显示 {{words.length}}/{{total}}）</button>
 
   <view class="bottom-tip" wx:if="{{words.length > 0}}">
     <text class="tip-text">💡 点击任意词汇可查看详细信息</text>

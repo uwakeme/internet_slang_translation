@@ -1,6 +1,7 @@
 var dataModule = require('../../utils/data.js')
+var storage = require('../../utils/storage.js')
 
-var FAVORITE_KEY = 'favorite_words'
+var PAGE_SIZE = 20
 
 Page({
   data: {
@@ -8,8 +9,13 @@ Page({
     categoryName: '',
     categoryType: '',
     isFavorites: false,
-    words: []
+    words: [],
+    total: 0,
+    hasMore: false
   },
+
+  _allWords: [],
+  _visibleCount: PAGE_SIZE,
 
   onLoad: function(options) {
     if (options.favorites) {
@@ -38,26 +44,34 @@ Page({
     this.loadWords(categoryId)
   },
 
+  setWords: function(words) {
+    this._allWords = words
+    this._visibleCount = PAGE_SIZE
+    this.setData({
+      words: words.slice(0, this._visibleCount),
+      total: words.length,
+      hasMore: words.length > this._visibleCount
+    })
+  },
+
+  loadMore: function() {
+    if (!this.data.hasMore) return
+    this._visibleCount += PAGE_SIZE
+    this.setData({
+      words: this._allWords.slice(0, this._visibleCount),
+      hasMore: this._allWords.length > this._visibleCount
+    })
+  },
+
   loadWords: function(categoryId) {
-    var words = dataModule.getWordsByCategory(categoryId)
-    this.setData({ words: words })
+    this.setWords(dataModule.getWordsByCategory(categoryId))
   },
 
   loadFavorites: function() {
-    var favorites = []
-    try {
-      favorites = wx.getStorageSync(FAVORITE_KEY) || []
-    } catch (e) {
-      console.error('加载收藏失败', e)
-    }
-
-    // 按收藏顺序倒序展示（最近收藏在前），已失效的词条自动过滤
-    var words = []
-    for (var i = favorites.length - 1; i >= 0; i--) {
-      var word = dataModule.getWordById(favorites[i])
-      if (word) words.push(word)
-    }
-    this.setData({ words: words })
+    var words = storage.getFavoriteIds().slice().reverse().map(function(id) {
+      return dataModule.getWordById(id)
+    }).filter(Boolean)
+    this.setWords(words)
   },
 
   onShow: function() {
@@ -73,10 +87,9 @@ Page({
   },
 
   translateWord: function(e) {
-    var word = e.currentTarget.dataset.word
-    wx.navigateTo({
-      url: '/pages/translate/translate?word=' + encodeURIComponent(word)
-    })
+    var app = getApp()
+    app.globalData.pendingTranslate = { text: e.currentTarget.dataset.word, mode: 'toHuman' }
+    wx.switchTab({ url: '/pages/translate/translate' })
   },
 
   onShareAppMessage: function() {

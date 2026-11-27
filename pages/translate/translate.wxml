@@ -25,7 +25,7 @@
       <text class="section-title">{{mode === 'toHuman' ? '输入互联网黑话' : '输入通俗易懂的话'}}</text>
       <textarea 
         placeholder="{{mode === 'toHuman' ? '例如：我们需要赋能业务，形成闭环' : '例如：我们需要帮助业务，形成完整流程'}}"
-        placeholder-style="color: #5c5855"
+        placeholder-style="color: #b8b2aa"
         value="{{inputText}}"
         bindinput="onInput"
         bindfocus="onInputFocus"
@@ -46,7 +46,21 @@
         <button class="copy-btn" bindtap="copyResult" size="mini">复制</button>
       </view>
       <view class="result-content fade-in-up">
-        <text class="result-text">{{result}}</text>
+        <text wx:for="{{resultSegments}}" wx:key="index" class="result-text {{item.matched ? 'result-highlight' : ''}}">{{item.text}}</text>
+      </view>
+      <view class="alternatives" wx:if="{{alternatives.length > 0}}">
+        <text class="alternative-label">也可以译为</text>
+        <view class="alternative-list">
+          <button
+            class="alternative-btn"
+            wx:for="{{alternatives}}"
+            wx:key="index"
+            data-match-index="{{item.matchIndex}}"
+            data-word="{{item.word}}"
+            bindtap="selectAlternative"
+            size="mini"
+          >{{item.word}}</button>
+        </view>
       </view>
     </view>
   </view>
