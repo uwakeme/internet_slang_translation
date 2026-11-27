@@ -1,81 +1,91 @@
-<view class="container">
+<view class="container city-home">
   <view class="error-state" wx:if="{{error}}">
     <text class="error-text">{{error}}</text>
     <button class="retry-btn" bindtap="loadData" size="mini">重新加载</button>
   </view>
 
   <block wx:else>
-  <!-- 标题区域 -->
-  <view class="header fade-in">
-    <text class="title">互联网黑话翻译器</text>
-    <text class="subtitle">让沟通更简单</text>
-  </view>
-
-  <!-- 搜索入口 -->
-  <view class="search-entry fade-in-delay1" bindtap="goToSearch">
-    <text class="search-icon">🔍</text>
-    <text class="search-placeholder">搜索黑话、含义或标签</text>
-  </view>
-
-  <!-- 今日热词 -->
-  <view class="section fade-in-delay2">
-    <view class="section-header">
-      <view class="section-bar"></view>
-      <text class="section-title">今日热词</text>
-    </view>
-    <view class="hot-words-wrap">
-      <view
-        class="hot-tag"
-        wx:for="{{hotWords}}"
-        wx:key="id"
-        data-id="{{item.id}}"
-        bindtap="goToWordDetail"
-      >
-        <text class="hot-tag-word">{{item.word}}</text>
-        <text class="hot-tag-meaning">{{item.meaning}}</text>
-      </view>
-    </view>
-  </view>
-
-  <!-- 分类速览 -->
-  <view class="section fade-in-delay3">
-    <view class="section-header">
-      <view class="section-bar"></view>
-      <text class="section-title">分类速览</text>
-    </view>
-    <view wx:if="{{categorySections.length === 0 && !loading}}" class="empty-block">暂无分类内容</view>
-    <view
-      class="category-block"
-      wx:for="{{categorySections}}"
-      wx:key="id"
-    >
-      <view
-        class="category-title-row"
-        data-id="{{item.id}}"
-        bindtap="goToCategory"
-      >
-        <view class="category-color-dot" style="background: {{item.color}};"></view>
-        <view class="category-icon-box">
-          <image wx:if="{{item.iconType === 'image'}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit" lazy-load="true"/>
-          <text wx:else class="category-icon-text">{{item.icon}}</text>
+    <view class="hero">
+      <view class="orbit orbit-one"></view>
+      <view class="orbit orbit-two"></view>
+      <view class="hero-top fade-in">
+        <view class="brand-row">
+          <view class="brand-dot"></view>
+          <text class="brand-name">黑话夜谈</text>
         </view>
-        <text class="category-name">{{item.name}}</text>
-        <text class="category-arrow">›</text>
+        <text class="online-label">今晚在线</text>
       </view>
-      <view class="category-words">
-        <view
-          class="word-card"
-          wx:for="{{item.words}}"
-          wx:for-item="word"
-          wx:key="id"
-          style="border-left-color: {{item.color}};"
-          data-id="{{word.id}}"
-          bindtap="goToWordDetail"
-          hover-class="word-card-hover"
-          hover-stay-time="80"
-        >
-          <text class="word-name">{{word.word}}</text>
-          <text class="word-meaning">{{word.meaning}}</text>
+      <view class="night-sticker">热点<br/>捕手</view>
+      <text class="eyebrow fade-in delay-1">CITY EDITION · 20:26</text>
+      <view class="hero-title fade-in delay-1">
+        <text>今晚的</text>
+        <text class="accent-line">互联网</text>
+        <text>也读得懂。</text>
+      </view>
+      <text class="hero-subtitle fade-in delay-2">热点会过去，热词要搞懂。把你的好奇心，交给这里。</text>
+    </view>
+
+    <view class="home-search fade-in delay-2" bindtap="goToSearch" hover-class="home-search-active" hover-stay-time="80">
+      <text class="search-glyph">⌕</text>
+      <text class="search-placeholder">搜一个听不懂的词</text>
+      <view class="search-go">→</view>
+    </view>
+
+    <view class="section decode-section fade-in delay-3" wx:if="{{previewWord}}">
+      <view class="section-heading">
+        <text class="section-kicker">一句话破译</text>
+        <text class="section-note">LIVE DEMO</text>
+      </view>
+      <view class="decode-card">
+        <view class="decode-source">
+          <text class="mini-label">你听到的</text>
+          <text class="source-text">这个视频把我{{previewWord.word}}了</text>
+        </view>
+        <view class="decode-line"><text>翻译一下</text><text>↓</text></view>
+        <view class="decode-result">
+          <text class="mini-label">其实在说</text>
+          <text class="result-text">{{previewWord.meaning}}</text>
+        </view>
+        <view class="decode-spark">✦</view>
+      </view>
+    </view>
+
+    <view class="section hot-section">
+      <view class="section-heading">
+        <view class="heading-left"><text class="heading-mark">↗</text><text class="section-kicker">大家正在聊</text></view>
+        <text class="section-note">今日热词</text>
+      </view>
+      <scroll-view class="hot-scroll" scroll-x="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
+        <view class="hot-row">
+          <view class="hot-tag" wx:for="{{hotWords}}" wx:key="id" data-id="{{item.id}}" bindtap="goToWordDetail" hover-class="hot-tag-active" hover-stay-time="80">
+            <text class="hot-index">0{{index + 1}}</text>
+            <text class="hot-tag-word">{{item.word}}</text>
+            <text class="hot-tag-meaning">{{item.meaning}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="section category-section">
+      <view class="section-heading">
+        <view class="heading-left"><text class="heading-mark">✦</text><text class="section-kicker">逛逛词库</text></view>
+        <text class="section-note">15 个分类</text>
+      </view>
+      <view class="category-block" wx:for="{{categorySections}}" wx:key="id">
+        <view class="category-title-row" data-id="{{item.id}}" bindtap="goToCategory" hover-class="category-title-active" hover-stay-time="80">
+          <view class="category-icon-box" style="background: {{item.color}};">
+            <image wx:if="{{item.iconType === 'image'}}" class="category-icon-img" src="{{item.icon}}" mode="aspectFit" lazy-load="{{true}}"/>
+            <text wx:else class="category-icon-text">{{item.icon}}</text>
+          </view>
+          <text class="category-name">{{item.name}}</text>
+          <text class="category-arrow">↗</text>
+        </view>
+        <view class="category-words">
+          <view class="word-card" wx:for="{{item.words}}" wx:for-item="word" wx:key="id" data-id="{{word.id}}" bindtap="goToWordDetail" hover-class="word-card-active" hover-stay-time="80">
+            <text class="word-name">{{word.word}}</text>
+            <text class="word-meaning">{{word.meaning}}</text>
+            <text class="word-arrow">›</text>
+          </view>
         </view>
       </view>
     </view>

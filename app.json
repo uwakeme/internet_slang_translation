@@ -2,15 +2,15 @@
   "pages": ["pages/index/index", "pages/category/category", "pages/translate/translate", "pages/search/search", "pages/wordList/wordList", "pages/wordDetail/wordDetail"],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0c0e14",
-    "navigationBarTitleText": "互联网黑话翻译器",
+    "navigationBarBackgroundColor": "#101a2b",
+    "navigationBarTitleText": "黑话夜谈",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#9a9590",
-    "selectedColor": "#f5a623",
+    "color": "#9ca9bd",
+    "selectedColor": "#ff7a59",
     "borderStyle": "black",
-    "backgroundColor": "#0c0e14",
+    "backgroundColor": "#101a2b",
     "list": [
       {"pagePath": "pages/index/index", "iconPath": "images/home.png", "selectedIconPath": "images/home-active.png", "text": "首页"},
       {"pagePath": "pages/category/category", "iconPath": "images/category.png", "selectedIconPath": "images/category-active.png", "text": "分类"},

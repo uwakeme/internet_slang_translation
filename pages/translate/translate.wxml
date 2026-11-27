@@ -1,6 +1,8 @@
 <view class="container">
   <view class="page-title">
-    <text>专业翻译</text>
+    <text class="page-eyebrow">MEANING, DECODED</text>
+    <text>一句话破译</text>
+    <text class="page-subtitle">黑话与人话，今晚一次说清。</text>
   </view>
 
   <view class="translate-modes">

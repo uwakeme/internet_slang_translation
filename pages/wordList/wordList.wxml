@@ -1,8 +1,9 @@
 <view class="container safe-bottom">
   <view class="page-header">
     <view class="header-content">
+      <text class="page-eyebrow">WORD COLLECTION</text>
       <text class="page-title">{{categoryName}}</text>
-      <text class="word-count">共{{total}}个词汇</text>
+      <text class="word-count">共{{total}}个词汇 · 慢慢逛，不着急</text>
     </view>
   </view>
 

@@ -1,7 +1,10 @@
 <view class="container safe-bottom" wx:if="{{wordInfo}}">
   <!-- 词汇标题区域 -->
   <view class="word-header">
+    <view class="detail-orbit"></view>
+    <view class="detail-sticker">今夜<br/>释义</view>
     <view class="word-name-wrap">
+      <text class="word-eyebrow">WORD OF THE NIGHT</text>
       <text class="word-name">{{wordInfo.word}}</text>
     </view>
     <view class="word-meta">

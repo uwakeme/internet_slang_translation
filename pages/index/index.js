@@ -1,6 +1,6 @@
 var dataModule = require('../../utils/data.js')
 
-var SECTION_COLORS = ['#f5a623', '#ff6b6b', '#4ecdc4', '#a78bfa']
+var SECTION_COLORS = ['#ff7a59', '#7db7ff', '#8ee0b0', '#ffd166']
 var SELECTED_CATEGORY_IDS = [1, 2, 8, 6]
 var HOT_WORDS_LIMIT = 8
 var WORDS_PER_CATEGORY = 3
@@ -52,7 +52,8 @@ Page({
     hotWords: [],
     categorySections: [],
     loading: true,
-    error: ''
+    error: '',
+    previewWord: null
   },
 
   onLoad: function () {
@@ -64,7 +65,7 @@ Page({
     try {
       var hotWords = buildHotWords()
       var sections = buildCategorySections(dataModule.getCategories())
-      this.setData({ hotWords: hotWords, categorySections: sections, loading: false })
+      this.setData({ hotWords: hotWords, categorySections: sections, previewWord: hotWords[0] || null, loading: false })
     } catch (err) {
       console.error('[index onLoad] failed:', err)
       this.setData({ loading: false, error: '首页加载失败，请重试' })

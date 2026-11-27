@@ -1,201 +1,28 @@
-/* ========== 词语列表页 - 精致暖色深色主题 ========== */
-
-.container {
-  min-height: 100vh;
-  padding: 0 0 calc(48rpx + env(safe-area-inset-bottom)) 0;
-  position: relative;
-}
-
-.page-header {
-  position: relative;
-  padding: 72rpx 40rpx 48rpx;
-  text-align: center;
-  z-index: 1;
-}
-
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16rpx;
-}
-
-.page-title {
-  font-size: 52rpx;
-  font-weight: 800;
-  background: linear-gradient(135deg, #f5a623, #ff6b6b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 2rpx;
-}
-
-.word-count {
-  font-size: 26rpx;
-  color: #b8b2aa;
-  font-weight: 300;
-  letter-spacing: 1rpx;
-}
-
-.words-list {
-  padding: 0 40rpx;
-  display: flex;
-  flex-direction: column;
-  gap: 24rpx;
-}
-
-.word-card {
-  background: linear-gradient(180deg, rgba(38, 41, 54, 0.95) 0%, rgba(22, 24, 32, 0.95) 100%);
-  border-radius: 24rpx;
-  padding: 34rpx;
-  border: 1rpx solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.25), inset 0 1rpx 0 rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.word-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1rpx;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
-}
-
-.word-card:active {
-  transform: scale(0.97);
-  box-shadow: 0 6rpx 24rpx rgba(0, 0, 0, 0.45), inset 0 1rpx 0 rgba(255, 255, 255, 0.1);
-}
-
-.word-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20rpx;
-  padding-bottom: 20rpx;
-  border-bottom: 1rpx solid rgba(255, 255, 255, 0.06);
-  gap: 16rpx;
-}
-
-.word-title {
-  font-size: 36rpx;
-  font-weight: 700;
-  color: #f5a623;
-  flex: 1;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-.word-meaning {
-  background: rgba(245, 166, 35, 0.08);
-  color: #f5a623;
-  padding: 8rpx 16rpx;
-  border-radius: 16rpx;
-  font-size: 24rpx;
-  font-weight: 500;
-  border: 1rpx solid rgba(245, 166, 35, 0.3);
-  box-shadow: inset 0 1rpx 0 rgba(255, 255, 255, 0.06);
-  flex-shrink: 0;
-  max-width: 60%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.word-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12rpx;
-  margin-bottom: 20rpx;
-}
-
-.word-tag {
-  background: rgba(255, 255, 255, 0.04);
-  color: #b8b2aa;
-  padding: 6rpx 14rpx;
-  border-radius: 16rpx;
-  font-size: 22rpx;
-  font-weight: 500;
-  border: 1rpx solid rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1rpx 0 rgba(255, 255, 255, 0.04);
-}
-
-.word-example {
-  margin-top: 16rpx;
-}
-
-.example-label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12rpx;
-}
-
-.label-icon {
-  font-size: 24rpx;
-  margin-right: 8rpx;
-  color: #f5a623;
-}
-
-.label-text {
-  font-size: 24rpx;
-  color: #b8b2aa;
-  font-weight: 500;
-}
-
-.example-text {
-  font-size: 26rpx;
-  color: #b8b2aa;
-  line-height: 1.6;
-}
-
-.bottom-tip {
-  text-align: center;
-  padding: 48rpx 40rpx;
-}
-
-.tip-text {
-  font-size: 24rpx;
-  color: #b8b2aa;
-}
-
-/* 淡入动画 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30rpx);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.4s ease-out forwards;
-  opacity: 0;
-}
-
-/* 空状态 */
-.empty-block {
-  text-align: center;
-  padding: 120rpx 40rpx;
-}
-
-.empty-block .empty-text {
-  font-size: 28rpx;
-  color: #b8b2aa;
-}
-
+.container { padding-bottom: calc(48rpx + env(safe-area-inset-bottom)); }
+.page-header { padding: 64rpx 40rpx 44rpx; }
+.header-content { display: flex; flex-direction: column; align-items: flex-start; }
+.page-eyebrow { margin-bottom: 14rpx; color: #7db7ff; font-size: 20rpx; font-weight: 700; letter-spacing: 4rpx; }
+.page-title { font-size: 54rpx; font-weight: 800; }
+.word-count { margin-top: 14rpx; color: #9ca9bd; font-size: 24rpx; }
+.words-list { display: flex; flex-direction: column; gap: 22rpx; padding: 0 40rpx; }
+.word-card { position: relative; padding: 30rpx; overflow: hidden; border: 1rpx solid #2b3a52; border-radius: 8rpx 28rpx 28rpx 28rpx; background: #1a2940; transition: transform .2s ease, border-color .2s ease; }
+.word-card:nth-child(3n+2) { border-radius: 28rpx 8rpx 28rpx 28rpx; }
+.word-card:active { transform: scale(.98); border-color: #ff7a59; }
+.word-header { display: flex; align-items: center; gap: 16rpx; margin-bottom: 20rpx; padding-bottom: 20rpx; border-bottom: 1rpx solid #2b3a52; }
+.word-title { flex: 1; min-width: 0; color: #ff9a7a; font-size: 36rpx; font-weight: 800; overflow-wrap: anywhere; }
+.word-meaning { flex-shrink: 0; max-width: 58%; overflow: hidden; padding: 7rpx 14rpx; border: 1rpx solid #405573; border-radius: 999rpx; background: #223451; color: #b9d6ff; font-size: 22rpx; text-overflow: ellipsis; white-space: nowrap; }
+.word-tags { display: flex; flex-wrap: wrap; gap: 12rpx; margin-bottom: 20rpx; }
+.word-tag { padding: 6rpx 14rpx; border: 1rpx solid #2b3a52; border-radius: 999rpx; background: #172438; color: #9ca9bd; font-size: 21rpx; }
+.word-example { margin-top: 18rpx; padding-top: 20rpx; border-top: 1rpx dashed #3b4e6b; }
+.example-label { display: flex; align-items: center; margin-bottom: 12rpx; }
+.label-icon { margin-right: 8rpx; color: #7db7ff; }
+.label-text { color: #9ca9bd; font-size: 22rpx; }
+.example-text { color: #d9e2ee; font-size: 26rpx; line-height: 1.65; }
+.bottom-tip { padding: 40rpx; text-align: center; }
+.tip-text { color: #9ca9bd; font-size: 22rpx; }
+.empty-block { margin: 40rpx; padding: 90rpx 32rpx; border: 1rpx dashed #3b4e6b; border-radius: 28rpx; color: #9ca9bd; font-size: 27rpx; text-align: center; }
+.load-more-btn { width: calc(100% - 80rpx); margin: 32rpx 40rpx 0; }
 @media (max-width: 375px) {
-  .word-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .word-meaning {
-    max-width: 100%;
-    white-space: normal;
-  }
+  .word-header { flex-direction: column; align-items: flex-start; }
+  .word-meaning { max-width: 100%; white-space: normal; }
 }
