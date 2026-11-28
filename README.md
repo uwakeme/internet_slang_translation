@@ -5,7 +5,7 @@
 ## ✨ 项目亮点
 
 🎯 **智能翻译** - 自动识别文本类型，一键完成双向翻译
-📚 **丰富词库** - 内置<!-- STAT:WORD_COUNT -->716<!-- /STAT:WORD_COUNT -->个精选词条，涵盖<!-- STAT:CATEGORY_COUNT -->15<!-- /STAT:CATEGORY_COUNT -->大分类（含网络热词）
+📚 **丰富词库** - 内置<!-- STAT:WORD_COUNT -->725<!-- /STAT:WORD_COUNT -->个精选词条，涵盖<!-- STAT:CATEGORY_COUNT -->15<!-- /STAT:CATEGORY_COUNT -->大分类（含网络热词）
 🔄 **双向转换** - 支持黑话→人话、人话→黑话两种翻译模式
 🔍 **智能搜索** - 支持词汇、含义、标签多维度搜索，关键词高亮
 ⭐ **收藏功能** - 一键收藏词条，分类页直达收藏夹
@@ -143,7 +143,7 @@ internet_slang_translation/
 ### 数据管理
 - **模块化设计**: 数据与逻辑分离，便于维护和扩展
 - **分类数据**: `data/categories.js` 存储<!-- STAT:CATEGORY_COUNT -->15<!-- /STAT:CATEGORY_COUNT -->个分类信息
-- **词汇数据**: `data/words.js` 存储<!-- STAT:WORD_COUNT -->716<!-- /STAT:WORD_COUNT -->个词条
+- **词汇数据**: `data/words.js` 存储<!-- STAT:WORD_COUNT -->725<!-- /STAT:WORD_COUNT -->个词条
 - **统一接口**: `utils/data.js` 提供数据访问和操作功能（含今日热词轮换、相关词条推荐）
 - **智能搜索**: 支持词汇、完整含义、标签多维度搜索
 - **本地存储**: 收藏、翻译历史和搜索历史通过 `utils/storage.js` 清洗并持久化
@@ -167,10 +167,10 @@ internet_slang_translation/
 | 前端开发 | 专业术语 | 10个 |
 | DevOps运维 | 专业术语 | 8个 |
 | 大数据分析 | 专业术语 | 7个 |
-| 网络热词 | 互联网黑话 | 254个 |
-| **总计** | | **716个** |
+| 网络热词 | 互联网黑话 | 263个 |
+| **总计** | | **725个** |
 
-其中148个长释义词条配有 `brief` 短释义，供翻译句中替换使用。
+其中157个长释义词条配有 `brief` 短释义，供翻译句中替换使用。
 <!-- CATEGORY_STATS:END -->
 
 ## 🛠 快速开始
@@ -253,7 +253,7 @@ internet_slang_translation/
    { id: 16, name: '新分类', desc: '分类描述', type: 'professional', iconType: 'emoji', icon: '🔥' }
    ```
 
-2. **添加新词汇**: 在 `data/words.js` 中添加词汇数据（id 取现有最大值递增，当前为 <!-- STAT:MAX_WORD_ID -->806<!-- /STAT:MAX_WORD_ID -->）
+2. **添加新词汇**: 在 `data/words.js` 中添加词汇数据（id 取现有最大值递增，当前为 <!-- STAT:MAX_WORD_ID -->815<!-- /STAT:MAX_WORD_ID -->）
    ```javascript
    { id: 743, word: '新术语', meaning: '中文解释', brief: '短释义', example: '使用示例', categoryId: 16, tags: ['标签1', '标签2'] }
    ```
